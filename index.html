@@ -23,7 +23,7 @@
     --accent-wash: #e3e8db;
     --grave: #8a4a3d;
     --grave-wash: #f2e3dd;
-    --radius: 3px;
+    --radius: 4px;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -80,9 +80,10 @@
   }
 
   .page {
-    max-width: 920px;
+    max-width: 1200px;
     margin: 0 auto;
   }
+  .page-narrow { max-width: 920px; }
 
   .eyebrow {
     font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
@@ -108,6 +109,22 @@
     max-width: 62ch;
     margin: 0 0 2.2rem;
   }
+
+  .legend {
+    font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
+    font-size: 0.76rem;
+    color: var(--ink-soft);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+    margin: -1.2rem 0 2rem;
+  }
+  .legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .legend i { width: 0.65rem; height: 0.65rem; border-radius: 2px; display: inline-block; border: 1px solid var(--line); }
+  .legend i.you-i { background: var(--accent-deep); border-color: var(--accent-deep); }
+  .legend i.direct-i { background: var(--accent-wash); border-color: var(--accent); }
+  .legend i.plain-i { background: var(--paper-raised); border-color: var(--line); }
+  .legend i.unsure-i { background: var(--paper-raised); border-color: var(--line); border-style: dashed; }
 
   .headstone {
     background: var(--grave-wash);
@@ -136,130 +153,137 @@
   }
   .headstone-names b { color: var(--ink); font-weight: 600; }
 
-  /* --- tree --- */
-  .tree {
-    position: relative;
-  }
-  .gen {
-    margin-left: 1.6rem;
-    padding-left: 1.6rem;
-    border-left: 1.5px solid var(--line);
-    position: relative;
-  }
-  .tree > .gen { margin-left: 0; padding-left: 0; border-left: none; }
+  /* ============ ORG CHART (box + connector lines) ============ */
+  .orgchart-section { margin-bottom: 3.2rem; }
+  .orgchart-section h2 { font-size: 1.2rem; font-weight: 600; margin: 0 0 0.2rem; }
+  .orgchart-section .dek { margin-bottom: 1.4rem; }
 
-  .couple {
-    position: relative;
-    margin: 0 0 0.9rem;
+  .orgchart {
+    overflow-x: auto;
+    padding: 0.4rem 0.4rem 1.6rem;
   }
-  .gen .couple::before {
+  .orgchart-inner { display: inline-flex; min-width: 100%; justify-content: center; }
+  .orgchart ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .orgchart > .orgchart-inner > ul { padding-top: 0; }
+  .orgchart ul ul {
+    padding-top: 30px;
+    position: relative;
+  }
+  .orgchart li {
+    list-style: none;
+    text-align: center;
+    position: relative;
+    padding: 0 0.6rem;
+  }
+  .orgchart ul ul li { padding-top: 30px; }
+
+  /* half-line above each li, joined into a full horizontal bar across siblings */
+  .orgchart ul ul li::before {
     content: "";
     position: absolute;
-    left: -1.6rem;
-    top: 1.1rem;
-    width: 1.6rem;
-    height: 1.5px;
-    background: var(--line);
+    top: 0; left: 0; right: 50%;
+    height: 30px;
+    border-top: 1.5px solid var(--line);
+  }
+  .orgchart ul ul li::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 50%; right: 0;
+    height: 30px;
+    border-top: 1.5px solid var(--line);
+    border-left: 1.5px solid var(--line);
+  }
+  .orgchart ul ul li:first-child::before { border-top: none; }
+  .orgchart ul ul li:last-child::after { border-top: none; }
+  .orgchart ul ul li:only-child::before,
+  .orgchart ul ul li:only-child::after { display: none; }
+  .orgchart ul ul li:only-child { padding-top: 30px; }
+  .orgchart ul ul li:only-child > .node::before {
+    content: "";
+    position: absolute;
+    top: -30px; left: 50%; width: 0; height: 30px;
+    border-left: 1.5px solid var(--line);
   }
 
-  .couple-row {
-    display: flex;
-    align-items: center;
-    gap: 0.55rem;
-    flex-wrap: wrap;
+  /* stem connecting a node down to its own children's ul */
+  .orgchart li > ul::before {
+    content: "";
+    position: absolute;
+    top: -30px; left: 50%; width: 0; height: 30px;
+    border-left: 1.5px solid var(--line);
   }
 
-  .person {
+  .node {
+    display: inline-block;
+    position: relative;
     background: var(--paper-raised);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 0.42rem 0.7rem;
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.45rem;
+    padding: 0.5rem 0.75rem;
     white-space: nowrap;
   }
-  .person .name {
-    font-size: 0.94rem;
-    font-weight: 600;
-  }
-  .person .dates {
+  .node .name { font-size: 0.86rem; font-weight: 600; display: block; }
+  .node .dates {
     font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
     font-variant-numeric: tabular-nums;
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     color: var(--ink-soft);
+    display: block;
   }
-
-  .person.direct {
-    background: var(--accent-wash);
-    border-color: var(--accent);
-  }
-  .person.direct .name { color: var(--accent-deep); }
-
-  .m {
+  .node .rel {
     font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
-    font-size: 0.72rem;
-    color: var(--ink-soft);
+    font-size: 0.6rem;
     font-style: italic;
+    color: var(--ink-soft);
+    display: block;
+    margin-top: 0.15rem;
   }
 
-  .tag {
+  .node.union {
+    padding: 0.55rem 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .node.union .half { text-align: left; }
+  .node.union .m { color: var(--ink-soft); font-family: -apple-system, sans-serif; font-size: 0.7rem; font-style: italic; }
+
+  .node.direct { background: var(--accent-wash); border-color: var(--accent); }
+  .node.direct .name { color: var(--accent-deep); }
+  .node.direct .rel { color: var(--accent-deep); opacity: 0.85; }
+
+  .node.you { background: var(--accent-deep); border-color: var(--accent-deep); }
+  .node.you .name, .node.you .dates, .node.you .rel { color: var(--paper); }
+
+  .node.unsure { border-style: dashed; }
+
+  .node.leaf { font-size: 0.86rem; }
+
+  .cluster-label {
     font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
     font-size: 0.62rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    font-weight: 700;
-    color: var(--accent-deep);
-    background: color-mix(in srgb, var(--accent) 22%, transparent);
-    padding: 0.12rem 0.4rem;
-    border-radius: 999px;
+    color: var(--ink-soft);
+    margin-bottom: 0.3rem;
   }
-
-  .children {
-    margin-top: 0.5rem;
-  }
-
-  .siblings-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0.3rem 0 0.9rem;
-  }
-  .siblings-row .person { font-size: 0.85rem; }
 
   .note {
     font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
     font-size: 0.78rem;
     color: var(--ink-soft);
     margin: 0.2rem 0 0.9rem;
-    max-width: 60ch;
+    max-width: 62ch;
   }
 
-  .tag.fs {
-    color: var(--grave);
-    background: color-mix(in srgb, var(--grave) 20%, transparent);
-  }
-
-  .rel {
-    font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
-    font-size: 0.62rem;
-    font-style: italic;
-    color: var(--ink-soft);
-    white-space: nowrap;
-  }
-  .rel::before { content: "— "; }
-  .person.direct .rel { color: var(--accent-deep); opacity: 0.85; }
-  .roots .rel { font-size: 0.58rem; }
-
-  /* --- ancestor pedigree (two converging columns) --- */
-  .roots {
-    margin-bottom: 3rem;
-  }
-  .roots h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 0 0 0.2rem;
-  }
+  /* ============ ancestor pedigree columns ============ */
+  .roots { margin-bottom: 3rem; }
+  .roots h2 { font-size: 1.15rem; font-weight: 600; margin: 0 0 0.2rem; }
   .roots .dek { margin-bottom: 1.4rem; }
 
   .roots-grid {
@@ -267,11 +291,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 0 1.6rem;
   }
-  .roots-col {
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-  }
+  .roots-col { display: flex; flex-direction: column; gap: 0.6rem; }
   .roots-col .colhead {
     font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
     font-size: 0.68rem;
@@ -282,25 +302,16 @@
     padding-bottom: 0.4rem;
     margin-bottom: 0.2rem;
   }
-  .roots-gen {
-    padding-left: 1rem;
-    border-left: 1.5px dashed var(--line);
-  }
+  .roots-gen { padding-left: 1rem; border-left: 1.5px dashed var(--line); }
   .roots-gen:first-of-type { border-left: none; padding-left: 0; }
   .roots-couple {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    align-items: baseline;
+    display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: baseline;
     margin-bottom: 0.35rem;
   }
-  .roots .person { font-size: 0.82rem; padding: 0.32rem 0.55rem; }
-  .roots .fsid {
-    font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
-    font-size: 0.6rem;
-    color: var(--ink-soft);
-    opacity: 0.7;
-  }
+  .roots .node { font-size: 0.8rem; padding: 0.32rem 0.55rem; }
+  .siblings-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.3rem 0 0.6rem; }
+  .siblings-chips .node { font-size: 0.72rem; padding: 0.26rem 0.5rem; }
+
   .converge {
     text-align: center;
     font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
@@ -319,77 +330,50 @@
     .roots-grid .converge { grid-column: 1; }
   }
 
-  .verify {
-    margin-top: 3.2rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--line);
-  }
-  .verify h2 {
-    font-size: 1.15rem;
-    font-weight: 600;
-    margin: 0 0 0.2rem;
-  }
-  .verify .dek { margin-bottom: 1.2rem; }
-  .verify-table {
-    width: 100%;
-    overflow-x: auto;
-  }
-  table.vt {
-    width: 100%;
-    border-collapse: collapse;
+  .tag {
     font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
-    font-size: 0.82rem;
-  }
-  table.vt th {
-    text-align: left;
-    font-size: 0.66rem;
-    letter-spacing: 0.08em;
+    font-size: 0.58rem;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--ink-soft);
-    padding: 0 0.6rem 0.5rem 0;
-    border-bottom: 1px solid var(--line);
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--accent-deep);
+    background: color-mix(in srgb, var(--accent) 22%, transparent);
+    padding: 0.1rem 0.35rem;
+    border-radius: 999px;
+    display: inline-block;
+    margin-top: 0.2rem;
   }
-  table.vt td {
-    padding: 0.55rem 0.6rem 0.55rem 0;
-    border-bottom: 1px solid var(--line);
-    vertical-align: top;
+  .node.union .tag { margin-left: 0.3rem; }
+  .tag.fs { color: var(--grave); background: color-mix(in srgb, var(--grave) 20%, transparent); }
+
+  /* ============ verify table ============ */
+  .verify { margin-top: 3.2rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .verify h2 { font-size: 1.15rem; font-weight: 600; margin: 0 0 0.2rem; }
+  .verify .dek { margin-bottom: 1.2rem; }
+  .verify-table { width: 100%; overflow-x: auto; }
+  table.vt { width: 100%; border-collapse: collapse; font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif; font-size: 0.82rem; }
+  table.vt th {
+    text-align: left; font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--ink-soft); padding: 0 0.6rem 0.5rem 0; border-bottom: 1px solid var(--line); font-weight: 600;
   }
+  table.vt td { padding: 0.55rem 0.6rem 0.55rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
   table.vt tr:last-child td { border-bottom: none; }
   table.vt .who { font-weight: 600; color: var(--ink); }
   table.vt .src { color: var(--ink-soft); }
   .verdict {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    padding: 0.15rem 0.5rem;
-    border-radius: 999px;
-    white-space: nowrap;
+    display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.02em; padding: 0.15rem 0.5rem; border-radius: 999px; white-space: nowrap;
   }
-  .verdict.ok {
-    background: color-mix(in srgb, var(--accent) 22%, transparent);
-    color: var(--accent-deep);
-  }
-  .verdict.bad {
-    background: color-mix(in srgb, var(--grave) 22%, transparent);
-    color: var(--grave);
-  }
+  .verdict.ok { background: color-mix(in srgb, var(--accent) 22%, transparent); color: var(--accent-deep); }
+  .verdict.bad { background: color-mix(in srgb, var(--grave) 22%, transparent); color: var(--grave); }
 
   footer {
-    margin-top: 3.2rem;
-    padding-top: 1.3rem;
-    border-top: 1px solid var(--line);
-    font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif;
-    font-size: 0.76rem;
-    color: var(--ink-soft);
+    margin-top: 3.2rem; padding-top: 1.3rem; border-top: 1px solid var(--line);
+    font-family: -apple-system, 'Avenir Next', 'Segoe UI', sans-serif; font-size: 0.76rem; color: var(--ink-soft);
   }
 
   @media (max-width: 560px) {
-    .gen { margin-left: 1rem; padding-left: 1rem; }
-    .person { white-space: normal; }
+    .node .name { white-space: normal; }
   }
 </style>
 <style>
@@ -433,301 +417,305 @@
 
 
 <div class="page">
-  <p class="eyebrow">Genealogy · Arocho / Marrero / Cardona / Huertas</p>
-  <h1>The line from Arecibo to Omar</h1>
-  <p class="dek">Reconstructed from an Ancestry.com "Marrero Family Tree" printout, a headstone at Cementerio Privado La Santa Cruz, Km 3.5 PR&#8209;129, Arecibo, PR, and FamilySearch's sourced Family Tree (logged in as Omar Huertas). Direct ancestors are highlighted in green; a rose tag marks facts pulled straight from FamilySearch records.</p>
+  <div class="page-narrow">
+    <p class="eyebrow">Genealogy · Arocho / Marrero / Cardona / Huertas</p>
+    <h1>The line from Arecibo to Omar</h1>
+    <p class="dek">Reconstructed from an Ancestry.com "Marrero Family Tree" printout, a headstone at Cementerio Privado La Santa Cruz, Km 3.5 PR&#8209;129, Arecibo, PR, and FamilySearch's sourced Family Tree (logged in as Omar Huertas). Boxes and lines below mirror FamilySearch's own chart layout.</p>
 
-  <div class="headstone">
-    <span class="headstone-label">On the headstone</span>
-    <span class="headstone-names">
-      <b>Guillermo Arocho Medina</b> † 13 Nov 1967 &nbsp;·&nbsp;
-      <b>Milagros Arocho Hernández</b> † 31 Jul 1996 &nbsp;·&nbsp;
-      <b>Rosa María Arocho Hernández</b> † 31 Mar 1979
-    </span>
+    <div class="legend">
+      <span><i class="you-i"></i> Omar</span>
+      <span><i class="direct-i"></i> your direct ancestor</span>
+      <span><i class="plain-i"></i> relative (not a direct ancestor)</span>
+      <span><i class="unsure-i"></i> not confirmed / disputed</span>
+    </div>
+
+    <div class="headstone">
+      <span class="headstone-label">On the headstone</span>
+      <span class="headstone-names">
+        <b>Guillermo Arocho Medina</b> † 13 Nov 1967 &nbsp;·&nbsp;
+        <b>Milagros Arocho Hernández</b> † 31 Jul 1996 &nbsp;·&nbsp;
+        <b>Rosa María Arocho Hernández</b> † 31 Mar 1979
+      </span>
+    </div>
   </div>
 
+  <!-- ============ ANCESTOR CHART: Arocho / Hernández side ============ -->
   <div class="roots">
-    <h2>Deeper roots — confirmed on FamilySearch</h2>
-    <p class="dek">Guillermo and María's own parents and grandparents, pulled directly from their sourced FamilySearch profiles. The two sides converge at Guillermo &amp; María, the couple on the headstone.</p>
+    <h2>Deeper roots — Guillermo &amp; María's side</h2>
+    <p class="dek">Pulled directly from their sourced FamilySearch profiles. The two families converge at Guillermo &amp; María, the couple on the headstone.</p>
     <div class="roots-grid">
       <div class="roots-col">
         <div class="colhead">Guillermo Arocho Medina's side</div>
         <div class="roots-gen">
           <div class="roots-couple">
-            <div class="person"><span class="name">Máximo Arocho</span><span class="rel">4th great-grandfather</span></div>
+            <div class="node"><span class="name">Máximo Arocho</span><span class="rel">4th great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person"><span class="name">María Ramona Román</span><span class="rel">4th great-grandmother</span></div>
+            <div class="node"><span class="name">María Ramona Román</span><span class="rel">4th great-grandmother</span></div>
           </div>
         </div>
         <div class="roots-gen">
           <div class="roots-couple">
-            <div class="person direct"><span class="name">Martín Arocho y Román</span><span class="dates">1828–1910</span><span class="rel">3rd great-grandfather</span></div>
+            <div class="node direct"><span class="name">Martín Arocho y Román</span><span class="dates">1828–1910</span><span class="rel">3rd great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person direct"><span class="name">Felipa Medina</span><span class="dates">1867–</span><span class="rel">3rd great-grandmother</span></div>
+            <div class="node direct"><span class="name">Felipa Medina</span><span class="dates">1867–</span><span class="rel">3rd great-grandmother</span></div>
           </div>
+          <div class="cluster-label">Their other children (Guillermo's siblings, your 3rd great-aunts/uncles)</div>
+          <div class="siblings-chips">
+            <div class="node leaf"><span class="name">Gregoria</span><span class="dates">1881–1910</span></div>
+            <div class="node leaf"><span class="name">Juana E.</span><span class="dates">1885–1913</span></div>
+            <div class="node leaf"><span class="name">María</span><span class="dates">1885–</span></div>
+            <div class="node leaf"><span class="name">José</span><span class="dates">1888–1940</span></div>
+            <div class="node leaf"><span class="name">Salome</span><span class="dates">1888–1964</span></div>
+            <div class="node leaf"><span class="name">Eusebio</span><span class="dates">1888–1974</span></div>
+            <div class="node leaf"><span class="name">Juan Rosendo</span><span class="dates">1893–1966</span></div>
+            <div class="node leaf"><span class="name">Anselma</span><span class="dates">1894–1939</span></div>
+            <div class="node leaf"><span class="name">Alejandra</span><span class="dates">1896–</span></div>
+            <div class="node leaf"><span class="name">Concepción</span><span class="dates">1897–1900</span></div>
+          </div>
+          <div class="note" style="margin:0;">All recorded as "Arocho y Medina." Guillermo also has a second, childless recorded union with Mónica Hernández (1902–).</div>
         </div>
-        <div class="note">FamilySearch has no parents recorded for Máximo Arocho or María Ramona Román (their profiles show empty "Add Father / Add Mother" slots) — this is currently the end of the line on this side.</div>
-        <div class="note" style="margin-top:-0.4rem;"><b>Martín &amp; Felipa's other children</b> (Guillermo's siblings, your 3rd great-aunts/uncles): Gregoria (1881–1910), Juana E. (1885–1913), María (1885–), José (1888–1940), Salome (1888–1964), Eusebio (1888–1974), Juan Rosendo (1893–1966), Anselma (1894–1939), Alejandra (1896–), Concepción (1897–1900) — all "Arocho y Medina."</div>
-        <div class="note">Guillermo also has a second, childless recorded union with Mónica Hernández (1902–).</div>
       </div>
       <div class="roots-col">
         <div class="colhead">María Hernández y Núñez's side</div>
         <div class="roots-gen">
           <div class="roots-couple">
-            <div class="person"><span class="name">Isidro Núñez</span><span class="rel">5th great-grandfather</span></div>
+            <div class="node"><span class="name">Isidro Núñez</span><span class="rel">5th great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person"><span class="name">Agustina Acevedo</span><span class="rel">5th great-grandmother</span></div>
+            <div class="node"><span class="name">Agustina Acevedo</span><span class="rel">5th great-grandmother</span></div>
           </div>
           <div class="roots-couple">
-            <div class="person"><span class="name">Alberto Núñez y Acevedo</span><span class="dates">1805–1895</span><span class="rel">4th great-grandfather</span></div>
+            <div class="node"><span class="name">Alberto Núñez y Acevedo</span><span class="dates">1805–1895</span><span class="rel">4th great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person"><span class="name">María Anita Bosque</span><span class="rel">4th great-grandmother</span></div>
+            <div class="node"><span class="name">María Anita Bosque</span><span class="rel">4th great-grandmother</span></div>
           </div>
           <div class="roots-couple">
-            <div class="person"><span class="name">Polinario Méndez</span><span class="rel">4th great-grandfather</span></div>
+            <div class="node"><span class="name">Polinario Méndez</span><span class="rel">4th great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person"><span class="name">Clemencia Núñez</span><span class="rel">4th great-grandmother</span></div>
+            <div class="node"><span class="name">Clemencia Núñez</span><span class="rel">4th great-grandmother</span></div>
           </div>
         </div>
         <div class="roots-gen">
           <div class="roots-couple">
-            <div class="person"><span class="name">Antonio Hernández</span><span class="rel">4th great-grandfather</span></div>
+            <div class="node"><span class="name">Antonio Hernández</span><span class="rel">4th great-grandfather</span></div>
           </div>
           <div class="roots-couple">
-            <div class="person"><span class="name">Juan Rosa Núñez y Bosque</span><span class="dates">1858–1919</span><span class="rel">4th great-grandfather</span></div>
+            <div class="node"><span class="name">Juan Rosa Núñez y Bosque</span><span class="dates">1858–1919</span><span class="rel">4th great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person"><span class="name">Juana Francisca Méndez Núñez</span><span class="dates">1865–1948</span><span class="rel">4th great-grandmother</span></div>
+            <div class="node"><span class="name">Juana Francisca Méndez Núñez</span><span class="dates">1865–1948</span><span class="rel">4th great-grandmother</span></div>
           </div>
         </div>
         <div class="roots-gen">
           <div class="roots-couple">
-            <div class="person direct"><span class="name">Manuel Hernández</span><span class="dates">1876–</span><span class="rel">3rd great-grandfather</span></div>
+            <div class="node direct"><span class="name">Manuel Hernández</span><span class="dates">1876–</span><span class="rel">3rd great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person direct"><span class="name">Ricarda Núñez y Méndez</span><span class="dates">1883–1936</span><span class="rel">3rd great-grandmother</span></div>
+            <div class="node direct"><span class="name">Ricarda Núñez y Méndez</span><span class="dates">1883–1936</span><span class="rel">3rd great-grandmother</span></div>
           </div>
+          <div class="note" style="margin:0;">María was Manuel &amp; Ricarda's only recorded child.</div>
         </div>
       </div>
       <div class="converge">↓ converge ↓</div>
     </div>
-    <div class="couple" style="margin-top:0.3rem;">
-      <div class="couple-row">
-        <div class="person direct"><span class="name">Guillermo Arocho Medina</span><span class="dates">1902–1967</span><span class="rel">2nd great-grandfather</span></div>
-        <span class="m">m.</span>
-        <div class="person direct"><span class="name">María Hernández y Núñez</span><span class="dates">1899–1956</span><span class="rel">2nd great-grandmother</span></div>
-        <span class="tag fs">FamilySearch MNLN-G1D / MNGR-FWB</span>
-      </div>
+    <div class="roots-couple" style="margin-top:0.3rem; justify-content:center;">
+      <div class="node direct"><span class="name">Guillermo Arocho Medina</span><span class="dates">1902–1967</span><span class="rel">2nd great-grandfather</span></div>
+      <span class="m">m.</span>
+      <div class="node direct"><span class="name">María Hernández y Núñez</span><span class="dates">1899–1956</span><span class="rel">2nd great-grandmother</span></div>
+      <span class="tag fs">FamilySearch MNLN-G1D / MNGR-FWB</span>
     </div>
   </div>
 
+  <!-- ============ ANCESTOR CHART: Marrero / Montalvo side ============ -->
   <div class="roots">
-    <h2>Amado Marrero Montalvo's side</h2>
+    <h2>Deeper roots — Amado Marrero Montalvo's side</h2>
     <p class="dek">Milagros's husband — his parents and grandparents, also confirmed on FamilySearch.</p>
     <div class="roots-grid">
       <div class="roots-col">
         <div class="colhead">Marrero side</div>
         <div class="roots-gen">
           <div class="roots-couple">
-            <div class="person"><span class="name">Juan Marrero González</span><span class="dates">1860–1923</span><span class="rel">4th great-grandfather</span></div>
+            <div class="node"><span class="name">Juan Marrero González</span><span class="dates">1860–1923</span><span class="rel">4th great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person"><span class="name">María/Marina del Carmen…</span><span class="dates">1868–1923</span><span class="rel">4th great-grandmother</span></div>
+            <div class="node"><span class="name">María/Marina del Carmen…</span><span class="dates">1868–1923</span><span class="rel">4th great-grandmother</span></div>
           </div>
         </div>
         <div class="roots-gen">
           <div class="roots-couple">
-            <div class="person"><span class="name">Juan Ramón Marrero</span><span class="dates">1883–1942</span><span class="rel">3rd great-grandfather</span></div>
+            <div class="node"><span class="name">Juan Ramón Marrero</span><span class="dates">1883–1942</span><span class="rel">3rd great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person"><span class="name">María Montalvo Ramos</span><span class="dates">1898–1963</span><span class="rel">3rd great-grandmother</span></div>
+            <div class="node"><span class="name">María Montalvo Ramos</span><span class="dates">1898–1963</span><span class="rel">3rd great-grandmother</span></div>
           </div>
-          <div class="note">Married 1920, Arecibo. Their other children (Amado's siblings, your great-great-aunt/uncle): Robert Marrero Montalvo (1925–) and Julia Marrero Montalvo (1927–2012).</div>
+          <div class="cluster-label">Their other children (Amado's siblings, your great-great-aunt/uncle)</div>
+          <div class="siblings-chips">
+            <div class="node leaf"><span class="name">Robert Marrero Montalvo</span><span class="dates">1925–</span></div>
+            <div class="node leaf"><span class="name">Julia Marrero Montalvo</span><span class="dates">1927–2012</span></div>
+          </div>
+          <div class="note" style="margin:0;">Married 1920, Arecibo.</div>
         </div>
       </div>
       <div class="roots-col">
         <div class="colhead">Montalvo side</div>
         <div class="roots-gen">
           <div class="roots-couple">
-            <div class="person"><span class="name">Domingo Montalvo Rodríguez</span><span class="dates">1875–1970</span><span class="rel">4th great-grandfather</span></div>
+            <div class="node"><span class="name">Domingo Montalvo Rodríguez</span><span class="dates">1875–1970</span><span class="rel">4th great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="person"><span class="name">Dionicia Ramos Santiago</span><span class="dates">1878–1972</span><span class="rel">4th great-grandmother</span></div>
+            <div class="node"><span class="name">Dionicia Ramos Santiago</span><span class="dates">1878–1972</span><span class="rel">4th great-grandmother</span></div>
           </div>
-          <div class="note">Married 22 March 1901, Arecibo.</div>
+          <div class="note" style="margin:0;">Married 22 March 1901, Arecibo.</div>
         </div>
       </div>
       <div class="converge">↓ converge ↓</div>
     </div>
-    <div class="couple" style="margin-top:0.3rem;">
-      <div class="couple-row">
-        <div class="person"><span class="name">Amado Marrero Montalvo</span><span class="dates">1924–1982</span><span class="rel">great-grandfather</span></div>
-        <span class="m">m.</span>
-        <div class="person direct"><span class="name">Milagros Arocho Hernández</span><span class="dates">1923–1996</span><span class="rel">great-grandmother</span></div>
-        <span class="tag fs">FamilySearch K8BX-SKG</span>
-      </div>
+    <div class="roots-couple" style="margin-top:0.3rem; justify-content:center;">
+      <div class="node"><span class="name">Amado Marrero Montalvo</span><span class="dates">1924–1982</span><span class="rel">great-grandfather</span></div>
+      <span class="m">m.</span>
+      <div class="node direct"><span class="name">Milagros Arocho Hernández</span><span class="dates">1923–1996</span><span class="rel">great-grandmother</span></div>
+      <span class="tag fs">FamilySearch K8BX-SKG</span>
     </div>
-    <div class="note">Amado's first marriage: Rosa Ceballo Marrero (1933–2022), Manhattan, New York, 1950 — no children. Matches the "Rosa Alicia Ceballo" pairing on the Ancestry printout.</div>
+    <div class="note" style="text-align:center; max-width:60ch; margin:0.6rem auto 0;">Amado's first marriage: Rosa Ceballo Marrero (1933–2022), Manhattan NY, 1950, no children — matches "Rosa Alicia Ceballo" on the Ancestry printout. Order vs. the Milagros union is unclear (Thelma born 1943, before this 1950 marriage).</div>
   </div>
 
-  <div class="tree">
-    <div class="gen">
-      <div class="couple">
-        <div class="couple-row">
-          <div class="person direct"><span class="name">Guillermo Arocho Medina</span><span class="dates">1902–1967</span><span class="rel">2nd great-grandfather</span></div>
-          <span class="m">m.</span>
-          <div class="person direct"><span class="name">María Hernández y Núñez</span><span class="dates">1899–1956</span><span class="rel">2nd great-grandmother</span></div>
-          <span class="tag">on headstone</span>
-        </div>
-      </div>
-      <div class="note">Guillermo &amp; María's other children (Milagros's siblings, your great-great-aunt/uncle): Juan Salvador Arocho Hernández (1919, died in infancy), José María Arocho Hernández (1921–), Roberto Arocho Hernández (1924–1925, died in infancy) — plus Rosa María, below.</div>
-
-      <div class="children">
-        <!-- Milagros branch -->
-        <div class="gen">
-          <div class="couple">
-            <div class="couple-row">
-              <div class="person direct"><span class="name">Milagros Arocho</span><span class="dates">1923–1996</span><span class="rel">great-grandmother</span></div>
+  <!-- ============ MAIN DESCENDANT ORG CHART ============ -->
+  <div class="orgchart-section">
+    <div class="page-narrow">
+      <h2>The full descendant tree — Guillermo &amp; María to Omar</h2>
+      <p class="dek">Every child, sibling, and cousin confirmed so far, laid out like FamilySearch's own chart. Scroll sideways on narrow screens.</p>
+    </div>
+    <div class="orgchart">
+      <div class="orgchart-inner">
+        <ul>
+          <li>
+            <div class="node union direct">
+              <div class="half"><span class="name">Guillermo Arocho Medina</span><span class="dates">1902–1967</span><span class="rel">2nd great-grandfather</span></div>
               <span class="m">m.</span>
-              <div class="person"><span class="name">Amado Marrero</span><span class="dates">1924–1982</span><span class="rel">great-grandfather</span></div>
-              <span class="tag">on headstone</span>
+              <div class="half"><span class="name">María Hernández y Núñez</span><span class="dates">1899–1956</span><span class="rel">2nd great-grandmother</span></div>
             </div>
-          </div>
-          <div class="note">Amado's FamilySearch record shows this marriage as undated, while his marriage to Rosa Ceballo Marrero (above) is dated 1950 — after Thelma's 1943 birth. Order between the two isn't fully clear from what's recorded.</div>
-
-          <div class="children">
-            <div class="siblings-row">
-              <div class="person"><span class="name">Yvonne Marrero</span><span class="dates">1950–</span><span class="rel">great-aunt</span></div>
-              <div class="person"><span class="name">Angel Amado Marrero</span><span class="dates">1954–</span><span class="rel">great-uncle</span></div>
-              <div class="person"><span class="name">Juan Ramón Marrero</span><span class="dates">1945–1959</span><span class="rel">great-uncle</span></div>
-            </div>
-
-            <div class="gen">
-              <div class="couple">
-                <div class="couple-row">
-                  <div class="person direct"><span class="name">Thelma Marrero Arocho</span><span class="dates">1943–2019</span><span class="rel">grandmother</span></div>
+            <ul>
+              <li><div class="node leaf"><span class="name">Juan Salvador</span><span class="dates">1919 (infant)</span></div></li>
+              <li><div class="node leaf"><span class="name">José María</span><span class="dates">1921–</span></div></li>
+              <li><div class="node leaf"><span class="name">Roberto</span><span class="dates">1924–1925</span></div></li>
+              <li>
+                <div class="node union">
+                  <div class="half"><span class="name">Rosa María Arocho H.</span><span class="dates">1920–1979</span><span class="rel">on headstone</span></div>
                   <span class="m">m.</span>
-                  <div class="person"><span class="name">Miguel Cardona?</span><span class="dates">1940–</span><span class="rel">grandfather</span></div>
-                  <span class="tag fs">FamilySearch L2H2-YCJ / PX8G-TQF</span>
+                  <div class="half"><span class="name">Víctor Cruz</span><span class="dates">1896–</span></div>
                 </div>
-              </div>
-              <div class="note">FamilySearch splits Thelma across two unmerged records (L2H2-YCJ and PX8G-TQF, same person, confirmed) — the descendant line to Yadyra runs through PX8G-TQF, which lists her spouse as "[Unknown Name]" rather than Miguel Cardona; the Ancestry printout is the only source naming him.</div>
-
-              <div class="children">
-                <div class="siblings-row">
-                  <div class="person"><span class="name">Michael Cardona</span><span class="dates">1961–</span><span class="rel">aunt/uncle</span></div>
-                  <div class="person"><span class="name">Christine Cardona</span><span class="dates">1964–2018</span><span class="rel">aunt/uncle</span></div>
+                <ul>
+                  <li><div class="node leaf"><span class="name">Letizia Cruz</span></div></li>
+                  <li><div class="node leaf"><span class="name">Maritza Cruz</span></div></li>
+                  <li><div class="node leaf"><span class="name">Miriam Cruz</span></div></li>
+                  <li><div class="node leaf"><span class="name">Orlando Cruz</span><span class="dates">1947–2000</span></div></li>
+                  <li><div class="node leaf"><span class="name">Pancho Cruz</span></div></li>
+                  <li><div class="node leaf"><span class="name">Rosa Luz Cruz</span></div></li>
+                  <li><div class="node leaf"><span class="name">Víctor Luis Cruz</span></div></li>
+                  <li><div class="node leaf"><span class="name">Lissette Arocho</span></div></li>
+                </ul>
+              </li>
+              <li>
+                <div class="node union direct">
+                  <div class="half"><span class="name">Milagros Arocho H.</span><span class="dates">1923–1996</span><span class="rel">great-grandmother</span></div>
+                  <span class="m">m.</span>
+                  <div class="half"><span class="name">Amado Marrero M.</span><span class="dates">1924–1982</span><span class="rel">great-grandfather</span></div>
                 </div>
-
-                <div class="gen">
-                  <div class="couple">
-                    <div class="couple-row">
-                      <div class="person direct"><span class="name">Yadyra Cardona</span><span class="dates">Living</span><span class="rel">mother</span></div>
+                <ul>
+                  <li><div class="node leaf"><span class="name">Juan Ramón Marrero A.</span><span class="dates">1945–1959</span></div></li>
+                  <li>
+                    <div class="node union direct unsure">
+                      <div class="half"><span class="name">Thelma Marrero</span><span class="dates">1943–2019</span><span class="rel">grandmother</span></div>
                       <span class="m">m.</span>
-                      <div class="person direct"><span class="name">Juan Huertas</span><span class="dates">–2021</span><span class="rel">father</span></div>
-                      <span class="tag fs">FamilySearch PX8G-5X3 / PX8G-XXP</span>
+                      <div class="half"><span class="name">Miguel Cardona?</span><span class="dates">1940–</span><span class="rel">grandfather</span></div>
                     </div>
-                  </div>
-
-                  <div class="children">
-                    <div class="siblings-row">
-                      <div class="person"><span class="name">Ellyn J. Huertas</span><span class="dates">1976–</span><span class="rel">sister</span></div>
-                      <div class="person direct"><span class="name">Omar Huertas</span><span class="dates">1978–</span><span class="tag">you</span><span class="tag fs">PX8L-H71</span></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Rosa María branch -->
-        <div class="gen">
-          <div class="couple">
-            <div class="couple-row">
-              <div class="person"><span class="name">Victor Cruz</span><span class="dates">1896–</span><span class="rel">great-great-aunt's husband</span></div>
-              <span class="m">m.</span>
-              <div class="person"><span class="name">Rosa María Arocho</span><span class="dates">1920–1979</span><span class="rel">great-great-aunt (Milagros's sister)</span></div>
-              <span class="tag">on headstone</span>
-            </div>
-          </div>
-          <div class="note">Milagros's sister — buried in the same plot at La Santa Cruz.</div>
-
-          <div class="children">
-            <div class="siblings-row">
-              <div class="person"><span class="name">Letizia Cruz</span><span class="rel">1st cousin, 2x removed</span></div>
-              <div class="person"><span class="name">Maritza Cruz</span><span class="rel">1st cousin, 2x removed</span></div>
-              <div class="person"><span class="name">Miriam Cruz</span><span class="rel">1st cousin, 2x removed</span></div>
-              <div class="person"><span class="name">Orlando Cruz</span><span class="dates">1947–2000</span><span class="rel">1st cousin, 2x removed</span></div>
-              <div class="person"><span class="name">Pancho Cruz</span><span class="rel">1st cousin, 2x removed</span></div>
-              <div class="person"><span class="name">Rosa Luz Cruz</span><span class="rel">1st cousin, 2x removed</span></div>
-              <div class="person"><span class="name">Víctor Luis Cruz</span><span class="rel">1st cousin, 2x removed</span></div>
-              <div class="person"><span class="name">Lissette Arocho</span><span class="rel">1st cousin, 2x removed</span></div>
-            </div>
-          </div>
-        </div>
+                    <ul>
+                      <li><div class="node leaf unsure"><span class="name">Michael Cardona</span><span class="dates">1961–</span></div></li>
+                      <li><div class="node leaf unsure"><span class="name">Christine Cardona</span><span class="dates">1964–2018</span></div></li>
+                      <li>
+                        <div class="node union direct">
+                          <div class="half"><span class="name">Yadyra Cardona</span><span class="dates">Living</span><span class="rel">mother</span></div>
+                          <span class="m">m.</span>
+                          <div class="half"><span class="name">Juan Huertas</span><span class="dates">–2021</span><span class="rel">father</span></div>
+                        </div>
+                        <ul>
+                          <li><div class="node leaf"><span class="name">Ellyn J. Huertas</span><span class="dates">1976–</span><span class="rel">sister</span></div></li>
+                          <li><div class="node you"><span class="name">Omar Huertas</span><span class="dates">1978–</span><span class="rel">you</span></div></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
-
-  <div class="verify">
-    <h2>Fact-check: how far back does this really go?</h2>
-    <p class="dek">FamilySearch's Family Tree is a single tree anyone can edit, so a "linked" ancestor isn't automatically a real one. I opened the Sources tab on each person below to check what's actually documented versus merged in without evidence.</p>
-    <div class="verify-table">
-      <table class="vt">
-        <thead>
-          <tr><th>Person</th><th>Sources found</th><th>Verdict</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="who">María Ramona Román<br><span class="src">L2P5-HLK</span></td>
-            <td class="src">6 sources — Puerto Rico parish &amp; civil registry records, 1630–1914</td>
-            <td><span class="verdict ok">✓ Real, documented</span></td>
-          </tr>
-          <tr>
-            <td class="who">Anatilde Román Jurado<br><span class="src">P3ZZ-DWC — placed next to María Ramona as if related</span></td>
-            <td class="src">7 sources — all Colombia parish records; the one profile's own events span 1909–1992, 78 years past her recorded 1914 death</td>
-            <td><span class="verdict bad">✗ Different person, different country — bad merge</span></td>
-          </tr>
-          <tr>
-            <td class="who">Vicente Sánchez Cardona (Antioquia line)<br><span class="src">GCQM-5R4</span></td>
-            <td class="src">10 sources — Colombia/Antioquia/El Retiro parish records, 1779–1848</td>
-            <td><span class="verdict ok">✓ Real — but a separate, unrelated Colombian family</span></td>
-          </tr>
-          <tr>
-            <td class="who">Juan Marrero González &amp; Domingo Montalvo Rodríguez (Amado's grandparents)<br><span class="src">9F64-23S / L6RL-N7P</span></td>
-            <td class="src">9 and 22 sources — Puerto Rico civil registration &amp; U.S. Census records, 1860s–1970s</td>
-            <td><span class="verdict ok">✓ Real, documented — your family, via Amado</span></td>
-          </tr>
-          <tr>
-            <td class="who">José María Jurado Gutiérrez (1774) &amp; Juan Nicolás de Herrera (1712)<br><span class="src">GZH8-X9Z / GK36-VF1</span></td>
-            <td class="src">17 and 8 sources — genuine Colombia/Antioquia parish records</td>
-            <td><span class="verdict ok">✓ Real — same unrelated Colombian family, holds up into the 1700s</span></td>
-          </tr>
-          <tr>
-            <td class="who">Pedro de Aguirre (1685) &amp; Fabián de Agudelo (1610)<br><span class="src">G5MK-D3V / GH1F-C9F</span></td>
-            <td class="src">3 and 5 sources — Colombia parish records, plus a published Antioquia surname genealogy</td>
-            <td><span class="verdict ok">✓ Real — same unrelated family, still holding up in the 1600s</span></td>
-          </tr>
-          <tr>
-            <td class="who">Fabián Hernández Salazar (1510) &amp; Capitán Juan Espinosa Villadiego (1554)<br><span class="src">LBLH-18P / G948-5HN</span></td>
-            <td class="src">3 and 7 sources — Spain baptism/marriage records; one stray 1960 record misattached to the 1510 profile</td>
-            <td><span class="verdict ok">✓ Mostly real — earliest Spanish emigrant ancestors of the unrelated family, one loose thread</span></td>
-          </tr>
-          <tr>
-            <td class="who">María Yamecí Indígena (1514–1560)<br><span class="src">PH7Y-8KP</span></td>
-            <td class="src">0 sources — married into the otherwise-documented 1510 Spanish line above</td>
-            <td><span class="verdict bad">✗ Fully unsourced insert</span></td>
-          </tr>
-          <tr>
-            <td class="who">Huēyi Tlahtoāni Motēcuzōmah Ilhuicamīna — Moctezuma I<br><span class="src">GPDB-51H</span></td>
-            <td class="src">1 source — a Wikipedia "Prominent Persons Index" citation, no document connecting him to this family</td>
-            <td><span class="verdict bad">✗ Unsourced myth-chain</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="page-narrow">
+      <p class="note">Dashed boxes = not confirmed on FamilySearch (Thelma's spouse and her children Michael/Christine come only from the Ancestry printout — FamilySearch lists Thelma's spouse as "[Unknown Name]" and shows only Yadyra as her child).</p>
     </div>
-    <p class="note" style="max-width:70ch; margin-top:1rem;">Conclusion, after checking every distinct branch in the tree (not just one path): your verified Arecibo ancestry runs cleanly through María Ramona Román and through Amado Marrero Montalvo's Marrero/Montalvo grandparents — all real, sourced Puerto Rico records, ending where FamilySearch has no parents recorded. The Colombian Jurado/Sánchez/Herrera/Aguirre/Agudelo family, wrongly attached at María Ramona Román, is <em>itself</em> genuinely well-documented all the way back to 1554 in Spain — it's a real family, just not yours. The chain only turns fictional at two specific points: María Yamecí Indígena (zero sources, grafted onto an otherwise real 1510s Spanish line) and the "royal descent" branch through Moctezuma I and medieval Spanish nobility. Fixing this on FamilySearch means detaching Anatilde Román Jurado from María Ramona Román's profile — everything past that single edit is the unrelated Colombian family's own tree, not yours.</p>
   </div>
 
-  <footer>
-    Sources: Ancestry.com "Marrero Family Tree" (printer-friendly family view, pp. 1–2), a headstone photograph at Cementerio Privado La Santa Cruz, Arecibo, PR, and FamilySearch Family Tree (familysearch.org, accessed while logged in as Omar Huertas — landscape pedigree view MNPW-LS4, and each linked person's own Sources tab). FamilySearch also confirms Milagros's burial record: Cementerio La Santa Cruz, Hato Abajo, Arecibo, buried August 1996 — matching the headstone. Dates without a start year, or ranges ending in "–", are as shown on the source and unverified beyond it. Miguel Cardona's marriage to Thelma Marrero is inferred from his position adjacent to her on the Ancestry chart; FamilySearch does not (yet) record this spouse. See the Fact-check section above for what is and isn't verified beyond María Ramona Román.
-  </footer>
+  <div class="page-narrow">
+    <div class="verify">
+      <h2>Fact-check: how far back does this really go?</h2>
+      <p class="dek">FamilySearch's Family Tree is a single tree anyone can edit, so a "linked" ancestor isn't automatically a real one. I opened the Sources tab on each person below to check what's actually documented versus merged in without evidence.</p>
+      <div class="verify-table">
+        <table class="vt">
+          <thead>
+            <tr><th>Person</th><th>Sources found</th><th>Verdict</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="who">María Ramona Román<br><span class="src">L2P5-HLK</span></td>
+              <td class="src">6 sources — Puerto Rico parish &amp; civil registry records, 1630–1914</td>
+              <td><span class="verdict ok">✓ Real, documented</span></td>
+            </tr>
+            <tr>
+              <td class="who">Anatilde Román Jurado<br><span class="src">P3ZZ-DWC — placed next to María Ramona as if related</span></td>
+              <td class="src">7 sources — all Colombia parish records; the one profile's own events span 1909–1992, 78 years past her recorded 1914 death</td>
+              <td><span class="verdict bad">✗ Different person, different country — bad merge</span></td>
+            </tr>
+            <tr>
+              <td class="who">Vicente Sánchez Cardona (Antioquia line)<br><span class="src">GCQM-5R4</span></td>
+              <td class="src">10 sources — Colombia/Antioquia/El Retiro parish records, 1779–1848</td>
+              <td><span class="verdict ok">✓ Real — but a separate, unrelated Colombian family</span></td>
+            </tr>
+            <tr>
+              <td class="who">Juan Marrero González &amp; Domingo Montalvo Rodríguez (Amado's grandparents)<br><span class="src">9F64-23S / L6RL-N7P</span></td>
+              <td class="src">9 and 22 sources — Puerto Rico civil registration &amp; U.S. Census records, 1860s–1970s</td>
+              <td><span class="verdict ok">✓ Real, documented — your family, via Amado</span></td>
+            </tr>
+            <tr>
+              <td class="who">José María Jurado Gutiérrez (1774) &amp; Juan Nicolás de Herrera (1712)<br><span class="src">GZH8-X9Z / GK36-VF1</span></td>
+              <td class="src">17 and 8 sources — genuine Colombia/Antioquia parish records</td>
+              <td><span class="verdict ok">✓ Real — same unrelated Colombian family, holds up into the 1700s</span></td>
+            </tr>
+            <tr>
+              <td class="who">Pedro de Aguirre (1685) &amp; Fabián de Agudelo (1610)<br><span class="src">G5MK-D3V / GH1F-C9F</span></td>
+              <td class="src">3 and 5 sources — Colombia parish records, plus a published Antioquia surname genealogy</td>
+              <td><span class="verdict ok">✓ Real — same unrelated family, still holding up in the 1600s</span></td>
+            </tr>
+            <tr>
+              <td class="who">Fabián Hernández Salazar (1510) &amp; Capitán Juan Espinosa Villadiego (1554)<br><span class="src">LBLH-18P / G948-5HN</span></td>
+              <td class="src">3 and 7 sources — Spain baptism/marriage records; one stray 1960 record misattached to the 1510 profile</td>
+              <td><span class="verdict ok">✓ Mostly real — earliest Spanish emigrant ancestors of the unrelated family, one loose thread</span></td>
+            </tr>
+            <tr>
+              <td class="who">María Yamecí Indígena (1514–1560)<br><span class="src">PH7Y-8KP</span></td>
+              <td class="src">0 sources — married into the otherwise-documented 1510 Spanish line above</td>
+              <td><span class="verdict bad">✗ Fully unsourced insert</span></td>
+            </tr>
+            <tr>
+              <td class="who">Huēyi Tlahtoāni Motēcuzōmah Ilhuicamīna — Moctezuma I<br><span class="src">GPDB-51H</span></td>
+              <td class="src">1 source — a Wikipedia "Prominent Persons Index" citation, no document connecting him to this family</td>
+              <td><span class="verdict bad">✗ Unsourced myth-chain</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="max-width:70ch; margin-top:1rem;">Conclusion, after checking every distinct branch in the tree (not just one path): your verified Arecibo ancestry runs cleanly through María Ramona Román and through Amado Marrero Montalvo's Marrero/Montalvo grandparents — all real, sourced Puerto Rico records, ending where FamilySearch has no parents recorded. The Colombian Jurado/Sánchez/Herrera/Aguirre/Agudelo family, wrongly attached at María Ramona Román, is <em>itself</em> genuinely well-documented all the way back to 1554 in Spain — it's a real family, just not yours. The chain only turns fictional at two specific points: María Yamecí Indígena (zero sources, grafted onto an otherwise real 1510s Spanish line) and the "royal descent" branch through Moctezuma I and medieval Spanish nobility. Fixing this on FamilySearch means detaching Anatilde Román Jurado from María Ramona Román's profile — everything past that single edit is the unrelated Colombian family's own tree, not yours.</p>
+    </div>
+
+    <footer>
+      Sources: Ancestry.com "Marrero Family Tree" (printer-friendly family view, pp. 1–2), a headstone photograph at Cementerio Privado La Santa Cruz, Arecibo, PR, and FamilySearch Family Tree (familysearch.org, accessed while logged in as Omar Huertas — landscape pedigree view MNPW-LS4, and each linked person's own Family and Sources tabs). FamilySearch also confirms Milagros's burial record: Cementerio La Santa Cruz, Hato Abajo, Arecibo, buried August 1996 — matching the headstone. Dates without a start year, or ranges ending in "–", are as shown on the source and unverified beyond it. Miguel Cardona's marriage to Thelma Marrero, and their children Michael and Christine Cardona, are inferred from the Ancestry printout only; FamilySearch does not (yet) record this spouse or those children under Thelma. See the Fact-check section above for what is and isn't verified beyond María Ramona Román.
+    </footer>
+  </div>
 </div>
 
 </div>
