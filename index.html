@@ -503,6 +503,10 @@
             <span class="m">m.</span>
             <div class="node"><span class="name">Juana Francisca Méndez Núñez</span><span class="dates">1865–1948</span><span class="rel">4th great-grandmother</span></div>
           </div>
+          <div class="cluster-label">Ricarda's sibling</div>
+          <div class="siblings-chips">
+            <div class="node leaf"><span class="name">Teresa Núñez Méndez</span><span class="dates">1889–</span></div>
+          </div>
         </div>
         <div class="roots-gen">
           <div class="roots-couple">
@@ -510,7 +514,7 @@
             <span class="m">m.</span>
             <div class="node direct"><span class="name">Ricarda Núñez y Méndez</span><span class="dates">1883–1936</span><span class="rel">3rd great-grandmother</span></div>
           </div>
-          <div class="note" style="margin:0;">María was Manuel &amp; Ricarda's only recorded child.</div>
+          <div class="note" style="margin:0;">María was Manuel &amp; Ricarda's only child together. Manuel has no siblings recorded. Ricarda later remarried Ramón Torres Martínez (1878–1940) in Lares, PR, 12 May 1913 — 8 more children (María's half-siblings, your half-3rd-great-aunts/uncles): Juan (1906–1918), Rosaura (1909–), Virginia (1909–1938), Juan Ramón (1913–1920), Ruperto (1915–), Florencio (1916–1951), Francisco (1918–), Félix (1922–2006).</div>
         </div>
       </div>
       <div class="converge">↓ converge ↓</div>
@@ -532,9 +536,23 @@
         <div class="colhead">Marrero side</div>
         <div class="roots-gen">
           <div class="roots-couple">
+            <div class="node"><span class="name">Pedro Marrero Nieves</span><span class="dates">–1895</span><span class="rel">5th great-grandfather</span></div>
+            <span class="m">m.</span>
+            <div class="node"><span class="name">Celestina González Soto</span><span class="dates">–1895</span><span class="rel">5th great-grandmother</span></div>
+          </div>
+        </div>
+        <div class="roots-gen">
+          <div class="roots-couple">
             <div class="node"><span class="name">Juan Marrero González</span><span class="dates">1860–1923</span><span class="rel">4th great-grandfather</span></div>
             <span class="m">m.</span>
-            <div class="node"><span class="name">María/Marina del Carmen…</span><span class="dates">1868–1923</span><span class="rel">4th great-grandmother</span></div>
+            <div class="node"><span class="name">María/Marina del Carmen Medina Ramos</span><span class="dates">1868–1923</span><span class="rel">4th great-grandmother</span></div>
+          </div>
+          <div class="cluster-label">Their other children (great-great-aunts/uncles)</div>
+          <div class="siblings-chips">
+            <div class="node leaf"><span class="name">Pedro Marrero Medina</span><span class="dates">1886–1954</span></div>
+            <div class="node leaf"><span class="name">José Marrero Medina</span><span class="dates">1885–1950</span></div>
+            <div class="node leaf"><span class="name">Leocadia Marrero Medina</span><span class="dates">1895–1871⚠</span></div>
+            <div class="node leaf"><span class="name">Julia Marrero Medina</span><span class="dates">1895–</span></div>
           </div>
         </div>
         <div class="roots-gen">
@@ -555,9 +573,34 @@
         <div class="colhead">Montalvo side</div>
         <div class="roots-gen">
           <div class="roots-couple">
+            <div class="node"><span class="name">Hilario Montalvo y Centeno</span><span class="dates">1850–1900</span><span class="rel">5th great-grandfather</span></div>
+            <span class="m">m.</span>
+            <div class="node"><span class="name">María Rodríguez y Rodríguez</span><span class="dates">1856–</span><span class="rel">5th great-grandmother</span></div>
+          </div>
+        </div>
+        <div class="roots-gen">
+          <div class="roots-couple">
             <div class="node"><span class="name">Domingo Montalvo Rodríguez</span><span class="dates">1875–1970</span><span class="rel">4th great-grandfather</span></div>
             <span class="m">m.</span>
             <div class="node"><span class="name">Dionicia Ramos Santiago</span><span class="dates">1878–1972</span><span class="rel">4th great-grandmother</span></div>
+          </div>
+          <div class="cluster-label">Domingo's siblings</div>
+          <div class="siblings-chips">
+            <div class="node leaf"><span class="name">Adolfo</span><span class="dates">1880–1886</span></div>
+            <div class="node leaf"><span class="name">Juan</span><span class="dates">1887–1898</span></div>
+            <div class="node leaf"><span class="name">Silverio</span><span class="dates">1889–1905</span></div>
+            <div class="node leaf"><span class="name">Mercedes</span><span class="dates">1902–1944</span></div>
+          </div>
+          <div class="cluster-label">Domingo &amp; Dionicia's other children (great-great-aunts/uncles)</div>
+          <div class="siblings-chips">
+            <div class="node leaf"><span class="name">Epifanio</span><span class="dates">1900–1947</span></div>
+            <div class="node leaf"><span class="name">Gertrudis</span><span class="dates">1902–</span></div>
+            <div class="node leaf"><span class="name">Granelio</span><span class="dates">1902–</span></div>
+            <div class="node leaf"><span class="name">Marcolina</span><span class="dates">1905–1912</span></div>
+            <div class="node leaf"><span class="name">Manola</span><span class="dates">1905–</span></div>
+            <div class="node leaf"><span class="name">Cándida</span><span class="dates">1908–</span></div>
+            <div class="node leaf"><span class="name">Andrea</span><span class="dates">1910–1961</span></div>
+            <div class="node leaf"><span class="name">Hilario</span><span class="dates">1912–1980</span></div>
           </div>
           <div class="note" style="margin:0;">Married 22 March 1901, Arecibo.</div>
         </div>
@@ -734,19 +777,11 @@
   async function tryPassword() {
     var pw = document.getElementById("gate-pw").value;
     var h = await sha256(pw);
-    if (h === HASH) {
-      unlock();
-    } else {
-      document.getElementById("gate-err").textContent = "Wrong password.";
-    }
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
   }
   document.getElementById("gate-go").addEventListener("click", tryPassword);
-  document.getElementById("gate-pw").addEventListener("keydown", function (e) {
-    if (e.key === "Enter") tryPassword();
-  });
-  try {
-    if (sessionStorage.getItem("ft_unlocked") === "1") unlock();
-  } catch (e) {}
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
 })();
 </script>
 
