@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Line to Omar — A Family History</title>
+<style>
+:root{
+  --paper:#f1ede2; --paper-raised:#e8e2d3; --ink:#2b2621; --ink-soft:#57503f;
+  --line:#c3b89f; --line-strong:#a89a78; --accent:#5f7a52; --accent-deep:#3c4f34;
+  --accent-wash:#e3e8db; --grave:#8a4a3d; --grave-wash:#f2e3dd;
+  --shadow:0 30px 70px rgba(40,30,15,.35); --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);
+  background:
+   radial-gradient(50% 60% at 85% 10%,rgba(95,122,82,.12),transparent 70%),
+   radial-gradient(50% 60% at 10% 100%,rgba(138,74,61,.10),transparent 70%),
+   linear-gradient(160deg,#2a251e,#1c1712 60%,#141009);
+  background-attachment:fixed;min-height:100vh;display:flex;flex-direction:column;align-items:center;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+.grain{position:fixed;inset:0;z-index:0;opacity:.4;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.03) 1px,transparent 1px);background-size:4px 4px}
+
+.topbar{position:relative;z-index:5;width:100%;display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:16px 22px;color:#ece5d6;font-family:-apple-system,'Avenir Next','Segoe UI',sans-serif}
+.brand{display:flex;align-items:center;gap:11px;color:#ece5d6;text-decoration:none}
+.brand-mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--accent-deep),var(--accent));
+  display:grid;place-items:center;color:#fff;font-size:15px;font-weight:900;box-shadow:0 8px 20px rgba(60,79,52,.4)}
+.brand-lock{display:flex;flex-direction:column;line-height:1.15}
+.brand-lock .b-name{font-weight:700;font-size:14px}
+.brand-lock .b-sub{font-size:9.5px;font-weight:700;letter-spacing:.09em;color:#b9cca9;text-transform:uppercase}
+.backlink{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(236,229,214,.22);
+  background:rgba(236,229,214,.06);color:#ece5d6;border-radius:999px;padding:7px 14px;font-size:12px;font-weight:700;
+  text-decoration:none;backdrop-filter:blur(8px);transition:.2s ease}
+.backlink:hover{background:rgba(95,122,82,.24);border-color:rgba(95,122,82,.5)}
+
+#progress{position:relative;z-index:5;width:min(900px,92vw);height:4px;border-radius:999px;background:rgba(236,229,214,.14);overflow:hidden;margin:2px 0 14px}
+#progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent-deep),var(--accent),#b9cca9);
+  box-shadow:0 0 12px rgba(95,122,82,.6);transition:width .4s cubic-bezier(.2,.8,.2,1)}
+
+.stage{position:relative;z-index:5;perspective:2600px;width:min(900px,92vw);flex:1;display:flex;
+  align-items:center;justify-content:center;padding-bottom:8px}
+.book{position:relative;width:100%;aspect-ratio:1/1.414;max-height:78vh}
+.page{position:absolute;inset:0;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);transform-style:preserve-3d;transform-origin:left center;backface-visibility:hidden;
+  transition:transform .85s cubic-bezier(.65,.02,.28,1);will-change:transform;display:flex;flex-direction:column}
+.page.turned{transform:rotateY(-180deg)}
+.page .face{position:absolute;inset:0;display:flex;flex-direction:column;backface-visibility:hidden;overflow:hidden}
+
+.face{
+  background-color:#ece0c0;
+  background-image:
+    radial-gradient(circle at 16% 12%, rgba(150,110,50,.12), transparent 30%),
+    radial-gradient(circle at 86% 88%, rgba(115,82,32,.16), transparent 36%),
+    radial-gradient(circle at 62% 38%, rgba(175,145,85,.08), transparent 42%),
+    radial-gradient(circle at 40% 75%, rgba(120,90,40,.07), transparent 40%),
+    linear-gradient(160deg,#f6eed7,#e7d9b6);
+  box-shadow:inset 0 0 80px rgba(120,90,40,.22), inset 0 0 6px rgba(80,60,25,.30);
+}
+
+.p-head{display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:18px 30px 0 30px;flex:0 0 auto;font-family:-apple-system,sans-serif}
+.p-head .ph-brand{display:flex;align-items:center;gap:9px}
+.p-head .ph-mark{width:24px;height:24px;border-radius:7px;background:linear-gradient(135deg,var(--accent-deep),var(--accent));
+  display:grid;place-items:center;color:#fff;font-size:9px;font-weight:900}
+.p-head .ph-name{font-size:10.5px;font-weight:700;letter-spacing:.03em;color:#3a2c16}
+.p-head .ph-doc{font-size:9.5px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:#7a5a22}
+.p-rule{height:2.5px;margin:12px 30px 0;border-radius:999px;background:linear-gradient(90deg, rgba(120,90,40,.6), transparent)}
+.p-body{flex:1 1 auto;overflow-y:auto;padding:20px 32px 14px;scrollbar-width:thin;
+  color:#3a2c16;font-size:15.5px;line-height:1.75}
+.p-body::-webkit-scrollbar{width:7px}.p-body::-webkit-scrollbar-thumb{background:rgba(120,90,40,.35);border-radius:999px}
+.p-foot{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:9px 30px 16px;font-size:9.5px;font-weight:600;color:#6b5a38;border-top:1px solid rgba(120,90,40,.30);
+  font-family:-apple-system,sans-serif}
+.p-foot .pf-c{color:#281d0c;font-weight:700}
+.p-foot .pf-n{font-weight:800;color:#7a5a22}
+
+.p-body h1{font-size:25px;font-weight:700;line-height:1.15;margin:2px 0 12px;color:#281d0c;font-family:Georgia,serif}
+.p-body h2{font-size:16.5px;font-weight:700;margin:20px 0 8px;color:#281d0c;font-variant:small-caps;letter-spacing:.02em}
+.p-body h3{font-size:13.5px;font-weight:700;margin:14px 0 6px;color:#3a2c16}
+.p-body p{margin:0 0 12px}
+.p-body .lead{font-size:16.5px;font-style:italic;color:#3a2c16;font-weight:400}
+.p-body strong{color:#281d0c;font-weight:700}
+.p-body .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:-apple-system,sans-serif;
+  border:1px solid rgba(120,90,40,.35);background:rgba(120,90,40,.08);border-radius:999px;padding:5px 12px;
+  font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7a5a22;margin-bottom:14px}
+.p-body .eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:#7a5a22}
+.callout{background:rgba(120,90,40,.06);border:1px solid rgba(120,90,40,.28);border-left:4px solid #7a5a22;
+  border-radius:10px;padding:13px 16px;margin:4px 0 14px}
+.callout p{margin:0;font-size:14px}
+.dates{font-family:-apple-system,sans-serif;font-variant-numeric:tabular-nums;font-size:12.5px;color:#7a5a22;
+  font-weight:700;letter-spacing:.02em}
+.who{display:block;margin:0 0 14px;padding:10px 14px;background:rgba(120,90,40,.05);
+  border-radius:8px;font-family:-apple-system,sans-serif;font-size:12px;color:#57503f}
+.who b{color:#281d0c}
+
+.cover,.back-cover{
+  background-image:none;
+  background-color:#241d14;
+  background:linear-gradient(160deg,#2a2116,#1c150d 55%,#120d08);
+  color:#ece0c8;justify-content:space-between;padding:42px 38px;
+  box-shadow:inset 0 0 100px rgba(0,0,0,.4);
+}
+.cover .c-aurora,.back-cover .bc-aurora{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(45% 45% at 82% 10%,rgba(95,122,82,.22),transparent 70%),
+   radial-gradient(45% 55% at 10% 96%,rgba(138,74,61,.16),transparent 70%)}
+.cover>*,.back-cover>*{position:relative;z-index:1}
+.cover .c-top{display:flex;align-items:center;justify-content:space-between}
+.cover .c-mark{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--accent-deep),var(--accent));
+  display:grid;place-items:center;color:#fff;font-size:20px;font-weight:900;box-shadow:0 12px 30px rgba(60,79,52,.45)}
+.cover .c-pill{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(212,150,132,.4);
+  background:rgba(212,150,132,.10);border-radius:999px;padding:7px 13px;font-size:10.5px;font-weight:700;
+  color:#eecfc4;font-family:-apple-system,sans-serif;letter-spacing:.02em}
+.cover .c-pill::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--grave)}
+.cover .c-mid{margin-top:auto}
+.cover .c-eyebrow{font-family:-apple-system,sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#b9cca9;margin-bottom:16px}
+.cover h1{font-size:clamp(32px,7vw,54px);font-weight:400;line-height:1.05;letter-spacing:-.01em;margin:0 0 16px;font-family:Georgia,serif}
+.cover h1 .accent{color:#c9a876;font-style:italic}
+.cover .c-sub{font-size:15px;line-height:1.6;color:#d8cdb8;max-width:92%;font-weight:400;font-style:italic}
+.cover .c-meta{margin-top:28px;padding-top:18px;border-top:1px solid rgba(236,229,214,.16);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:14px;font-family:-apple-system,sans-serif}
+.cover .c-meta .cm-l .cm-by{font-size:13px;font-weight:700;color:#ece5d6}
+.cover .c-meta .cm-l .cm-rel{font-size:11px;color:#b9ae98;margin-top:3px;font-weight:500}
+.cover .c-meta .cm-r{font-size:9.5px;color:#8a7f68;text-align:right;font-weight:500;max-width:46%}
+
+.back-cover h2{font-size:23px;font-weight:400;letter-spacing:-.01em;margin-bottom:12px;color:#ece0c8;font-family:Georgia,serif;font-style:italic}
+.back-cover p{font-size:13px;line-height:1.7;color:#d8cdb8;margin-bottom:11px}
+.back-cover .legacy{margin-top:20px;padding-top:16px;border-top:1px solid rgba(236,229,214,.16);
+  font-size:11px;line-height:1.6;color:#b9ae98;font-family:-apple-system,sans-serif}
+.back-cover .legacy strong{color:#ece5d6}
+.back-cover .bc-foot{margin-top:16px;font-size:11px;font-weight:600;color:#b9cca9;
+  font-family:-apple-system,sans-serif;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+
+.controls{position:relative;z-index:6;display:flex;align-items:center;gap:16px;padding:14px 0 22px;color:#ece5d6;
+  font-family:-apple-system,sans-serif}
+.nav-btn{width:46px;height:46px;border-radius:50%;border:1px solid rgba(236,229,214,.22);
+  background:rgba(236,229,214,.06);color:#ece5d6;font-size:19px;cursor:pointer;display:grid;place-items:center;
+  backdrop-filter:blur(8px);transition:.2s ease}
+.nav-btn:hover:not(:disabled){background:var(--accent);color:#fff;transform:translateY(-2px)}
+.nav-btn:disabled{opacity:.3;cursor:default}
+.counter{font-size:12.5px;font-weight:700;min-width:76px;text-align:center;letter-spacing:.03em}
+.counter b{color:#b9cca9}
+.hint{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:6;font-size:11px;color:#8a7f68;
+  font-weight:500;opacity:.8;font-family:-apple-system,sans-serif}
+@media(max-width:640px){.p-body{padding:16px 18px 12px}.p-head{padding:14px 18px 0}.p-rule,.p-foot{margin-left:0;padding-left:18px;padding-right:18px}.p-rule{margin:10px 18px 0}.cover,.back-cover{padding:30px 24px}}
+</style>
+
+<style>
+  #gate {
+    position: fixed; inset: 0; z-index: 999;
+    background: #1c150d; color: #ece0c8;
+    display: flex; align-items: center; justify-content: center;
+    font-family: Georgia, serif;
+  }
+  #gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+  #gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+  #gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+  #gate input {
+    font-family: -apple-system, sans-serif; font-size: 0.95rem;
+    padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+    background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+    margin-bottom: 0.7rem;
+  }
+  #gate button {
+    font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+    padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+    background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+  }
+  #gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+  #content { display: none; }
+</style>
+
+</head>
+
+<body>
+<div id="gate">
+  <div class="box">
+    <h2>Family only</h2>
+    <p>This is a private family history &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+<div id="content">
+<div class="grain"></div>
+
+<div class="topbar">
+  <a class="brand" href="../">
+    <span class="brand-mark">🌳</span>
+    <span class="brand-lock"><span class="b-name">Arocho–Marrero–Huertas</span><span class="b-sub">Family History</span></span>
+  </a>
+  <a class="backlink" href="../">&larr; Back to the tree</a>
+</div>
+
+<div id="progress"><span></span></div>
+
+<div class="stage">
+  <div class="book" id="book"></div>
+</div>
+
+<div class="controls">
+  <button class="nav-btn" id="prev" aria-label="Previous page">&larr;</button>
+  <div class="counter"><b id="cur">1</b> / <span id="tot">1</span></div>
+  <button class="nav-btn" id="next" aria-label="Next page">&rarr;</button>
+</div>
+<div class="hint">Use &larr; &rarr; arrow keys, click the page edges, or the buttons to turn pages</div>
+
+<script>
+const DOC = "Family History";
+const PAGES = [
+
+{cover:true, html:`
+  <div class="c-top"><span class="c-mark">🌳</span><span class="c-pill">A Family History</span></div>
+  <div class="c-mid">
+    <div class="c-eyebrow">Arocho &middot; Marrero &middot; Cardona &middot; Huertas</div>
+    <h1>The Line <span class="accent">to Omar</span></h1>
+    <p class="c-sub">From a farming family in Añasco and Lares, Puerto Rico &mdash; to the day they got to me.</p>
+    <div class="c-meta">
+      <div class="cm-l"><div class="cm-by">Researched and compiled by Claude, for Omar Huertas</div><div class="cm-rel">First edition &middot; July 2026</div></div>
+      <div class="cm-r">Sourced from FamilySearch, Ancestry, primary family documents, and a headstone in Arecibo.</div>
+    </div>
+  </div>`},
+
+{doc:"How We Know This", html:`
+  <span class="eyebrow">Before the story begins</span>
+  <h1>How we know this is true.</h1>
+  <p class="lead">Every name in this book was checked, not assumed.</p>
+  <p>This story began with a photograph of a headstone at Cementerio Privado La Santa Cruz, in Arecibo, Puerto Rico. From there, it was built outward &mdash; person by person, record by record &mdash; using FamilySearch's sourced civil and parish registrations, an Ancestry.com printout your mother compiled, and primary documents like a funeral card and downloaded Puerto Rico civil registry certificates.</p>
+  <p>Along the way, a tempting but false lead surfaced: a chain that appeared to connect this family to Spanish nobility and the Aztec emperor Moctezuma I. It was checked and rejected &mdash; a real but unrelated Colombian family, wrongly merged onto one ancestor's profile by another researcher, with no genuine documentation connecting it here. That branch is not in this book. What follows is only what could be verified.</p>
+  <div class="who">Where a date or fact isn't certain, this book says so &mdash; the same way the family tree site does.</div>`},
+
+{doc:"Añasco & Lares", html:`
+  <span class="eyebrow">The 1820s &ndash; 1890s</span>
+  <h1>A family in the hills of the west.</h1>
+  <p class="lead">The oldest names we can confirm belong to farming families around Añasco and Lares, in the mountainous western interior of Puerto Rico.</p>
+  <p><strong>Máximo Arocho</strong> and <strong>María Ramona Román</strong> were both born in Añasco. Neither their exact birth years nor their own parents have surfaced in any record found so far &mdash; they are, for now, the edge of what can be proven on this branch.</p>
+  <p>Their son, <strong>Martín Arocho y Román</strong>, was born around <span class="dates">1828</span>. He married twice: first to <strong>María Josefa Pérez</strong>, with six children whose names were already forgotten by the time of his death in 1910 &mdash; and second to <strong>Felipa Medina</strong>, with whom he raised at least eleven more children in Lares, among them a son named Guillermo.</p>
+  <p>On the other side of the family, in the same decades, <strong>Juan Rosa Núñez y Bosque</strong> (b. 1858) and <strong>Juana Francisca Méndez Núñez</strong> (b. 1865) were raising their own family, which would eventually connect to Guillermo's line through marriage.</p>
+  <div class="who">Confirmed via FamilySearch civil registration &amp; parish records; Martín's own 1910 death certificate was located and read in full.</div>`},
+
+{doc:"A Death in Lares, 1910", html:`
+  <span class="eyebrow">10 October 1910 &middot; Lares, Puerto Rico</span>
+  <h1>What a death certificate remembered.</h1>
+  <p class="lead">Martín Arocho y Román died at eighty-two, and the clerk who recorded it wrote down more than a date.</p>
+  <p>The <em>Acta de Defunción</em>, entry number 328, names his parents &mdash; Máximo Arocho and Ramona Román, both "natural de Añasco." It records that he was first married to María Josefa Pérez, with six children whose names the informant could no longer recall. And it names his second wife, Felipa Medina, and the children they raised together: Gregoria, Eusebio, and several more, among them Guillermo.</p>
+  <div class="callout"><p>This single document, downloaded and read a century later, is the reason this book knows Martín had a first marriage at all &mdash; a fact that had disappeared from every other record and from family memory.</p></div>
+  <p>It is a small thing, an old man's death recorded by a village clerk. It is also the reason any of the rest of this book can be written.</p>`},
+
+{doc:"Guillermo & María", html:`
+  <span class="eyebrow">10 December 1916 &middot; Lares, Puerto Rico</span>
+  <h1>A wedding, and the family it began.</h1>
+  <p class="lead">Guillermo Arocho Medina married María Hernández y Núñez in Lares, in the winter of 1916.</p>
+  <p>He was Martín and Felipa's son. She was the daughter of <strong>Manuel Hernández</strong> and <strong>Ricarda Núñez y Méndez</strong> &mdash; María's own mother had already lived through one marriage and would go on to a second, to Ramón Torres Martínez, adding eight more children to the family tree that would one day lead to Omar.</p>
+  <p>Guillermo and María's marriage record lists him at twenty-two and her at twenty-one &mdash; ages that suggest birth years a few years earlier than the official records elsewhere carry for both of them. It is a small discrepancy, the kind that turns up constantly in century-old paperwork, and this book leaves it unresolved rather than picking a winner.</p>
+  <p>Together they raised a family in Arecibo: five children lived long enough to be recorded, though two &mdash; Juan Salvador and Roberto &mdash; died in infancy. The rest were José María, Rosa María, and a daughter born the day before Christmas, 1923: <strong>Milagros</strong>.</p>
+  <div class="who">Guillermo died 13 Nov 1967; María died 10 Apr 1956, Arecibo, buried the next day. Both names are on the Arecibo headstone that started this whole search.</div>`},
+
+{doc:"Milagros", html:`
+  <span class="eyebrow">20 December 1923 &middot; Arecibo, Puerto Rico</span>
+  <h1>Milagros is born.</h1>
+  <p class="lead">She would live seventy-two years, marry, raise a family in Arecibo, and be buried in the same cemetery her parents already occupied.</p>
+  <p>Her sister <strong>Rosa María</strong> married a man named Víctor Cruz and had eight children of her own &mdash; the Cruz cousins, a whole branch of the family that grew up alongside Milagros's own children. Her brothers José María and, briefly, Juan Salvador and Roberto rounded out the household, though the two youngest never made it past infancy, a loss common enough in that era to barely register in the official record beyond a name and two dates a year apart.</p>
+  <p>On Christmas Eve, 1942 &mdash; Milagros married. Her husband's name was <strong>Amado Marrero Montalvo</strong>, and his own family had roots in a different part of the island, but a story just as documented as hers.</p>`},
+
+{doc:"The Marrero–Montalvo Line", html:`
+  <span class="eyebrow">In parallel, the 1850s &ndash; 1920s</span>
+  <h1>Amado's family, growing at the same time.</h1>
+  <p class="lead">While Guillermo and María's family took shape in Lares and Arecibo, Amado's parents were building a life of their own.</p>
+  <p><strong>Juan Ramón Marrero</strong> (b. 1883) married <strong>María Montalvo Ramos</strong> (b. 1898) in Arecibo, 1920. Juan Ramón's own parents, <strong>Pedro Marrero Nieves</strong> and <strong>Celestina González Soto</strong>, both died in 1895 &mdash; the same year, for reasons the records don't explain. María's parents, <strong>Domingo Montalvo Rodríguez</strong> and <strong>Dionicia Ramos Santiago</strong>, married in Arecibo on 22 March 1901 and went on to raise nine children of their own.</p>
+  <p>Amado was born 11 May 1924, in Arecibo &mdash; the same city where, eighteen years later, he would marry Milagros.</p>
+  <div class="who">This side of the family extends one generation further back than confirmed on the Arocho/Hernández side: to Amado's great-grandparents, Pedro Marrero Nieves, Celestina González Soto, Hilario Montalvo y Centeno, and María Rodríguez y Rodríguez.</div>`},
+
+{doc:"Thelma", html:`
+  <span class="eyebrow">1943</span>
+  <h1>A daughter, and a family that would scatter.</h1>
+  <p class="lead">Milagros and Amado's first surviving child was a daughter, Thelma.</p>
+  <p>Amado's own life did not stay in Puerto Rico. He appears to have remarried &mdash; a first wife, Rosa Ceballo Marrero, in Manhattan in 1950 &mdash; and by the time he died in 1982, it was in Oceanside, on Long Island, New York, far from the Arecibo he was born in. He is buried in Roosevelt, New York.</p>
+  <p>Milagros stayed. She died in Arecibo in 1996, seventy-two years old, and was buried that August in Cementerio Privado La Santa Cruz &mdash; the same plot as her parents and her sister. It is the grave that started this entire search.</p>
+  <p>Thelma's own daughter, born sometime after, was named <strong>Yadyra Cardona</strong>.</p>`},
+
+{doc:"Yadyra & Juan José", html:`
+  <span class="eyebrow">27 September 1950</span>
+  <h1>The man who would become your father.</h1>
+  <p class="lead">Juan José Huertas Vargas was born in 1950 &mdash; his mother's surname, Vargas, is the only trace of that side of the family found so far.</p>
+  <p>Nothing about his own parents has surfaced yet, not in any record. What is known about him comes almost entirely from a single document: the service card printed for his funeral, on 27 November 2021, four days after he died at seventy-one.</p>
+  <p>He married Yadyra Cardona &mdash; Thelma's daughter, three generations removed from the wedding in Lares in 1916, four from the death certificate that first named Máximo Arocho.</p>
+  <div class="callout"><p>Everything in this book, every record and every name, exists to answer one question: who were the people whose lives, one after another, led to this marriage &mdash; and to the child it produced.</p></div>`},
+
+{doc:"The Day They Got to Me", html:`
+  <span class="eyebrow">1978</span>
+  <h1>Omar.</h1>
+  <p class="lead">Two centuries of farmers, clerks, witnesses, and the people who married them &mdash; and it comes down to one name, one year, one city.</p>
+  <p>He was born to Yadyra Cardona and Juan José Huertas Vargas, the great-grandson of a woman born the day before Christmas in Arecibo, and of a man who died and was buried on Long Island, New York, far from where his own story began.</p>
+  <p>He has a sister, Ellyn. And somewhere behind him, quietly proven one document at a time, is every name in this book &mdash; farmers from Añasco, a widowed mother in Lares who remarried and kept going, a man whose first marriage was almost lost to history, and a family that crossed an ocean and came back to a single grave in Arecibo.</p>
+  <p>This is where the record ends, for now. It is not where the family does.</p>`},
+
+{back:true, html:`
+  <h2>Keep going.</h2>
+  <p>This book will grow as more records surface &mdash; a photograph, a certificate, a name half-remembered by someone still living. The full, interactive family tree, with every source cited and every uncertain fact marked as such, lives at the link below.</p>
+  <p><strong>Máximo Arocho and María Ramona Román</strong> are the current edge of the confirmed line on one side; <strong>Pedro Marrero Nieves, Celestina González Soto, Hilario Montalvo y Centeno,</strong> and <strong>María Rodríguez y Rodríguez</strong> on the other. Somewhere behind them are more names, waiting on a record that hasn't been searched yet.</p>
+  <div class="legacy">&#9670; In memory of <strong>Guillermo Arocho Medina, Milagros Arocho Hernández,</strong> and <strong>Rosa María Arocho Hernández</strong> &mdash; Cementerio Privado La Santa Cruz, Arecibo, Puerto Rico. And of <strong>Juan José Huertas Vargas</strong>, 1950&ndash;2021.</div>
+  <div class="bc-foot"><span>Compiled by Claude, for Omar Huertas</span><span>family.dbaomarhuertasllc.com</span></div>`}
+
+];
+
+const book=document.getElementById('book');
+const total=PAGES.length;
+document.getElementById('tot').textContent=total;
+const pageEls=[];
+PAGES.forEach((pg,i)=>{
+  const el=document.createElement('div');el.className='page';
+  const front=document.createElement('div');front.className='face front';
+  if(pg.cover) front.classList.add('cover');
+  else if(pg.back) front.classList.add('back-cover');
+  if(pg.cover||pg.back){
+    if(pg.cover) front.innerHTML='<div class="c-aurora"></div>'+pg.html;
+    else front.innerHTML='<div class="bc-aurora"></div>'+pg.html;
+  } else {
+    front.innerHTML =
+      '<div class="p-head"><span class="ph-brand"><span class="ph-mark">🌳</span>'+
+      '<span class="ph-name">Arocho &ndash; Marrero &ndash; Huertas</span></span>'+
+      '<span class="ph-doc">'+(pg.doc||DOC)+'</span></div>'+
+      '<div class="p-rule"></div>'+
+      '<div class="p-body">'+pg.html+'</div>'+
+      '<div class="p-foot"><span class="pf-c">A Family History</span>'+
+      '<span class="pf-n">'+String(i+1).padStart(2,'0')+'</span></div>';
+  }
+  el.appendChild(front);
+  book.appendChild(el);
+  pageEls.push(el);
+});
+
+let cur=0;
+function render(){
+  pageEls.forEach((el,i)=>{
+    const turned = i<cur;
+    el.classList.toggle('turned',turned);
+    el.style.zIndex = turned ? i : (total - i);
+  });
+  document.getElementById('cur').textContent=Math.min(cur+1,total);
+  document.getElementById('progress').firstElementChild.style.width=((cur)/(total-1)*100)+'%';
+  document.getElementById('prev').disabled=cur<=0;
+  document.getElementById('next').disabled=cur>=total-1;
+}
+function next(){if(cur<total-1){cur++;render();}}
+function prev(){if(cur>0){cur--;render();}}
+document.getElementById('next').onclick=next;
+document.getElementById('prev').onclick=prev;
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev();});
+book.addEventListener('click',e=>{const r=book.getBoundingClientRect();(e.clientX-r.left)/r.width>0.5?next():prev();});
+render();
+</script>
+</div>
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
