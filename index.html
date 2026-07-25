@@ -441,6 +441,26 @@
   @media (max-width: 560px) {
     .node .name { white-space: normal; }
   }
+  /* ===== Family remembered ===== */
+  .remember { margin: 2.5rem 0; }
+  .remember-card {
+    background: var(--accent-wash, rgba(120,90,60,0.06));
+    border: 1px solid var(--accent, rgba(120,90,60,0.25));
+    border-radius: 10px; padding: 1.2rem 1.4rem; margin: 1rem 0;
+  }
+  .remember-card h3 { font-family: -apple-system,'Avenir Next','Segoe UI',sans-serif; font-size: 1.1rem; margin: 0 0 0.2rem; }
+  .rc-years { font-weight: 400; opacity: 0.6; font-size: 0.9rem; }
+  .rc-rel { font-family: -apple-system,'Avenir Next','Segoe UI',sans-serif; font-size: 0.82rem; opacity: 0.7; margin: 0 0 0.7rem; }
+  .rc-quote {
+    font-size: 1.15rem; line-height: 1.5; font-style: italic;
+    border-left: 3px solid var(--accent, rgba(120,90,60,0.5));
+    margin: 0.8rem 0; padding: 0.2rem 0 0.2rem 1rem;
+  }
+  .rc-note { font-size: 0.92rem; line-height: 1.6; margin: 0.6rem 0 0; }
+  @media (prefers-color-scheme: dark) {
+    .remember-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.18); }
+  }
+
   /* ===== Family Archive nav ===== */
   .archive-nav {
     position: sticky; top: 0; z-index: 50;
@@ -952,6 +972,22 @@
       </div>
     </div>
 
+    <div class="remember" id="remembered">
+      <h2>Family remembered</h2>
+      <p class="dek">The records give dates. These are the things only family can tell you — kept here in Omar's own words, marked as family memory rather than documents.</p>
+      <div class="remember-card">
+        <h3>Ramón &ldquo;Moncho&rdquo; Ceballo Vargas <span class="rc-years">1905&ndash;2009</span></h3>
+        <p class="rc-rel">Rosa Ceballo's father &middot; grandfather-figure always in Omar's life &middot; lived to <b>103</b></p>
+        <blockquote class="rc-quote">&ldquo;Rosa's dad was cool. He used to pretend like he was deaf &mdash; talk about baseball or food &mdash; he heard everything.&rdquo;</blockquote>
+        <p class="rc-note">Moncho would play deaf and let the talk roll on around him about baseball or food &mdash; and the whole time he was catching every single word. A century-plus of listening while everyone thought he wasn't. His 1910 census home, Cienega Baja in R&iacute;o Grande, is also where his own father Ram&oacute;n Ceballos y Calder&oacute;n was recorded &mdash; the documented Afro&#8209;Puerto Rican Ceballos line out of Lo&iacute;za.</p>
+      </div>
+      <div class="remember-card">
+        <h3>Rosa Ceballo &amp; Alicia Marrero Alvelo</h3>
+        <p class="rc-rel">Angel / Jos&eacute; Angel's mother, and her mother &middot; both always around growing up</p>
+        <p class="rc-note">Amado Marrero Montalvo's second family. Rosa (1933&ndash;2022) and her mother Alicia (1914&ndash;2002) were part of the grandparents who were simply there &mdash; &ldquo;cool people, the whole family.&rdquo;</p>
+      </div>
+    </div>
+
     <div class="verify">
       <h2>Fact-check: how far back does this really go?</h2>
       <p class="dek">FamilySearch's Family Tree is a single tree anyone can edit, so a "linked" ancestor isn't automatically a real one. I opened the Sources tab on each person below to check what's actually documented versus merged in without evidence.</p>
@@ -1026,6 +1062,7 @@
     ['Roots — Marrero/Montalvo', 'roots-marrero'],
     ['Descendant tree', 'desc-tree'],
     ['Archive by year', 'archive'],
+    ['Family remembered', 'remembered'],
     ['Fact-check', 'factcheck']
   ];
   var h2s = document.querySelectorAll('h2');
