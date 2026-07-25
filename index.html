@@ -441,6 +441,33 @@
   @media (max-width: 560px) {
     .node .name { white-space: normal; }
   }
+  /* ===== Family Archive nav ===== */
+  .archive-nav {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--bg, #fff); border-bottom: 1px solid rgba(0,0,0,0.12);
+    padding: 0.55rem 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center;
+    font-family: -apple-system,'Avenir Next','Segoe UI',sans-serif;
+  }
+  .archive-nav .an-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; margin-right: 0.35rem; }
+  .archive-nav a {
+    font-size: 0.78rem; font-weight: 600; text-decoration: none; color: inherit;
+    border: 1px solid rgba(0,0,0,0.18); border-radius: 999px; padding: 0.22rem 0.7rem; white-space: nowrap;
+  }
+  .archive-nav a:hover { background: rgba(0,0,0,0.06); }
+  .archive-nav a.an-decade { border-style: dashed; }
+  .tl-decade-head {
+    font-family: -apple-system,'Avenir Next','Segoe UI',sans-serif;
+    font-size: 1.15rem; font-weight: 800; letter-spacing: 0.02em;
+    margin: 1.6rem 0 0.5rem; padding-top: 0.8rem; border-top: 2px solid rgba(0,0,0,0.25);
+    scroll-margin-top: 4.5rem;
+  }
+  .tl-decade-count { font-size: 0.72rem; font-weight: 600; opacity: 0.55; margin-left: 0.5rem; }
+  @media (prefers-color-scheme: dark) {
+    .archive-nav { background: var(--bg, #111); border-bottom-color: rgba(255,255,255,0.15); }
+    .archive-nav a { border-color: rgba(255,255,255,0.25); }
+    .archive-nav a:hover { background: rgba(255,255,255,0.08); }
+    .tl-decade-head { border-top-color: rgba(255,255,255,0.3); }
+  }
 </style>
 <style>
   #gate {
@@ -857,7 +884,7 @@
 
   <div class="page-narrow">
     <div class="timeline-section">
-      <h2>Timeline — every dated event, in order</h2>
+      <h2 id="archive">The Family Archive — year by year</h2>
       <p class="dek">Same family, laid out chronologically instead of by generation. Solid dots are FamilySearch-sourced or from a primary document; hollow-toned dots are Ancestry-only or unconfirmed.</p>
       <div class="timeline">
 
@@ -989,6 +1016,74 @@
     </footer>
   </div>
 </div>
+
+<script>
+(function () {
+  // ---- 1. Section menu (sticky, top of page) ----
+  var sections = [
+    ['Roots — Arocho/Hernández', 'roots-arocho'],
+    ['Roots — Marrero/Montalvo', 'roots-marrero'],
+    ['Descendant tree', 'desc-tree'],
+    ['Archive by year', 'archive'],
+    ['Fact-check', 'factcheck']
+  ];
+  var h2s = document.querySelectorAll('h2');
+  h2s.forEach(function (h) {
+    var t = h.textContent;
+    if (/Guillermo & María's side/.test(t)) h.id = 'roots-arocho';
+    else if (/Amado Marrero Montalvo's side/.test(t)) h.id = 'roots-marrero';
+    else if (/full descendant tree/.test(t)) h.id = 'desc-tree';
+    else if (/Fact-check/.test(t)) h.id = 'factcheck';
+    h.style.scrollMarginTop = '4.5rem';
+  });
+  var nav = document.createElement('nav');
+  nav.className = 'archive-nav';
+  nav.innerHTML = '<span class="an-label">Family Archive</span>' + sections.map(function (s) {
+    return '<a href="#' + s[1] + '">' + s[0] + '</a>';
+  }).join('');
+  var host = document.getElementById('content') || document.body;
+  host.insertBefore(nav, host.firstChild);
+
+  // ---- 2. Rebuild the timeline: sort by year, group by decade, add year menu ----
+  var tl = document.querySelector('.timeline');
+  if (!tl) return;
+  var events = Array.prototype.slice.call(tl.querySelectorAll('.tl-event'));
+  function yearOf(ev) {
+    var y = ev.querySelector('.tl-year');
+    var m = y ? y.textContent.match(/\d{4}/) : null;
+    return m ? parseInt(m[0], 10) : 9999;
+  }
+  events.sort(function (a, b) { return yearOf(a) - yearOf(b); });
+  // group by decade
+  var groups = {};
+  events.forEach(function (ev) {
+    var d = Math.floor(yearOf(ev) / 10) * 10;
+    (groups[d] = groups[d] || []).push(ev);
+  });
+  var decades = Object.keys(groups).map(Number).sort(function (a, b) { return a - b; });
+  // decade menu inside the archive section
+  var menu = document.createElement('div');
+  menu.className = 'archive-nav';
+  menu.style.position = 'static';
+  menu.style.borderBottom = 'none';
+  menu.style.padding = '0 0 0.8rem';
+  menu.innerHTML = '<span class="an-label">Jump to</span>' + decades.map(function (d) {
+    return d === 9990 ? '' : '<a class="an-decade" href="#decade-' + d + '">' + d + 's</a>';
+  }).join('');
+  tl.parentNode.insertBefore(menu, tl);
+  // rebuild timeline grouped
+  tl.innerHTML = '';
+  decades.forEach(function (d) {
+    var head = document.createElement('div');
+    head.className = 'tl-decade-head';
+    head.id = 'decade-' + d;
+    head.innerHTML = (d === 9990 ? 'Undated' : d + 's') +
+      '<span class="tl-decade-count">' + groups[d].length + ' event' + (groups[d].length > 1 ? 's' : '') + '</span>';
+    tl.appendChild(head);
+    groups[d].forEach(function (ev) { tl.appendChild(ev); });
+  });
+})();
+</script>
 
 </div>
 <script>
