@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>Puerto Rico — The History Route · Omar & Poli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#F7F3EA; --ink:#1E2726; --bomba-red:#B3271E; --bomba-black:#20201E;
+  --sea:#0E6E71; --gold:#C99A3C; --paper:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Public Sans',sans-serif;background:var(--sand);color:var(--ink);line-height:1.55}
+.stripes{height:14px;background:repeating-linear-gradient(135deg,var(--bomba-red) 0 22px,var(--bomba-black) 22px 44px)}
+header{padding:44px 20px 30px;text-align:center;max-width:760px;margin:0 auto}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--sea);font-weight:700}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(38px,7vw,58px);line-height:1.05;margin:10px 0 8px}
+h1 em{font-style:italic;color:var(--bomba-red)}
+.sub{color:#4c5a58;font-size:15px}
+.flights{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.flight{background:var(--paper);border:1px solid #e4ddcd;border-radius:10px;padding:10px 16px;font-size:13px}
+.flight b{color:var(--sea)}
+.day{max-width:760px;margin:0 auto;padding:26px 16px}
+.dayhead{display:flex;align-items:baseline;gap:14px;border-bottom:3px solid var(--ink);padding-bottom:8px;margin-bottom:6px;flex-wrap:wrap}
+.daynum{font-family:'Instrument Serif',serif;font-size:44px;color:var(--bomba-red);line-height:1}
+.daytitle{font-family:'Instrument Serif',serif;font-size:26px}
+.daydate{margin-left:auto;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6a756f;font-weight:700}
+.routebtn{display:inline-block;margin:10px 0 18px;background:var(--sea);color:#fff;text-decoration:none;font-weight:700;font-size:13px;padding:9px 16px;border-radius:999px}
+.routebtn:hover{background:#0a5658}
+.stop{background:var(--paper);border:1px solid #e7e0d1;border-radius:14px;overflow:hidden;margin-bottom:18px;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+.stop img{width:100%;height:190px;object-fit:cover;display:block}
+.stopbody{padding:16px 18px 18px}
+.time{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bomba-red)}
+.stop h3{font-family:'Instrument Serif',serif;font-size:23px;margin:3px 0 2px}
+.addr{font-size:13px;color:#5c6a66;margin-bottom:8px}
+.note{font-size:14px;margin-bottom:10px}
+.eats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0 10px}
+@media(max-width:520px){.eats{grid-template-columns:1fr}}
+.eat{border-radius:10px;padding:10px 12px;font-size:13px}
+.eat.omar{background:#FBEDE9;border:1px solid #ecc9c2}
+.backlink{position:fixed;top:14px;left:14px;z-index:5;font-family:'Public Sans',sans-serif;font-size:12px;font-weight:700;color:#0E6E71;text-decoration:none;background:#fff;border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px}
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+.eat.poli{background:#E8F2F1;border:1px solid #c4dcda}
+.eat b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.eat.omar b{color:var(--bomba-red)}.eat.poli b{color:var(--sea)}
+.maplink{display:inline-block;font-size:13px;font-weight:700;color:var(--sea);text-decoration:none;border-bottom:2px solid var(--gold)}
+.park{font-size:12.5px;color:#5c6a66;margin-top:8px}
+.park b{color:var(--ink)}
+.plain{background:var(--paper);border:1px dashed #cfc6b0;border-radius:14px;padding:14px 18px;margin-bottom:18px;font-size:14px}
+footer{max-width:760px;margin:10px auto 0;padding:20px 16px 50px;text-align:center;font-size:13px;color:#6a756f}
+footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;color:var(--ink);margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>Family only</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+<a class="backlink" href="../">&larr; Back to the family site</a>
+<div class="stripes"></div>
+<header>
+  <div class="eyebrow">Omar &amp; Poli · August 3–7</div>
+  <h1>Puerto Rico<br><em>The History Route</em></h1>
+  <p class="sub">Ocean Park (Calle Monsita) · nights Aug 3–4 &nbsp;→&nbsp; Ponce (2722 Las Américas Ave) · nights Aug 5–6</p>
+  <div class="flights">
+    <div class="flight"><b>OUT</b> · Flight 2116 · TPA 9:35 PM → SJU 12:41 AM</div>
+    <div class="flight"><b>HOME</b> · Flight 2215 · SJU 5:22 PM → TPA 8:30 PM</div>
+  </div>
+</header>
+
+<section class="day">
+  <div class="dayhead"><span class="daynum">1</span><span class="daytitle">San Juan</span><span class="daydate">Tue Aug 4</span></div>
+  <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/Calle+Monsita,+Ocean+Park,+San+Juan,+PR/Kasalta,+1966+Ave+McLeary,+San+Juan/La+Cueva+del+Mar,+1904+Calle+Loiza,+San+Juan/Distrito+T-Mobile,+250+Convention+Blvd,+San+Juan/Princesa+Cocina+Cultura,+Paseo+de+la+Princesa,+San+Juan">Open full Day 1 route in Google Maps →</a>
+
+  <div class="plain"><b>12:41 AM — land SJU (Flight 2116).</b> Baggage → rental-shuttle island (lower level) → Charlie/ACE shuttle (~5–10 min) → counter → <b>photo/video the car all around</b> → Airbnb by ~2 AM. Sleep in — nothing before 9.</div>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjALbQm3hMvC9JilrrOayy0bz-7Krgpd9KjFLX8Hv09z10pUX9QT4BDcP_TxoXlGbUfqO_zVX3C1uDuAIRVy1rvQWV2YUmbbSybw3n1gcjCqi_cpl0mYxuxPPQohCosw23LqFhyUTHwJi7LupaI=s4800-w800-h600" onerror="this.style.display='none'" alt="Kasalta Bakery">
+    <div class="stopbody">
+      <div class="time">9:00 AM · Breakfast</div>
+      <h3>Kasalta Bakery</h3>
+      <div class="addr">1966 Ave. McLeary, San Juan 00911</div>
+      <div class="eats">
+        <div class="eat omar"><b>Omar</b>Mallorca with ham &amp; cheese · Cuban sandwich · croqueta sandwich · café con leche</div>
+        <div class="eat poli"><b>Poli</b>Octopus salad (house classic) · cazuela de bacalao · quesitos · fresh juice</div>
+      </div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Kasalta,+1966+Ave+McLeary,+San+Juan,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> their own attended lot — free for customers.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjB2T-_oGb5HXwUFK2AMKnDPRvqs6TGObo3UYrz7t5xXiE-UMko26DnoXbkztCFwt16HduBCn4cQdEZR_9p4xylmwduayAp-jhgkYblO-hZWz8f5i66gUdTjEyE6r5VrSWJPwGPyK9XMoxtjpsNvnD05ag=s4800-w800-h600" onerror="this.style.display='none'" alt="La Cueva del Mar">
+    <div class="stopbody">
+      <div class="time">12:30 PM · Lunch — Poli's showcase</div>
+      <h3>La Cueva del Mar</h3>
+      <div class="addr">1904 Calle Loíza, San Juan 00911</div>
+      <div class="eats">
+        <div class="eat poli"><b>Poli</b>The famous fish tacos · fresh dorado filet · arroz con mariscos · octopus &amp; conch salad</div>
+        <div class="eat omar"><b>Omar</b>Churrasco Angus 8oz a la parrilla · asopao de pollo · breaded chicken breast</div>
+      </div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=La+Cueva+del+Mar,+1904+Calle+Loiza,+San+Juan,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> DON'T DRIVE — walk ~10 min from the Airbnb. Calle Loíza street parking is misery. Browse shops &amp; street art after.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjD2_zvCMqlh7nX-ZoAUeRkeo1LjMN-IRIo748ZXlv_giHfhgVWTojvuMvJWxDpoVtfZqA761VlerCsji2EAOdxMJZitXlbj77LYvkvKFSIGLZqFeJDdPmcycDOi1Nny2xzjSO0m1hu6nM-z8WTGmd_HOw=s4800-w800-h600" onerror="this.style.display='none'" alt="Distrito T-Mobile">
+    <div class="stopbody">
+      <div class="time">5:30 PM · Evening warm-up</div>
+      <h3>Distrito T-Mobile</h3>
+      <div class="addr">250 Convention Blvd, San Juan 00907</div>
+      <div class="note">LED screens, live music. Drinks &amp; snacks only — dinner is next.</div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Distrito+T-Mobile,+250+Convention+Blvd,+San+Juan,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> on-site Convention District garage (~$5–10). Park once, walk everything.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjAE3_HFky1mKX1BljJIims0qhFI9B4vkqcP4gJY-IXY9HoJkF4mH98jNLf_LayoEBaYWR9x3WcF43rpOoHtdR8Sm0bLr-NDmNsA37g6s177hJmS72IoFwMYbvYWFevhLcz-RB8E3FfZ9dvgzA=s4800-w800-h600" onerror="this.style.display='none'" alt="Princesa Cocina Cultura">
+    <div class="stopbody">
+      <div class="time">7:30 PM · Dinner in Old San Juan</div>
+      <h3>Princesa – Cocina Cultura</h3>
+      <div class="addr">Paseo de la Princesa, Old San Juan 00901 · menu from 1859–1950 cookbooks</div>
+      <div class="eats">
+        <div class="eat omar"><b>Omar</b>Chuleta can-can (the biggest chop you'll ever meet) · pernil · pork belly · rack of lamb</div>
+        <div class="eat poli"><b>Poli</b>Roasted snapper (the crowd favorite) · ceviche · seafood paella</div>
+      </div>
+      <div class="note">After: Paseo de la Princesa → San Juan Gate → the blue cobblestones, on foot.</div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Princesa+Cocina+Cultura,+Paseo+de+la+Princesa,+San+Juan,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> Doña Fela garage, Calle Comercio — cheap municipal, 2-min walk. The local move.</div>
+    </div>
+  </div>
+</section>
+
+<div class="stripes"></div>
+
+<section class="day">
+  <div class="dayhead"><span class="daynum">2</span><span class="daytitle">Ita &amp; the Taíno Heartland → Ponce</span><span class="daydate">Wed Aug 5</span></div>
+  <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/Calle+Monsita,+Ocean+Park,+San+Juan,+PR/Cementerio+Privado+La+Santa+Cruz,+Arecibo,+PR/Cueva+Ventana,+Arecibo,+PR/Parque+Ceremonial+Indigena+de+Caguana,+Utuado,+PR/2722+Las+Americas+Ave,+Ponce,+PR">Open full Day 2 route in Google Maps →</a>
+
+  <div class="plain"><b>7:45 AM — full checkout.</b> Everything in the car. Kasalta grab-and-go: mallorca for Omar, quesito + fruit for Poli. <b>~9:00 AM:</b> florist in downtown Arecibo for Ita's flowers.</div>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjBAfpfl7qbXkOLtHjwY1V6epotlULws27Zglg1qNR7cRkkgtrHVddfrCCkGlthWB9u8UAuEqk5Y5eesZoTJX9DuNzNejV7OBgSGImgETmB9BLvrjQ0Z7uDqYEhuyrwUQVNChGucGeSx4Al08IIMwCAy8w=s4800-w800-h600" onerror="this.style.display='none'" alt="Cementerio La Santa Cruz">
+    <div class="stopbody">
+      <div class="time">9:15 AM · The heart of the trip</div>
+      <h3>Ita — Cementerio Privado La Santa Cruz</h3>
+      <div class="addr">Carr. 651, Arecibo · search by name in Waze</div>
+      <div class="note">Take all the time you need. The day has slack built in.</div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Cementerio+Privado+La+Santa+Cruz,+Arecibo,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> free on-site lot.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stopbody">
+      <div class="time">11:30 AM · Booked tour — arrive 11:15</div>
+      <h3>Cueva Ventana</h3>
+      <div class="addr">PR-10 Km 75, Hato Viejo, Arecibo · $29/person</div>
+      <div class="note">~1.5-hr guided walk: Taíno petroglyphs inside the cave, ending at the 700-ft "window" over the Río Grande de Arecibo valley. Closed-toe shoes + water required.</div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Cueva+Ventana,+Arecibo,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> free lot up the driveway left of registration; real bathrooms behind the office.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stopbody">
+      <div class="time">1:30 PM · The Caribbean's most important Taíno site</div>
+      <h3>Caguana Ceremonial Park + Utuado lunch</h3>
+      <div class="addr">PR-111 Km 12.4, Utuado · $5/person CASH ONLY</div>
+      <div class="note">Stone bateyes and the Mujer de Caguana monolith, standing where the Taíno placed them 800 years ago. Then lunch at any busy roadside chinchorro on PR-111.</div>
+      <div class="eats">
+        <div class="eat omar"><b>Omar</b>Lechón or chuletas fritas · chicharrón de pollo · arroz con gandules</div>
+        <div class="eat poli"><b>Poli</b>Bacalao guisado (mountain staple) · arroz y habichuelas · tostones · amarillos · aguacate</div>
+      </div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Parque+Ceremonial+Indigena+de+Caguana,+Utuado,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> free gated lot. Twisty PR-111 — take it slow.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjDCo9CuVOjb764dT1auyiN3fkHegHYGww4pd1AiVZy9q4SNRamqVYcf9CrrrHjpWhdZD0NRQOFww4BU8GidC7H8LhN17VBAg_BwihhQl3fBL0mfW2uGNOb5Iov9oLZvEgvnDxFCcX59Tl8gB9eizyY_=s4800-w800-h600" onerror="this.style.display='none'" alt="Plaza Las Delicias">
+    <div class="stopbody">
+      <div class="time">4:30 PM check-in · 7:00 PM plaza</div>
+      <h3>Ponce — Airbnb, then Plaza Las Delicias at night</h3>
+      <div class="addr">2722 Las Américas Ave → Plaza Las Delicias, Calle Marina</div>
+      <div class="eats">
+        <div class="eat omar"><b>Omar</b>Churrasco · chuleta can-can (Ponce does them huge) · pollo al horno</div>
+        <div class="eat poli"><b>Poli</b>Mofongo relleno de camarones · fresh catch criolla · ensalada de pulpo</div>
+      </div>
+      <div class="note">Dinner downtown, then the lit-up plaza — fountains, cathedral, locals out.</div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Plaza+Las+Delicias,+Ponce,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> confirm the Airbnb's spot with the host this week; plaza street parking is easy after 6 PM.</div>
+    </div>
+  </div>
+</section>
+
+<div class="stripes"></div>
+
+<section class="day">
+  <div class="dayhead"><span class="daynum">3</span><span class="daytitle">Full Ponce Day</span><span class="daydate">Thu Aug 6</span></div>
+  <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/2722+Las+Americas+Ave,+Ponce,+PR/Centro+Ceremonial+Indigena+de+Tibes,+Ponce,+PR/Parque+de+Bombas,+Ponce,+PR/Museo+Castillo+Serralles,+Ponce,+PR/La+Guancha,+Ponce,+PR">Open full Day 3 route in Google Maps →</a>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjDT_Q7X4P1gqEaEb10gpWqMEnE50hL4UTLFUGOs5EnIgJ0mkEY9KqdIv_lRhKQaNZ0to1KBGVYpsfpQpzqbFjcyDrH9mhdU29YbHVpcbUP7oNmGQxU3M6W5cUrUZRP7XY7fkSdJyLAuu5Wmg8HuBloccg=s4800-w800-h600" onerror="this.style.display='none'" alt="Tibes">
+    <div class="stopbody">
+      <div class="time">8:30 AM · FREE + free guided tour</div>
+      <h3>Tibes Indigenous Ceremonial Center</h3>
+      <div class="addr">PR-503 Km 2.2, Ponce · closes 3 PM — go early, ask for Raúl or Jose</div>
+      <div class="note">The oldest ceremonial site in the Caribbean — pre-Taíno plazas aligned to the solstices. Seeing it the day after Caguana shows how the carvings evolved across centuries.</div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Centro+Ceremonial+Indigena+de+Tibes,+Ponce,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> free on-site lot, ~10 min from the Airbnb.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjCTKvvk-lTGZEr_-AyErgej3lT0ZpAkAmTaRUm9IS3_sNyhSg4nM132EO4ihewlWKxQgrUt6D1-gM-B38N1DYNFgjeWnaxMa3i-GSxtCUoMNP4BEhtwwBl1jsVYCJGS7pYnQJzmmDSKHgVLc8oyu686EQ=s4800-w800-h600" onerror="this.style.display='none'" alt="Parque de Bombas">
+    <div class="stopbody">
+      <div class="time">11:00 AM · Downtown + lunch</div>
+      <h3>Parque de Bombas, cathedral &amp; historic core</h3>
+      <div class="addr">Plaza Las Delicias, Ponce 00730 · firehouse free, open till 4:30</div>
+      <div class="eats">
+        <div class="eat omar"><b>Omar</b>Carne frita · churrasco · chuletas</div>
+        <div class="eat poli"><b>Poli</b>Chillo entero (fried whole snapper — a Ponce specialty) · camarones al ajillo</div>
+      </div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Parque+de+Bombas,+Ponce,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> metered street/lots by the plaza (~$1/hr) — or walk the ~20 min from the Airbnb.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <img src="https://lh3.googleusercontent.com/place-photos/AG9NLjAOuYVlWAE4JyiWf7xESbAZ4LY5hD8vc3bovDPQTKSGIBkbXq66_70k5K56GMaUmKSMs2OlbtK9WVeHIfgcPc6KHf_ALUclRcR6BcnpVE80tCbqTb5v4dNsReMd9uZVJq3VHywk9q3K7R5eOQ=s4800-w800-h600" onerror="this.style.display='none'" alt="Castillo Serrallés">
+    <div class="stopbody">
+      <div class="time">2:00 PM · Open till 4</div>
+      <h3>Museo Castillo Serrallés + Cruceta El Vigía</h3>
+      <div class="addr">17 El Vigía, Sector El Vigía, Ponce 00730</div>
+      <div class="note">The Don Q rum family's 1930s mansion — guided tour, Japanese garden, Don Q bar, and the best view over the city.</div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=Museo+Castillo+Serralles,+Ponce,+PR">Navigate →</a>
+      <div class="park"><b>Parking:</b> free lot at the top — follow signs up El Vigía; skip the hill's street parking.</div>
+    </div>
+  </div>
+
+  <div class="stop">
+    <div class="stopbody">
+      <div class="time">4:30 PM onward · Your pick</div>
+      <h3>Museo de Arte de Ponce or La Guancha boardwalk</h3>
+      <div class="addr">MAP: 2325 Las Américas (down your own street — verify reopening) · La Guancha: Paseo Tablado, free lot</div>
+      <div class="eats">
+        <div class="eat omar"><b>Omar</b>Pinchos de pollo / cerdo</div>
+        <div class="eat poli"><b>Poli</b>Pinchos de camarones · empanadillas de jueyes (crab)</div>
+      </div>
+      <div class="note">Then a slow dinner downtown. No driving tonight — that's the whole point of sleeping in Ponce.</div>
+      <a class="maplink" target="_blank" href="https://maps.google.com/?q=La+Guancha,+Ponce,+PR">Navigate →</a>
+    </div>
+  </div>
+</section>
+
+<div class="stripes"></div>
+
+<section class="day">
+  <div class="dayhead"><span class="daynum">4</span><span class="daytitle">Ponce → Home</span><span class="daydate">Fri Aug 7</span></div>
+  <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/2722+Las+Americas+Ave,+Ponce,+PR/Luis+Munoz+Marin+International+Airport,+Carolina,+PR">Open Day 4 route in Google Maps →</a>
+  <div class="plain">
+    <b>8:30 AM</b> — panadería near the plaza: ham &amp; egg sandwich + café con leche (Omar) · pan sobao + fruit (Poli). The slow-down moment — listen to the room.<br><br>
+    <b>10:00 AM</b> — Museo de Arte de Ponce (2325 Las Américas, down your own street — verify reopening) or a last plaza stroll.<br><br>
+    <b>12:00 PM</b> — PR-52 north (~1.5 hrs) → <b>~1:45</b> gas to full near the rental office, keep the receipt → <b>~2:15</b> return car at Charlie/ACE, walk-around, $0 pending → shuttle → <b>~2:45 PM</b> at SJU, 2.5 hrs before <b>Flight 2215, 5:22 PM → TPA 8:30 PM</b>. One straight line, zero backtracking, no airport purgatory.
+  </div>
+</section>
+
+<footer>
+  <div class="rule">"Once, sit at a panadería with a café con leche and just listen. That's the trip."</div>
+  Cash: $150–200 small bills (Caguana, chinchorros &amp; La Guancha are cash-country) · Waze · closed-toe shoes Wed · nothing valuable in the car
+</footer>
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
