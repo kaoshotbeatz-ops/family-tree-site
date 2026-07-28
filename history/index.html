@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>Puerto Rico — The Colonial Record · Omar &amp; Poli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sand:#F7F3EA; --ink:#1E2726; --bomba-red:#B3271E; --bomba-black:#20201E;
+  --sea:#0E6E71; --gold:#C99A3C; --paper:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Public Sans',sans-serif;background:var(--sand);color:var(--ink);line-height:1.6}
+.stripes{height:14px;background:repeating-linear-gradient(135deg,var(--bomba-red) 0 22px,var(--bomba-black) 22px 44px)}
+header{padding:44px 20px 30px;text-align:center;max-width:760px;margin:0 auto}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--sea);font-weight:700}
+h1{font-family:'Instrument Serif',serif;font-size:clamp(38px,7vw,58px);line-height:1.05;margin:10px 0 8px}
+h1 em{font-style:italic;color:var(--bomba-red)}
+.sub{color:#4c5a58;font-size:15px;max-width:560px;margin:0 auto}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:22px}
+.stat{background:var(--paper);border:1px solid #e4ddcd;border-radius:10px;padding:12px 18px;min-width:120px}
+.stat b{display:block;font-family:'Instrument Serif',serif;font-size:30px;color:var(--bomba-red);line-height:1.1}
+.stat span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6a756f}
+.wrap{max-width:720px;margin:0 auto;padding:10px 18px 30px}
+.era{background:var(--paper);border:1px solid #e7e0d1;border-radius:14px;padding:22px 24px;margin-bottom:18px;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+.era .yr{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sea)}
+.era h2{font-family:'Instrument Serif',serif;font-size:26px;margin:4px 0 10px}
+.era p{font-size:15px;color:#3a423f}
+.era p em{font-style:italic}
+.source-note{max-width:720px;margin:10px auto 0;padding:16px 18px;font-size:12.5px;color:#6a756f;border-top:1px dashed #cfc6b0}
+.backlink{position:fixed;top:14px;left:14px;z-index:5;font-family:'Public Sans',sans-serif;font-size:12px;font-weight:700;color:#0E6E71;text-decoration:none;background:#fff;border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px}
+footer{max-width:720px;margin:10px auto 0;padding:20px 16px 50px;text-align:center;font-size:13px;color:#6a756f}
+footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19px;color:var(--ink);margin-bottom:6px}
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family archive</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<a class="backlink" href="../">&larr; Back to the tree</a>
+
+<div class="stripes"></div>
+
+<header>
+  <div class="eyebrow">Why the island is the way it is</div>
+  <h1>The <em>colonial</em> record</h1>
+  <p class="sub">Not opinion, not folklore &mdash; every line below traces to a specific act of Congress, a Supreme Court ruling, or a government report. This is the paper trail behind why Arecibo, and every town like it, ended up the way it did.</p>
+  <div class="stats">
+    <div class="stat"><b>127</b><span>years a US territory</span></div>
+    <div class="stat"><b>0</b><span>votes for president</span></div>
+    <div class="stat"><b>0</b><span>voting seats in Congress</span></div>
+    <div class="stat"><b>7</b><span>status referendums</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<div class="era">
+  <div class="yr">1898</div>
+  <h2>Invasion, and the Foraker Act</h2>
+  <p>The US invaded Puerto Rico during the Spanish-American War and took it as a war prize under the Treaty of Paris &mdash; no vote of the Puerto Rican people involved. The Foraker Act of 1900 set up a civilian government where the governor and every upper official were appointed by the US president, not elected locally, and the island had no vote in the Congress governing it.</p>
+</div>
+
+<div class="era">
+  <div class="yr">1901&ndash;1922</div>
+  <h2>The Insular Cases</h2>
+  <p>The Supreme Court, starting with <em>Downes v. Bidwell</em> (1901), invented the legal category of "unincorporated territory" &mdash; land that belongs to the US but isn't fully part of it, where the Constitution applies only partially. <em>Dorr v. United States</em> (1904) and <em>Balzac v. Porto Rico</em> (1922) confirmed residents of such territory aren't guaranteed rights like jury trial. These rulings have never been overturned. They are still the legal foundation of Puerto Rico's status today.</p>
+</div>
+
+<div class="era">
+  <div class="yr">1917</div>
+  <h2>Jones-Shafroth Act</h2>
+  <p>Congress granted statutory US citizenship to Puerto Ricans &mdash; not through the 14th Amendment, but by ordinary law Congress could in theory undo. The same year, the draft was extended to Puerto Rican men just as World War I began. The act also locked in the "Jones Act" shipping law: cargo between US ports, including to the island, must travel on US-built, US-owned, US-crewed ships &mdash; a restriction that federal and academic studies have tied directly to the higher cost of goods in Puerto Rico ever since.</p>
+</div>
+
+<div class="era">
+  <div class="yr">1937 &amp; 1950</div>
+  <h2>Ponce, and the Nationalist uprising</h2>
+  <p>Police fired on a civilian march in Ponce in 1937, killing marchers and bystanders. In 1950, an armed Nationalist uprising was met with mass arrests; some of the FBI's own surveillance files on independence activists from this period have since been declassified. Public Law 600, passed the same year, let Puerto Rico write its own local constitution &mdash; the island became a "commonwealth" in 1952, but stayed, and stays, an unincorporated territory under the Insular Cases.</p>
+</div>
+
+<div class="era">
+  <div class="yr">2016</div>
+  <h2>PROMESA and the fiscal control board</h2>
+  <p>Facing a debt crisis, Congress created a Financial Oversight and Management Board &mdash; seven members appointed by the US president, none elected by Puerto Ricans &mdash; with power to override the island's own elected government on budget matters. The Supreme Court upheld the board's structure in 2020, ruling that the Constitution's Appointments Clause doesn't restrict how a territorial board gets picked.</p>
+</div>
+
+<div class="era">
+  <div class="yr">2017</div>
+  <h2>Hurricane Maria</h2>
+  <p>An independent study commissioned by Puerto Rico's own government (George Washington University, 2018) put the excess death toll at roughly 2,975 &mdash; far above the government's initial count of 64. The power grid took nearly 11 months to fully restore: the longest blackout in US history.</p>
+</div>
+
+<div class="era">
+  <div class="yr">2022</div>
+  <h2>Vaello Madero</h2>
+  <p>The Supreme Court upheld a federal law that excludes Puerto Rico residents from Supplemental Security Income, even though they pay the same payroll taxes as everyone else. The majority opinion leaned directly on the territorial status the Insular Cases built over a century earlier.</p>
+</div>
+
+<div class="era">
+  <div class="yr">Now</div>
+  <h2>Where it stands</h2>
+  <p>Seven status referendums since 1967, no result binding on Congress &mdash; only Congress can change the island's status under the Constitution's territorial clause. Statehood, independence, free association, and the current commonwealth arrangement remain the options on the table, each with real, disputed consequences for citizenship, taxes, and federal benefits that Congress alone gets to decide.</p>
+</div>
+
+</div>
+
+<div class="source-note">
+  Sources: US Statutes at Large (Foraker Act, Jones-Shafroth Act, PROMESA); US Reports (<em>Downes v. Bidwell</em>, <em>Dorr v. United States</em>, <em>Balzac v. Porto Rico</em>, <em>Financial Oversight and Management Board v. Aurelius</em>, <em>United States v. Vaello Madero</em>); GWU Milken Institute School of Public Health 2018 Puerto Rico mortality study. Full primary-source documents (statute texts, court opinions, Meriam Report, Church Committee reports, and more) are archived off-site alongside the family research.
+</div>
+
+<footer>
+  <div class="rule">"You can't understand where the family comes from without understanding what was done to the island itself."</div>
+  <a href="../puerto-rico/">&larr; 1st Puerto Rico Vacation</a> &middot; <a href="../story/">Read the story &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
