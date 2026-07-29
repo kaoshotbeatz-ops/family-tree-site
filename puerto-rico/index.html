@@ -22,6 +22,11 @@ h1 em{font-style:italic;color:var(--bomba-red)}
 .sub{color:#4c5a58;font-size:15px}
 .flights{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
 .flight{background:var(--paper);border:1px solid #e4ddcd;border-radius:10px;padding:10px 16px;font-size:13px}
+.agenda{background:var(--paper);border:1px solid #e4ddcd;border-radius:14px;padding:16px 18px;margin-bottom:18px}
+.agenda-title{font-family:'Instrument Serif',serif;font-style:italic;font-size:17px;color:var(--sea);margin-bottom:8px}
+.agenda-row{display:flex;gap:14px;padding:6px 0;border-top:1px dashed #e7e0d1;font-size:13.5px}
+.agenda-row:first-of-type{border-top:none}
+.agenda-time{flex:0 0 68px;font-weight:700;color:var(--bomba-red)}
 .flight b{color:var(--sea)}
 .day{max-width:760px;margin:0 auto;padding:26px 16px}
 .dayhead{display:flex;align-items:baseline;gap:14px;border-bottom:3px solid var(--ink);padding-bottom:8px;margin-bottom:6px;flex-wrap:wrap}
@@ -295,6 +300,19 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
 <section class="day">
   <div class="dayhead"><span class="daynum">4</span><span class="daytitle">Ponce → Home</span><span class="daydate">Fri Aug 7</span></div>
   <a class="routebtn" target="_blank" href="https://www.google.com/maps/dir/2722+Las+Americas+Ave,+Ponce,+PR/Ca%C3%B1a+by+Jos%C3%A9+Enrique,+Isla+Verde,+Carolina,+PR/Luis+Munoz+Marin+International+Airport,+Carolina,+PR">Open Day 4 route in Google Maps →</a>
+
+  <div class="agenda">
+    <div class="agenda-title">Friday at a glance — nothing here is tight</div>
+    <div class="agenda-row"><span class="agenda-time">8:30 AM</span><span>Breakfast near the plaza</span></div>
+    <div class="agenda-row"><span class="agenda-time">10:00 AM</span><span>Museo de Arte de Ponce or a last plaza stroll</span></div>
+    <div class="agenda-row"><span class="agenda-time">11:00 AM</span><span>Checkout → PR-52 north (all highway)</span></div>
+    <div class="agenda-row"><span class="agenda-time">12:30 PM</span><span>Lunch — Caña by José Enrique, Isla Verde</span></div>
+    <div class="agenda-row"><span class="agenda-time">1:40 PM</span><span>Gas up near the rental office</span></div>
+    <div class="agenda-row"><span class="agenda-time">2:10 PM</span><span>Return the car, shuttle to SJU</span></div>
+    <div class="agenda-row"><span class="agenda-time">2:30 PM</span><span>At the airport — <b>~3 hrs</b> of slack before boarding</span></div>
+    <div class="agenda-row"><span class="agenda-time">5:22 PM</span><span>Flight 2215 departs → TPA 8:30 PM</span></div>
+  </div>
+
   <div class="plain">
     <b>8:30 AM</b> — panadería near the plaza: ham &amp; egg sandwich + café con leche (Omar) · pan sobao + fruit (Poli). The slow-down moment — listen to the room.<br><br>
     <b>10:00 AM</b> — Museo de Arte de Ponce (2325 Las Américas, down your own street — verify reopening) or a last plaza stroll.<br><br>
