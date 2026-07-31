@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>The Island Itself · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+:root { --deep: #0a3b4a; --deep-wash: #e2eef1; --stone: #6b6355; }
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+.stat-big { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; padding: 0 18px; margin-bottom: 20px; }
+.stat-big div { background: var(--paper-raised); border-radius: var(--radius-lg); padding: 14px 16px; }
+.stat-big b { display: block; font-family: 'Instrument Serif', serif; font-size: 26px; color: var(--deep); }
+.stat-big span { font-size: 12px; color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family archive</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="./" class="active">The Island Itself</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">Before Taíno, before people, before anyone</div>
+  <h1>The <em>island</em> itself</h1>
+  <p class="fam-sub">Every page on this site is about people &mdash; who arrived, who ruled, who was enslaved, who survived. This one is about the land under all of it: where it actually sits, what it actually is, and how long it's actually been here.</p>
+</header>
+
+<div class="stat-big">
+  <div><b>18.2&deg;N</b><span>latitude</span></div>
+  <div><b>66.5&deg;W</b><span>longitude</span></div>
+  <div><b>~100&times;35 mi</b><span>visible island size</span></div>
+  <div><b>27,480 ft</b><span>deepest point nearby, below sea level</span></div>
+</div>
+
+<div class="fam-wrap">
+
+<div class="fam-card">
+  <span class="fam-tag">Where it actually is</span>
+  <h2>Sitting on a plate boundary, not just "in the Caribbean"</h2>
+  <p>Puerto Rico sits at roughly 18&deg;N, 66&deg;W &mdash; the easternmost of the Greater Antilles, between the Atlantic Ocean to the north and the Caribbean Sea to the south. That's the simple answer. The real answer is more dramatic: the island sits almost exactly on the complicated, actively moving boundary between the <strong>Caribbean tectonic plate</strong> and the <strong>North American tectonic plate</strong> &mdash; two of the massive rigid slabs the Earth's outer shell is broken into, grinding, colliding, and sliding past each other here in a way most places on the planet never have to deal with. That boundary is exactly why the island has real, regular earthquakes and why the 1918 quake and tsunami discussed on <a href="../history/" style="color:var(--sea);font-weight:700;">The Colonial Record</a> happened at all &mdash; not bad luck, but geography.</p>
+</div>
+
+<div class="fam-card">
+  <span class="fam-tag">The part nobody sees</span>
+  <h2>The island is the peak of something much bigger</h2>
+  <p>What you can stand on &mdash; the roughly 100-by-35-mile landmass called Puerto Rico &mdash; is only the small, dry, above-water tip of a far larger underwater mountain system rising from the ocean floor. Directly north of the island, the seafloor doesn't gently slope away; it falls off a cliff. The <strong>Puerto Rico Trench</strong> reaches a depth of roughly <strong>27,480 feet (about 8,376 meters)</strong> at its deepest point, the <strong>Milwaukee Deep</strong> &mdash; the deepest point in the entire Atlantic Ocean, anywhere on Earth. The vertical distance from the top of Puerto Rico's highest peak down to the bottom of that trench, over a comparatively short horizontal distance, is one of the most extreme pieces of relief anywhere on the planet &mdash; a bigger drop than the distance from sea level to the summit of most of the world's tallest mountains, just happening underwater, right next to this specific island.</p>
+</div>
+
+<div class="fam-card">
+  <span class="fam-tag">How old the land itself is</span>
+  <h2>Tens of millions of years before anyone stood on it</h2>
+  <p>Puerto Rico's oldest exposed rock formations date back roughly <strong>190 million years</strong>, to the Jurassic period &mdash; long before any human being anywhere on Earth. The island wasn't formed the way most people picture an island forming; it built up gradually through <strong>volcanic island-arc activity</strong>, the same basic process that built Japan or the Philippines, as the Caribbean plate's edge pushed against and partly slid under neighboring plates over tens of millions of years, throwing up volcanic material that eventually broke the ocean's surface. Later, large parts of the island &mdash; especially the northern karst region &mdash; were built up further by <strong>limestone deposited by shallow tropical seas</strong>, then exposed and carved by water over millions more years into the cave systems, sinkholes, and haystack-shaped hills (<em>mogotes</em>) that still define that part of the island today, including <strong>Cueva del Indio</strong> and the wider Camuy cave system near Arecibo &mdash; the same municipality already documented as this family's own ground on <a href="../boriken/" style="color:var(--sea);font-weight:700;">the Boriken page</a>. The very rock this family's ancestors are buried in is a geological event that happened millions of years before there were ancestors at all.</p>
+</div>
+
+<div class="fam-card">
+  <span class="fam-tag">The rainforest and the reason for it</span>
+  <h2>El Yunque, and why the island looks the way it does</h2>
+  <p>Puerto Rico's mountainous, volcanic interior and its position directly in the path of the northeast trade winds off the Atlantic together create the conditions for <strong>El Yunque National Forest</strong> &mdash; the only tropical rainforest in the entire US National Forest System, receiving well over 100 inches of rain a year in its wettest zones. It's not a coincidence sitting next to the other facts on this page; it's the direct, physical consequence of the island's volcanic mountain geography meeting a specific position on the globe. Everything on this page &mdash; the earthquakes, the caves, the rainforest, even the reason Columbus's ships could find fresh water and safe harbor here at all &mdash; comes from the same underlying fact: this is a young, active, geologically dramatic piece of land sitting in an unusually dramatic place, and every person who ever lived here, including this family, built their whole story on top of that.</p>
+</div>
+
+</div>
+
+<div class="fam-source-note">
+  Geological and geographic facts here reflect well-established, broadly published science (plate tectonics, bathymetric survey data on the Puerto Rico Trench, regional stratigraphy) rather than a single cited paper &mdash; this page is a factual overview, not a research citation, the way the Boriken and Colonial Record pages are.
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">The land was already ancient when the first person ever stood on it.</div>
+  <a href="../boriken/">Boriken &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
