@@ -115,6 +115,24 @@
 
 <div class="archive-section">
   <div class="archive-section-head">
+    <span class="fam-eyebrow">The complete document, all 715 pages</span>
+    <h2>Page through the full registry</h2>
+    <p>Every page of District 1, in order. This is the actual record, not a sample &mdash; individual entries for real enslaved people, one year before abolition. Enter a page number or use the arrows.</p>
+  </div>
+  <div style="padding:0 18px;">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
+      <button id="pv-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">&larr; Prev</button>
+      <span style="font-size:14px;">Page <input id="pv-num" type="number" min="1" max="715" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> of 715</span>
+      <button id="pv-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">Next &rarr;</button>
+    </div>
+    <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
+      <img id="pv-img" src="img/registry-full/page-001.jpg" alt="Registro Central de Esclavos page viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
+    </div>
+  </div>
+</div>
+
+<div class="archive-section">
+  <div class="archive-section-head">
     <span class="fam-eyebrow">Coming as they're pulled</span>
     <h2>What else belongs here</h2>
     <p>This page is meant to grow: draft cards for the family members documented on <a href="../history/" style="color:var(--sea);font-weight:700;">The Colonial Record</a>'s "Those who served" section, the Taíno baptism record already in the book, census pages, and any other primary-source scan worth seeing in the original rather than just described in text.</p>
@@ -133,6 +151,20 @@
 </div>
 
 <script>
+(function () {
+  var total = 715;
+  var num = document.getElementById('pv-num');
+  var img = document.getElementById('pv-img');
+  function render() {
+    var n = Math.max(1, Math.min(total, parseInt(num.value, 10) || 1));
+    num.value = n;
+    img.src = 'img/registry-full/page-' + String(n).padStart(3, '0') + '.jpg';
+  }
+  document.getElementById('pv-prev').addEventListener('click', function () { num.value = (parseInt(num.value, 10) || 1) - 1; render(); });
+  document.getElementById('pv-next').addEventListener('click', function () { num.value = (parseInt(num.value, 10) || 1) + 1; render(); });
+  num.addEventListener('change', render);
+})();
+
 function openLightbox(src) {
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox').style.display = 'flex';
