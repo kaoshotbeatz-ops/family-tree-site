@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>The Image Archive · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+
+.archive-section { margin-bottom: 40px; }
+.archive-section-head { padding: 0 18px; margin-bottom: 12px; }
+.archive-section-head .fam-eyebrow { display: block; }
+.archive-section-head h2 { font-size: 26px; margin: 4px 0 6px; }
+.archive-section-head p { font-size: 14px; color: var(--ink-soft); max-width: 620px; }
+.archive-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px; padding: 0 18px;
+}
+.archive-item {
+  background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  overflow: hidden; box-shadow: var(--shadow-card);
+}
+.archive-item img { width: 100%; height: 260px; object-fit: cover; display: block; cursor: zoom-in; }
+.archive-item .cap { padding: 10px 14px 14px; font-size: 12.5px; color: var(--ink-soft); }
+.archive-item .cap b { display: block; color: var(--ink); font-size: 13.5px; margin-bottom: 2px; }
+
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 200; background: rgba(20,16,10,.92);
+  align-items: center; justify-content: center; padding: 20px; cursor: zoom-out;
+}
+#lightbox img { max-width: 100%; max-height: 90vh; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family archive</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="./" class="active">Image Archive</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">Primary sources, in the actual paper</div>
+  <h1>The image <em>archive</em></h1>
+  <p class="fam-sub">Real document scans, not summaries &mdash; the actual pages behind the facts on this site. This grows over time as more records are pulled and added.</p>
+</header>
+
+<div class="archive-section">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">1872 &middot; one year before abolition</span>
+    <h2>Registro Central de Esclavos</h2>
+    <p>Spain's own colonial slave registry, District 1, Puerto Rico, 1872 &mdash; the full 715-page record is archived off-site; these are real sample pages from it. Each entry records a real enslaved person by name: their owner, town, a Spanish colonial racial classification, age, parentage, and their own children's names. Full context on <a href="../history/" style="color:var(--sea);font-weight:700;">The Colonial Record</a>.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_cover.jpg" alt="1872 Registro Central de Esclavos, Puerto Rico, opening page" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Opening page</b>The registry's title page, District 1, 1872.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p5.jpg" alt="1872 Registro Central de Esclavos, page 5" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Page 5</b>Individual entries: name, owner, town, age, parentage, children.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p50.jpg" alt="1872 Registro Central de Esclavos, page 50" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Page 50</b>Further into the register &mdash; the record continues for 715 pages.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p200.jpg" alt="1872 Registro Central de Esclavos, page 200" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Page 200</b>Still District 1 alone &mdash; one year before final abolition, 22 March 1873.</div>
+    </div>
+  </div>
+</div>
+
+<div class="archive-section">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">Coming as they're pulled</span>
+    <h2>What else belongs here</h2>
+    <p>This page is meant to grow: draft cards for the family members documented on <a href="../history/" style="color:var(--sea);font-weight:700;">The Colonial Record</a>'s "Those who served" section, the Taíno baptism record already in the book, census pages, and any other primary-source scan worth seeing in the original rather than just described in text.</p>
+  </div>
+</div>
+
+<div id="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">The paper itself, not just what it says.</div>
+  <a href="../history/">The Colonial Record &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').style.display = 'flex';
+}
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
