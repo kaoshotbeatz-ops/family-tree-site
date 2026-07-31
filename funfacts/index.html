@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>You Didn't Know · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+:root { --pop: #b3271e; --pop-wash: #fbeae7; }
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+.fact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; padding: 0 18px; }
+.fact-card { background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 20px 22px; box-shadow: var(--shadow-card); }
+.fact-card .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--pop); background: var(--pop-wash); border-radius: 999px; padding: 3px 10px; margin-bottom: 8px; }
+.fact-card h3 { font-family: 'Instrument Serif', serif; font-size: 21px; margin: 0 0 8px; font-weight: 400; }
+.fact-card p { font-size: 14px; color: var(--ink-soft); margin: 0; }
+.section-lead { padding: 0 18px; margin: 34px 0 14px; }
+.section-lead h2 { font-size: 24px; margin: 4px 0 6px; }
+.section-lead p { font-size: 14px; color: var(--ink-soft); max-width: 620px; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family archive</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../island/">The Island Itself</a>
+  <a href="./" class="active">You Didn't Know</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">The lighter side of the archive</div>
+  <h1>You didn't <em>know</em></h1>
+  <p class="fam-sub">Not every page here needs to be heavy. This one's just the cool stuff &mdash; things the Taíno and Puerto Rico actually gave the entire world, that most people have no idea came from this island.</p>
+</header>
+
+<div class="section-lead">
+  <h2>What the Taíno gave the whole world</h2>
+  <p>Words and things every language on Earth basically uses now, straight from the people who were here first.</p>
+</div>
+<div class="fact-grid">
+  <div class="fact-card">
+    <span class="badge">Sleeping</span>
+    <h3>The hammock</h3>
+    <p>Europeans had never seen one. The word <em>hamaca</em> and the object itself are both Taíno inventions &mdash; every hammock on Earth today traces back to this island and its neighbors.</p>
+  </div>
+  <div class="fact-card">
+    <span class="badge">Cooking</span>
+    <h3>Barbecue</h3>
+    <p>The word "barbecue" comes straight from Taíno <em>barbacoa</em> &mdash; a raised wooden cooking frame. An entire global food culture, and the word for it, started right here.</p>
+  </div>
+  <div class="fact-card">
+    <span class="badge">Weather</span>
+    <h3>"Hurricane" itself</h3>
+    <p>Named for Jurakán, a powerful Taíno storm spirit. Every time a meteorologist anywhere in the world says "hurricane," they're saying a Taíno word.</p>
+  </div>
+  <div class="fact-card">
+    <span class="badge">Boats</span>
+    <h3>The canoe</h3>
+    <p>Columbus's own crew had never seen anything like it &mdash; a single tree carved into a seaworthy boat. "Canoe" is a Taíno word, still used in basically every language.</p>
+  </div>
+</div>
+
+<div class="section-lead">
+  <h2>What Puerto Rico itself gave the world</h2>
+  <p>Not ancient history &mdash; modern, real, verifiable contributions, some of them from this family's own hometown.</p>
+</div>
+<div class="fact-grid">
+  <div class="fact-card">
+    <span class="badge">Right in Arecibo</span>
+    <h3>One of the most famous telescopes ever built</h3>
+    <p>The Arecibo Observatory &mdash; in the exact municipality this family's Arocho line comes from &mdash; was for decades one of the largest radio telescopes on Earth. It discovered the first-ever binary pulsar (a Nobel Prize-winning find), sent humanity's first deliberate message to the stars in 1974, and appeared in real Hollywood films. Family hometown, world-famous science.</p>
+  </div>
+  <div class="fact-card">
+    <span class="badge">Nature</span>
+    <h3>One of the brightest bioluminescent bays on Earth</h3>
+    <p>Mosquito Bay in Vieques glows electric blue at night from microorganisms in the water &mdash; regularly cited as the brightest bioluminescent bay anywhere in the world, a real, visitable, natural phenomenon.</p>
+  </div>
+  <div class="fact-card">
+    <span class="badge">Sports</span>
+    <h3>The team that beat the US "Dream Team"</h3>
+    <p>At the 2004 Athens Olympics, Puerto Rico's national basketball team beat a US roster stacked with active NBA stars, 92&ndash;73 &mdash; the first Olympic loss for a US team of professional players since NBA players were allowed to compete.</p>
+  </div>
+  <div class="fact-card">
+    <span class="badge">Music</span>
+    <h3>A whole modern genre came from here</h3>
+    <p>Reggaeton developed and grew into a global genre substantially in Puerto Rico through the 1990s and 2000s &mdash; an entire sound now heard worldwide started in San Juan clubs and underground mixtapes.</p>
+  </div>
+  <div class="fact-card">
+    <span class="badge">History</span>
+    <h3>Older than almost any US city</h3>
+    <p>San Juan, founded in 1521, is the second-oldest European-established city anywhere in the Americas &mdash; older than Boston, older than St. Augustine, older than almost anywhere else with a US flag on it today.</p>
+  </div>
+  <div class="fact-card">
+    <span class="badge">Drink</span>
+    <h3>Where the piña colada was born</h3>
+    <p>Widely credited to San Juan in the 1950s &mdash; two different hotels there still argue over who invented it first, which is itself a very Puerto Rican fun fact.</p>
+  </div>
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">This island gave the world more than most people ever get taught.</div>
+  <a href="../boriken/">Boriken &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
