@@ -157,6 +157,16 @@
       <div class="cap"><b>Page 250</b>Later chapters, covering population and colonial life.</div>
     </div>
   </div>
+  <div style="padding:16px 18px 0;">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
+      <button id="ab-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">&larr; Prev</button>
+      <span style="font-size:14px;">Page <input id="ab-num" type="number" min="1" max="420" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> of 420 &mdash; full book</span>
+      <button id="ab-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">Next &rarr;</button>
+    </div>
+    <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
+      <img id="ab-img" src="img/abad-full/page-001.jpg" alt="Abad y Lasierra 1788 full-book viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
+    </div>
+  </div>
 </div>
 
 <div class="archive-section">
@@ -177,6 +187,16 @@
     <div class="archive-item">
       <img src="img/latimer_1899_p150.jpg" alt="Latimer Collection, 1899, page 150" onclick="openLightbox(this.src)">
       <div class="cap"><b>Page 150</b>Further into the catalog.</div>
+    </div>
+  </div>
+  <div style="padding:16px 18px 0;">
+    <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
+      <button id="lt-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">&larr; Prev</button>
+      <span style="font-size:14px;">Page <input id="lt-num" type="number" min="1" max="178" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> of 178 &mdash; full catalog</span>
+      <button id="lt-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">Next &rarr;</button>
+    </div>
+    <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
+      <img id="lt-img" src="img/latimer-full/page-001.jpg" alt="Latimer Collection 1899 full-catalog viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
     </div>
   </div>
 </div>
@@ -212,6 +232,34 @@
   }
   document.getElementById('pv-prev').addEventListener('click', function () { num.value = (parseInt(num.value, 10) || 1) - 1; render(); });
   document.getElementById('pv-next').addEventListener('click', function () { num.value = (parseInt(num.value, 10) || 1) + 1; render(); });
+  num.addEventListener('change', render);
+})();
+
+(function () {
+  var total = 420;
+  var num = document.getElementById('ab-num');
+  var img = document.getElementById('ab-img');
+  function render() {
+    var n = Math.max(1, Math.min(total, parseInt(num.value, 10) || 1));
+    num.value = n;
+    img.src = 'img/abad-full/page-' + String(n).padStart(3, '0') + '.jpg';
+  }
+  document.getElementById('ab-prev').addEventListener('click', function () { num.value = (parseInt(num.value, 10) || 1) - 1; render(); });
+  document.getElementById('ab-next').addEventListener('click', function () { num.value = (parseInt(num.value, 10) || 1) + 1; render(); });
+  num.addEventListener('change', render);
+})();
+
+(function () {
+  var total = 178;
+  var num = document.getElementById('lt-num');
+  var img = document.getElementById('lt-img');
+  function render() {
+    var n = Math.max(1, Math.min(total, parseInt(num.value, 10) || 1));
+    num.value = n;
+    img.src = 'img/latimer-full/page-' + String(n).padStart(3, '0') + '.jpg';
+  }
+  document.getElementById('lt-prev').addEventListener('click', function () { num.value = (parseInt(num.value, 10) || 1) - 1; render(); });
+  document.getElementById('lt-next').addEventListener('click', function () { num.value = (parseInt(num.value, 10) || 1) + 1; render(); });
   num.addEventListener('change', render);
 })();
 
