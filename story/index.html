@@ -43,14 +43,59 @@ body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);
 #progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent-deep),var(--accent),#b9cca9);
   box-shadow:0 0 12px rgba(95,122,82,.6);transition:width .4s cubic-bezier(.2,.8,.2,1)}
 
-.stage{position:relative;z-index:5;perspective:2600px;width:min(900px,92vw);flex:1;display:flex;
-  align-items:center;justify-content:center;padding-bottom:8px}
-.book{position:relative;width:100%;aspect-ratio:1/1.414;max-height:78vh}
-.page{position:absolute;inset:0;border-radius:var(--radius);overflow:hidden;
-  box-shadow:var(--shadow);transform-style:preserve-3d;transform-origin:left center;backface-visibility:hidden;
-  transition:transform .85s cubic-bezier(.65,.02,.28,1);will-change:transform;display:flex;flex-direction:column}
-.page.turned{transform:rotateY(-180deg)}
-.page .face{position:absolute;inset:0;display:flex;flex-direction:column;backface-visibility:hidden;overflow:hidden}
+.stage{position:relative;z-index:5;width:min(1180px,96vw);flex:1;display:flex;align-items:center;justify-content:center;padding:6px 0 12px;perspective:3000px}
+/* hardcover boards behind the pages */
+.bookwrap{position:relative;width:100%;max-height:82vh;aspect-ratio:1.46/1;display:flex;align-items:center;justify-content:center;
+  transform-style:preserve-3d;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.bookwrap::before{content:"";position:absolute;inset:-14px -16px -16px -16px;border-radius:12px;
+  background:linear-gradient(135deg,#2a2116,#1c150d 55%,#120d08);
+  box-shadow:0 50px 90px rgba(0,0,0,.55),inset 0 0 0 1px rgba(95,122,82,.22);z-index:0}
+.book{position:relative;width:100%;height:100%;z-index:1;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+/* center spine */
+.book::after{content:"";position:absolute;top:1.5%;bottom:1.5%;left:50%;width:30px;transform:translateX(-50%);z-index:40;pointer-events:none;
+  background:linear-gradient(90deg,rgba(0,0,0,0),rgba(60,40,15,.24) 38%,rgba(60,40,15,.34) 50%,rgba(60,40,15,.24) 62%,rgba(0,0,0,0));border-radius:4px}
+.book.closed::after{opacity:0}
+
+/* a leaf = one physical sheet, occupies the RIGHT half, hinged at the spine */
+.leaf{position:absolute;top:0;right:0;width:50%;height:100%;transform-origin:left center;transform-style:preserve-3d;
+  transition:transform .95s cubic-bezier(.34,.62,.28,1)}
+.leaf.turned{transform:rotateY(-180deg)}
+.leaf .face{position:absolute;inset:0;backface-visibility:hidden;overflow:hidden;border-radius:0 var(--radius) var(--radius) 0;
+  display:flex;flex-direction:column}
+.leaf .face.front{z-index:2}
+.leaf .face.back{transform:rotateY(180deg);border-radius:var(--radius) 0 0 var(--radius)}
+/* page-edge thickness, parchment tones */
+.leaf .face.front::before{content:"";position:absolute;top:0;bottom:0;right:0;width:8px;z-index:30;pointer-events:none;
+  background:repeating-linear-gradient(90deg,#d8c9a3,#d8c9a3 1px,#f0e6cc 1px,#f0e6cc 3px)}
+.leaf .face.back::before{content:"";position:absolute;top:0;bottom:0;left:0;width:8px;z-index:30;pointer-events:none;
+  background:repeating-linear-gradient(270deg,#d8c9a3,#d8c9a3 1px,#f0e6cc 1px,#f0e6cc 3px)}
+.leaf .face.back.cover::before,.leaf .face.back.back-cover::before,.leaf .face.front.cover::before,.leaf .face.front.back-cover::before{display:none}
+/* spine + curl shading */
+.leaf .face::after{content:"";position:absolute;inset:0;z-index:25;pointer-events:none;opacity:1;
+  background:linear-gradient(90deg,rgba(60,40,15,.18),rgba(0,0,0,0) 14%)}
+.leaf .face.back::after{background:linear-gradient(270deg,rgba(60,40,15,.18),rgba(0,0,0,0) 14%)}
+.leaf .face.cover::after,.leaf .face.back-cover::after{background:none}
+/* lift + sweeping highlight while a leaf is mid-turn */
+.leaf.tn{box-shadow:0 40px 80px rgba(0,0,0,.45)}
+.leaf.tn .face.front::after{animation:curl .95s ease}
+@keyframes curl{0%{background:linear-gradient(90deg,rgba(60,40,15,.18),transparent 14%)}
+  45%{background:linear-gradient(105deg,rgba(60,40,15,.06),rgba(255,250,235,.30) 30%,rgba(60,40,15,.24) 60%,transparent 80%)}
+  100%{background:linear-gradient(90deg,rgba(60,40,15,.18),transparent 14%)}}
+
+/* closed book = only the cover, centered */
+.book.closed .leaf:not(:first-child){opacity:0;pointer-events:none}
+.book.closed .leaf:first-child{width:100%}
+.book.closed .leaf:first-child .face.cover{border-radius:var(--radius)}
+
+/* decorative filler verso (odd page count) */
+.facing{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  color:#57503f;text-align:center;padding:40px}
+.facing .f-mark{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,var(--accent-deep),var(--accent));
+  display:grid;place-items:center;color:#fff;font-weight:900;font-size:18px;box-shadow:0 10px 24px rgba(60,79,52,.35)}
+.facing .f-word{font-family:Georgia,serif;font-size:24px;font-weight:400;line-height:1.1;color:#3a2c16}
+.facing .f-word b{color:#7a5a22;font-style:italic;font-weight:400}
+.facing .f-rule{width:54px;height:3px;border-radius:999px;background:linear-gradient(90deg,var(--accent-deep),var(--accent))}
+.facing .f-sub{font-family:-apple-system,sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#8a7f68}
 
 .face{
   background-color:#ece0c0;
@@ -153,6 +198,23 @@ body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);
 .hint{position:fixed;bottom:10px;left:50%;transform:translateX(-50%);z-index:6;font-size:11px;color:#8a7f68;
   font-weight:500;opacity:.8;font-family:-apple-system,sans-serif}
 @media(max-width:640px){.p-body{padding:16px 18px 12px}.p-head{padding:14px 18px 0}.p-rule,.p-foot{margin-left:0;padding-left:18px;padding-right:18px}.p-rule{margin:10px 18px 0}.cover,.back-cover{padding:30px 24px}}
+/* phones/tablets: linearize — every FACE becomes its own page */
+@media(max-width:860px){
+  .stage{align-items:stretch;padding:6px 0 10px;perspective:none}
+  .bookwrap{aspect-ratio:auto;width:92vw;max-width:460px;height:auto;max-height:none;flex:1;margin:0 auto}
+  .book{height:100%}
+  .bookwrap::before{inset:-8px -8px -10px -8px}
+  .leaf{position:absolute!important;inset:0;left:0;right:auto;width:100%;transform:none!important;opacity:1;pointer-events:auto;transition:none}
+  .leaf .face{position:absolute;inset:0;transform:none!important;backface-visibility:visible;border-radius:var(--radius)}
+  .leaf .face.back{transform:none!important;border-radius:var(--radius)}
+  .leaf .face::after{display:none}
+  .leaf .face.front::before,.leaf .face.back::before{display:none}
+  .leaf.tn .face.front::after{animation:none}
+  .cover,.back-cover{border-radius:var(--radius)}
+  .book::after{display:none}
+  .facing{display:none}
+  .hint{display:none}
+}
 </style>
 
 <style>
@@ -213,7 +275,7 @@ body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);
 <div id="progress"><span></span></div>
 
 <div class="stage">
-  <div class="book" id="book"></div>
+  <div class="bookwrap"><div class="book" id="book"></div></div>
 </div>
 
 <div class="controls">
@@ -910,50 +972,115 @@ const PAGES = [
 
 const book=document.getElementById('book');
 const total=PAGES.length;
-document.getElementById('tot').textContent=total;
-const pageEls=[];
-PAGES.forEach((pg,i)=>{
-  const el=document.createElement('div');el.className='page';
-  const front=document.createElement('div');front.className='face front';
-  if(pg.cover) front.classList.add('cover');
-  else if(pg.back) front.classList.add('back-cover');
-  if(pg.cover||pg.back){
-    if(pg.cover) front.innerHTML='<div class="c-aurora"></div>'+pg.html;
-    else front.innerHTML='<div class="bc-aurora"></div>'+pg.html;
-  } else {
-    front.innerHTML =
-      '<div class="p-head"><span class="ph-brand"><span class="ph-mark">🌳</span>'+
-      '<span class="ph-name">Arocho &ndash; Marrero &ndash; Huertas</span></span>'+
-      '<span class="ph-doc">'+(pg.doc||DOC)+'</span></div>'+
-      '<div class="p-rule"></div>'+
-      '<div class="p-body">'+pg.html+'</div>'+
-      '<div class="p-foot"><span class="pf-c">A Family History</span>'+
-      '<span class="pf-n">'+String(i+1).padStart(2,'0')+'</span></div>';
-  }
-  el.appendChild(front);
-  book.appendChild(el);
-  pageEls.push(el);
-});
 
-let cur=0;
-function render(){
-  pageEls.forEach((el,i)=>{
-    const turned = i<cur;
-    el.classList.toggle('turned',turned);
-    el.style.zIndex = turned ? i : (total - i);
-  });
-  document.getElementById('cur').textContent=Math.min(cur+1,total);
-  document.getElementById('progress').firstElementChild.style.width=((cur)/(total-1)*100)+'%';
-  document.getElementById('prev').disabled=cur<=0;
-  document.getElementById('next').disabled=cur>=total-1;
+function faceMarkup(pg,pageNo){
+  if(pg.cover) return ['cover','<div class="c-aurora"></div>'+pg.html];
+  if(pg.back)  return ['back-cover','<div class="bc-aurora"></div>'+pg.html];
+  return ['content',
+    '<div class="p-head"><span class="ph-brand"><span class="ph-mark">\ud83c\udf33</span>'+
+    '<span class="ph-name">Arocho &ndash; Marrero &ndash; Huertas</span></span>'+
+    '<span class="ph-doc">'+(pg.doc||DOC)+'</span></div>'+
+    '<div class="p-rule"></div>'+
+    '<div class="p-body">'+pg.html+'</div>'+
+    '<div class="p-foot"><span class="pf-c">A Family History</span>'+
+    '<span class="pf-n">'+String(pageNo).padStart(2,'0')+'</span></div>'];
 }
-function next(){if(cur<total-1){cur++;render();}}
-function prev(){if(cur>0){cur--;render();}}
-function goTo(n){cur=Math.max(0,Math.min(total-1,n-1));render();}
-document.getElementById('next').onclick=next;
-document.getElementById('prev').onclick=prev;
+function buildFace(side,pg,pageNo){
+  const f=document.createElement('div');f.className='face '+side;
+  if(pg){const [cls,html]=faceMarkup(pg,pageNo);if(cls!=='content')f.classList.add(cls);f.innerHTML=html;}
+  else{
+    f.classList.add('blankback');
+    f.innerHTML='<div class="facing"><div class="f-mark">\ud83c\udf33</div><div class="f-word">The Line<br><b>to Omar</b></div><div class="f-rule"></div><div class="f-sub">A Family History</div></div>';
+  }
+  return f;
+}
+
+// Each LEAF carries TWO pages: front = recto (right), back = verso (left).
+const leaves=[], faceSeq=[];
+const L=Math.ceil(PAGES.length/2);
+for(let i=0;i<L;i++){
+  const fp=PAGES[2*i], bp=PAGES[2*i+1];
+  const leaf=document.createElement('div');leaf.className='leaf';
+  const front=buildFace('front',fp,2*i+1);
+  const back =buildFace('back', bp,bp?2*i+2:null);
+  leaf.appendChild(front);leaf.appendChild(back);
+  book.appendChild(leaf);leaves.push(leaf);
+  faceSeq.push(front); if(bp) faceSeq.push(back);
+}
+const N=leaves.length;   // desktop spreads
+const M=faceSeq.length;  // mobile pages
+
+const elCur=document.getElementById('cur'), elTot=document.getElementById('tot');
+const elBar=document.getElementById('progress').firstElementChild;
+const elPrev=document.getElementById('prev'), elNext=document.getElementById('next');
+const mq=window.matchMedia('(max-width:860px)');
+function isMobile(){return mq.matches;}
+
+let cur=0;  // desktop leaf index
+let mi=0;   // mobile face index
+
+function renderDesktop(){
+  book.querySelectorAll('.face').forEach(f=>f.style.display='');
+  leaves.forEach((el,i)=>{
+    const turned=i<cur;
+    el.classList.toggle('turned',turned);
+    el.style.zIndex = turned ? i : (N - i);
+    el.style.display = Math.abs(i-cur)<=1 ? '' : 'none';
+  });
+  book.classList.toggle('closed', cur===0);
+  elCur.textContent=cur+1; elTot.textContent=N;
+  elBar.style.width=(N>1?cur/(N-1)*100:0)+'%';
+  elPrev.disabled=cur<=0; elNext.disabled=cur>=N-1;
+}
+const allFaces=Array.prototype.slice.call(book.querySelectorAll('.face'));
+function renderMobile(){
+  leaves.forEach(el=>{el.classList.remove('turned');el.style.zIndex='';el.style.display='block';});
+  allFaces.forEach(f=>{f.style.display='none';});
+  if(faceSeq[mi]) faceSeq[mi].style.display='flex';
+  book.classList.toggle('closed', mi===0);
+  elCur.textContent=mi+1; elTot.textContent=M;
+  elBar.style.width=(M>1?mi/(M-1)*100:0)+'%';
+  elPrev.disabled=mi<=0; elNext.disabled=mi>=M-1;
+}
+function render(){ isMobile()?renderMobile():renderDesktop(); }
+
+function flash(el){el.classList.add('tn');setTimeout(()=>el.classList.remove('tn'),950);}
+let busy=false;
+function next(){
+  if(busy)return;
+  if(isMobile()){ if(mi>=M-1)return; busy=true; mi++; render(); }
+  else{ if(cur>=N-1)return; busy=true; flash(leaves[cur]); cur++; render(); }
+  setTimeout(()=>busy=false,440);
+}
+function prev(){
+  if(busy)return;
+  if(isMobile()){ if(mi<=0)return; busy=true; mi--; render(); }
+  else{ if(cur<=0)return; busy=true; cur--; flash(leaves[cur]); render(); }
+  setTimeout(()=>busy=false,440);
+}
+// goTo(n) — n is the linear 1-based page number (used by the Table of Contents)
+function goTo(n){
+  const p=Math.max(0,Math.min(M-1,n-1));
+  if(isMobile()){ mi=p; }
+  else{
+    const leafIdx=Math.floor(p/2);
+    cur=Math.max(0,Math.min(N-1,(p%2===0)?leafIdx:leafIdx+1));
+  }
+  render();
+}
+elNext.onclick=next; elPrev.onclick=prev;
 document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')next();if(e.key==='ArrowLeft')prev();});
-book.addEventListener('click',e=>{const r=book.getBoundingClientRect();(e.clientX-r.left)/r.width>0.5?next():prev();});
+let _sw=0;
+book.addEventListener('click',e=>{
+  if(Date.now()-_sw<450)return;
+  if(e.target.closest('a'))return;
+  const r=book.getBoundingClientRect();(e.clientX-r.left)/r.width>0.5?next():prev();
+});
+let _tx=0,_ty=0;
+book.addEventListener('touchstart',e=>{const t=e.changedTouches[0];_tx=t.clientX;_ty=t.clientY;},{passive:true});
+book.addEventListener('touchend',e=>{const t=e.changedTouches[0],dx=t.clientX-_tx,dy=t.clientY-_ty;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3){_sw=Date.now();dx<0?next():prev();}},{passive:true});
+mq.addEventListener('change',()=>{ if(isMobile()) mi=Math.min(M-1,Math.max(0,cur*2)); else cur=Math.min(N-1,Math.max(0,Math.floor(mi/2))); render(); });
+
 render();
 </script>
 </div>
