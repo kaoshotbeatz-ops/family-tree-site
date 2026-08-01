@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>The Full Timeline · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+:root { --pop: #a8532e; }
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+
+.tl-wrap { max-width: 820px; margin: 0 auto; padding: 10px 18px 30px; position: relative; }
+.tl-wrap::before { content:""; position: absolute; left: 38px; top: 0; bottom: 0; width: 2px; background: var(--line); }
+.tl-item { position: relative; padding-left: 76px; margin-bottom: 26px; }
+.tl-dot { position: absolute; left: 30px; top: 4px; width: 18px; height: 18px; border-radius: 50%; background: var(--pop); border: 3px solid var(--paper); box-shadow: 0 0 0 2px var(--pop); }
+.tl-dot.person-columbus { background: #0e6e71; box-shadow: 0 0 0 2px #0e6e71; }
+.tl-dot.person-ponce { background: #a8532e; box-shadow: 0 0 0 2px #a8532e; }
+.tl-dot.person-other { background: #6b6355; box-shadow: 0 0 0 2px #6b6355; }
+.tl-dot.person-usa { background: #2f4a3c; box-shadow: 0 0 0 2px #2f4a3c; }
+.tl-year { font-family: 'Instrument Serif', serif; font-size: 20px; color: var(--pop); margin-bottom: 2px; }
+.tl-card { background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 16px 20px; box-shadow: var(--shadow-card); }
+.tl-card h3 { font-family: 'Instrument Serif', serif; font-size: 20px; margin: 0 0 6px; font-weight: 400; }
+.tl-card .who-tag { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: 2px 9px; margin-bottom: 8px; margin-right: 4px; }
+.tag-columbus { background: #e2eef1; color: #0a3b4a; }
+.tag-ponce { background: #f3e4da; color: #7a3a1e; }
+.tag-other { background: #ece7dd; color: #4a4436; }
+.tag-usa { background: #e9efe9; color: #2f4a3c; }
+.tl-card p { font-size: 14px; color: var(--ink-soft); margin: 0; }
+.tl-route { font-size: 12.5px; color: var(--sea); font-weight: 600; margin-top: 8px; }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; padding: 0 18px 20px; max-width: 820px; margin: 0 auto; font-size: 12.5px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family archive</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../island/">The Island Itself</a>
+  <a href="../military/">Who Served</a>
+  <a href="../map/">Indigenous Map</a>
+  <a href="../cookbook/">Cookbook</a>
+  <a href="./" class="active">Full Timeline</a>
+  <a href="../funfacts/">You Didn't Know</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">Everything, in one continuous line</div>
+  <h1>The full <em>timeline</em></h1>
+  <p class="fam-sub">Every event from the Colonial Record and Boriken pages, in a single chronological line &mdash; who did what, when, and where they actually went. Color shows who's driving each event: teal for Columbus, clay for Ponce de León, gray for other people/events, green for the United States.</p>
+</header>
+
+<div class="legend">
+  <span><i style="background:#0e6e71;"></i>Columbus</span>
+  <span><i style="background:#a8532e;"></i>Ponce de León</span>
+  <span><i style="background:#6b6355;"></i>Other people/events</span>
+  <span><i style="background:#2f4a3c;"></i>United States</span>
+</div>
+
+<div class="tl-wrap">
+
+  <div class="tl-item">
+    <div class="tl-dot person-columbus"></div>
+    <div class="tl-year">1492</div>
+    <div class="tl-card">
+      <span class="who-tag tag-columbus">Columbus &middot; 1st voyage</span>
+      <h3>Bahamas &rarr; Cuba &rarr; Hispaniola</h3>
+      <p>Funded by Spain's Catholic Monarchs to find a westward trade route to Asia. Made landfall in the Bahamas, then Cuba, then Hispaniola, where he left 39 men at a fort called La Navidad and sailed home. Never reached Puerto Rico or Florida.</p>
+      <div class="tl-route">Route: Spain &rarr; Bahamas &rarr; Cuba &rarr; Hispaniola &rarr; Spain</div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-columbus"></div>
+    <div class="tl-year">1493</div>
+    <div class="tl-card">
+      <span class="who-tag tag-columbus">Columbus &middot; 2nd voyage</span>
+      <span class="who-tag tag-ponce">Ponce de León joins</span>
+      <h3>Lesser Antilles &rarr; Puerto Rico &rarr; Hispaniola</h3>
+      <p>Found La Navidad's men dead. This voyage carried young soldier Juan Ponce de León, on his very first Atlantic crossing. Sighted Puerto Rico 19 Nov 1493, briefly, no landing party. Founded La Isabela in Hispaniola.</p>
+      <div class="tl-route">Route: Spain &rarr; Dominica &rarr; Guadeloupe &rarr; Montserrat &rarr; Antigua &rarr; Virgin Islands &rarr; Puerto Rico &rarr; Hispaniola</div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-ponce"></div>
+    <div class="tl-year">1493&ndash;1508</div>
+    <div class="tl-card">
+      <span class="who-tag tag-ponce">Ponce de León</span>
+      <h3>Fifteen years in Hispaniola</h3>
+      <p>Commanded troops that crushed the Higüey rebellion around 1504, earning him the governorship of that province under Governor Nicolás de Ovando. This is where he learned the conquest system he'd later run in Puerto Rico.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-ponce"></div>
+    <div class="tl-year">1508</div>
+    <div class="tl-card">
+      <span class="who-tag tag-ponce">Ponce de León</span>
+      <h3>Lands in Puerto Rico, founds Caparra</h3>
+      <p>Sailed from Hispaniola on his own authority, seeking gold. Got permission from cacique Agüeybaná for a settlement, founded Caparra, became the island's first governor.</p>
+      <div class="tl-route">Route: Hispaniola &rarr; Puerto Rico (west coast, near Aguada)</div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-other"></div>
+    <div class="tl-year">1509</div>
+    <div class="tl-card">
+      <span class="who-tag tag-other">Juan de Esquivel</span>
+      <h3>Jamaica taken</h3>
+      <p>Nearly simultaneous with Puerto Rico, under the same Hispaniola-based colonial authority, same repartimiento/encomienda pattern applied.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-other"></div>
+    <div class="tl-year">1511</div>
+    <div class="tl-card">
+      <span class="who-tag tag-ponce">Ponce de León</span>
+      <span class="who-tag tag-other">Agüeybaná II</span>
+      <h3>Taíno uprising in Puerto Rico, crushed</h3>
+      <p>Agüeybaná II led a coordinated Taíno rebellion against the encomienda system. Ponce de León personally led the military response that put it down.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-other"></div>
+    <div class="tl-year">1511&ndash;15</div>
+    <div class="tl-card">
+      <span class="who-tag tag-other">Diego Velázquez</span>
+      <h3>Cuba conquered, last of the big four islands</h3>
+      <p>Sailing from Hispaniola with soldiers including a young Hernán Cortés. Included the capture and execution of Hatuey, a cacique who had fled Hispaniola's system only to be caught in Cuba.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-other"></div>
+    <div class="tl-year">1511&ndash;12</div>
+    <div class="tl-card">
+      <span class="who-tag tag-ponce">Ponce de León</span>
+      <span class="who-tag tag-other">Diego Columbus</span>
+      <h3>Ponce de León forced out of Puerto Rico</h3>
+      <p>Christopher Columbus's own son, Diego Columbus, used his inherited claim to govern all territory his father found, and pushed Ponce de León out as governor.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-ponce"></div>
+    <div class="tl-year">1513</div>
+    <div class="tl-card">
+      <span class="who-tag tag-ponce">Ponce de León</span>
+      <h3>Reaches Florida, names it, doesn't settle it</h3>
+      <p>Sailed north through the Bahamas looking for rumored "Bimini." Sighted land near modern St. Augustine in April 1513, named the whole territory La Florida, charted the coast south around the peninsula and the Dry Tortugas. Built nothing permanent.</p>
+      <div class="tl-route">Route: Puerto Rico &rarr; Bahamas &rarr; Florida (Atlantic coast) &rarr; around the peninsula &rarr; Dry Tortugas &rarr; Puerto Rico</div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-other"></div>
+    <div class="tl-year">1513</div>
+    <div class="tl-card">
+      <span class="who-tag tag-other">Vasco Núñez de Balboa</span>
+      <h3>Panama crossed, Pacific reached</h3>
+      <p>The conquest's first major move onto the American mainland, from a base in Panama, after the Caribbean islands were already under Spanish control.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-ponce"></div>
+    <div class="tl-year">1521</div>
+    <div class="tl-card">
+      <span class="who-tag tag-ponce">Ponce de León</span>
+      <h3>Second Florida expedition, and death</h3>
+      <p>Returned to Florida to actually build a colony this time. Wounded fighting the Calusa people; died of the wound in Cuba shortly after.</p>
+      <div class="tl-route">Route: Puerto Rico &rarr; Florida (west/southwest coast) &rarr; wounded, retreats to Cuba, dies</div>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-other"></div>
+    <div class="tl-year">1519&ndash;21</div>
+    <div class="tl-card">
+      <span class="who-tag tag-other">Hernán Cortés</span>
+      <h3>Mexico conquered</h3>
+      <p>The Aztec empire falls, using the same encomienda-based playbook already proven on the Caribbean islands for nearly three decades.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-other"></div>
+    <div class="tl-year">1565</div>
+    <div class="tl-card">
+      <span class="who-tag tag-other">Pedro Menéndez de Avilés</span>
+      <h3>St. Augustine actually founded</h3>
+      <p>44 years after Ponce de León's death. Sent to destroy a French Protestant colony and secure Florida for Spain. Becomes the oldest continuously occupied European-founded city in what's now the US &mdash; 42 years before Jamestown.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-usa"></div>
+    <div class="tl-year">1776</div>
+    <div class="tl-card">
+      <span class="who-tag tag-usa">13 British colonies</span>
+      <h3>The United States is born &mdash; a separate lineage</h3>
+      <p>Declares independence from Britain. This is a different colonial thread entirely from Spain's &mdash; the USA descends politically from England, not Spain, even though Spain had already been in the Americas for nearly 300 years by this point.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-usa"></div>
+    <div class="tl-year">1819</div>
+    <div class="tl-card">
+      <span class="who-tag tag-usa">Adams-Onís Treaty</span>
+      <h3>Spain cedes Florida to the US</h3>
+      <p>The first time Spanish territory in what's now the US changes hands to America &mdash; by treaty, not war, decades before Puerto Rico's turn.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-usa"></div>
+    <div class="tl-year">1846&ndash;48</div>
+    <div class="tl-card">
+      <span class="who-tag tag-usa">Mexican-American War</span>
+      <h3>The Southwest and California taken from Mexico</h3>
+      <p>The same use-of-force pattern the US would use on Spain fifty years later, tested first on a weaker neighbor. Full details on the <a href="../history/" style="color:var(--sea);font-weight:700;">Colonial Record</a>.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-usa"></div>
+    <div class="tl-year">1861&ndash;90</div>
+    <div class="tl-card">
+      <span class="who-tag tag-usa">United States</span>
+      <h3>The US builds the capability to fight Spain</h3>
+      <p>Post-Civil War industrialization, the 1883 New Navy Act (steel warships, influenced by Mahan's naval strategy), and the 1890 "closing of the frontier" redirecting expansion overseas instead of westward.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-usa"></div>
+    <div class="tl-year">1898</div>
+    <div class="tl-card">
+      <span class="who-tag tag-usa">Spanish-American War</span>
+      <h3>Puerto Rico, Guam, and the Philippines change hands</h3>
+      <p>Spain's remaining empire &mdash; Cuba, Puerto Rico, the Philippines &mdash; falls in a few months. The Treaty of Paris cedes Puerto Rico, Guam, and the Philippines directly to the US, and Cuba becomes independent (though US-controlled in practice). This family's own island changes owners for the second and last time.</p>
+    </div>
+  </div>
+
+  <div class="tl-item">
+    <div class="tl-dot person-usa"></div>
+    <div class="tl-year">1900&ndash;2022</div>
+    <div class="tl-card">
+      <span class="who-tag tag-usa">United States</span>
+      <h3>127 years of territorial status, still ongoing</h3>
+      <p>Foraker Act, the Insular Cases, Jones-Shafroth citizenship and shipping law, PROMESA, Hurricane Maria, Vaello Madero &mdash; the full modern chain is on the <a href="../history/" style="color:var(--sea);font-weight:700;">Colonial Record</a> page in complete detail.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="fam-source-note">
+  This page consolidates events already sourced in full on the <a href="../history/" style="color:var(--sea);font-weight:700;">Colonial Record</a> and <a href="../boriken/" style="color:var(--sea);font-weight:700;">Boriken</a> pages &mdash; see those pages for citations. Routes are approximate general directions of travel, not survey-grade navigation.
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">One continuous line, five hundred years long, ending on this family's own island.</div>
+  <a href="../history/">The Colonial Record &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
