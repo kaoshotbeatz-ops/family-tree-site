@@ -76,6 +76,29 @@ body {
   padding-bottom: 8px;
 }
 
+/* Photographic hero — real archived photo behind the page header, with a readable scrim */
+.fam-hero-photo {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+}
+.fam-hero-photo::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, var(--paper) 92%);
+}
+.fam-hero-photo .fam-hero-caption {
+  position: relative; z-index: 1;
+  width: 100%; text-align: center;
+  font-size: 11px; color: rgba(255,255,255,.85);
+  padding: 6px 12px 4px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
 @media (min-width: 900px) {
   .fam-wrap, .fam-header, .fam-footer, .fam-source-note, .fam-tocbar { max-width: 780px; }
   .archive-grid, .fact-grid { max-width: 780px; margin-left: auto; margin-right: auto; }
