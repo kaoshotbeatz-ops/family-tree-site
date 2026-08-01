@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>The Puerto Rican Cookbook · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+:root { --pop: #a8532e; --pop-wash: #f3e4da; }
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+
+.section-lead { padding: 0 18px; margin: 34px 0 14px; max-width: 780px; margin-left: auto; margin-right: auto; }
+.section-lead h2 { font-size: 24px; margin: 4px 0 6px; }
+.section-lead p { font-size: 14px; color: var(--ink-soft); max-width: 640px; }
+
+.recipe { background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px 24px; margin: 0 auto 16px; max-width: 780px; box-shadow: var(--shadow-card); }
+.recipe .tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--pop); background: var(--pop-wash); border-radius: 999px; padding: 3px 10px; margin-bottom: 8px; margin-right: 6px; }
+.recipe h3 { font-family: 'Instrument Serif', serif; font-size: 24px; margin: 0 0 2px; font-weight: 400; }
+.recipe .sub { font-size: 13px; color: var(--ink-soft); font-style: italic; margin-bottom: 12px; }
+.recipe h4 { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--sea); margin: 14px 0 6px; }
+.recipe ul, .recipe ol { margin: 0 0 8px 20px; font-size: 14.5px; color: var(--ink-soft); }
+.recipe li { margin-bottom: 4px; }
+.recipe .story { font-size: 13.5px; color: var(--ink-soft); border-top: 1px dashed var(--line); margin-top: 14px; padding-top: 10px; }
+.recipe-wrap { padding: 0 18px; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family archive</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../island/">The Island Itself</a>
+  <a href="../military/">Who Served</a>
+  <a href="../map/">Indigenous Map</a>
+  <a href="./" class="active">Cookbook</a>
+  <a href="../funfacts/">You Didn't Know</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">Five hundred years on one plate</div>
+  <h1>The Puerto Rican <em>cookbook</em></h1>
+  <p class="fam-sub">Every dish here carries the island's whole history &mdash; Taíno yuca and casabe, Spanish sofrito and pork, African plantain frying and one-pot rice. This is heritage you can actually cook, and it grows as family recipes get added. If anyone in the family has their own version of any of these, it replaces the general one.</p>
+</header>
+
+<div class="recipe-wrap">
+
+<div class="section-lead">
+  <h2>The foundation</h2>
+  <p>One thing before everything else: most Puerto Rican savory cooking starts from the same base.</p>
+</div>
+
+<div class="recipe">
+  <span class="tag">The base of everything</span>
+  <h3>Sofrito</h3>
+  <div class="sub">The flavor foundation &mdash; make a batch, keep it in the fridge or freeze it in cubes</div>
+  <h4>Ingredients</h4>
+  <ul>
+    <li>2 medium yellow onions, rough chopped</li>
+    <li>1 head of garlic, peeled</li>
+    <li>2 green bell peppers (or 1 bell + 8&ndash;10 ají dulce peppers if you can get them &mdash; that's the real island flavor)</li>
+    <li>1 big bunch cilantro (stems and all)</li>
+    <li>8&ndash;10 leaves culantro/recao if you can find it (Latin grocery) &mdash; this is the flavor most mainland versions are missing</li>
+  </ul>
+  <h4>Method</h4>
+  <ol>
+    <li>Blend everything until it's a coarse, bright-green purée. No cooking, no salt yet.</li>
+    <li>Keeps a week refrigerated, or freeze in ice-cube trays &mdash; one cube is one dish's worth.</li>
+  </ol>
+  <div class="story">Sofrito is Spanish in name and technique, but the ají dulce and recao that make Puerto Rican sofrito taste like Puerto Rico are New World plants the Taíno knew long before any Spaniard did.</div>
+</div>
+
+<div class="section-lead">
+  <h2>The mains</h2>
+</div>
+
+<div class="recipe">
+  <span class="tag">The national dish</span>
+  <h3>Arroz con Gandules</h3>
+  <div class="sub">Rice with pigeon peas &mdash; the dish that shows up at every Puerto Rican holiday table</div>
+  <h4>Ingredients</h4>
+  <ul>
+    <li>2 cups medium-grain rice, rinsed</li>
+    <li>1 can (15 oz) gandules (pigeon peas), drained</li>
+    <li>3 tbsp sofrito</li>
+    <li>2 tbsp achiote oil (or 1 packet saz&oacute;n con culantro y achiote)</li>
+    <li>4 oz diced ham or salted pork (optional but traditional)</li>
+    <li>2 tbsp tomato sauce &middot; 6&ndash;8 pimento-stuffed olives &middot; 1 tsp capers</li>
+    <li>2&frac12; cups water or broth &middot; salt to taste</li>
+  </ul>
+  <h4>Method</h4>
+  <ol>
+    <li>In a caldero (heavy pot), heat the achiote oil and brown the ham. Add sofrito and cook 2&ndash;3 minutes until fragrant.</li>
+    <li>Stir in tomato sauce, olives, capers, gandules. Add rice, stir to coat every grain.</li>
+    <li>Add water, bring to a boil uncovered until the water drops level with the rice.</li>
+    <li>Lower heat, cover, and do not touch it for 25 minutes. The crispy bottom layer that forms &mdash; the <em>pegao</em> &mdash; is the most fought-over part of the pot.</li>
+  </ol>
+  <div class="story">Rice came with Spain, gandules came across the Atlantic with enslaved Africans, and the one-pot caldero technique is Afro-Caribbean through and through &mdash; one dish, three continents.</div>
+</div>
+
+<div class="recipe">
+  <span class="tag">The showpiece</span>
+  <h3>Pernil</h3>
+  <div class="sub">Slow-roasted pork shoulder &mdash; crispy skin (cuerito) mandatory</div>
+  <h4>Ingredients</h4>
+  <ul>
+    <li>1 bone-in, skin-on pork shoulder (6&ndash;9 lbs)</li>
+    <li>1 head of garlic, mashed to a paste</li>
+    <li>3 tbsp olive oil &middot; 2 tbsp dried oregano &middot; 2 tbsp salt &middot; 1 tbsp black pepper</li>
+    <li>2 tbsp white vinegar or sour orange juice</li>
+  </ul>
+  <h4>Method</h4>
+  <ol>
+    <li>The night before: cut deep slits all over the meat (not the skin). Mash garlic, oregano, salt, pepper, oil, and vinegar into an adobo. Push it deep into every slit. Refrigerate overnight, skin side up, uncovered so the skin dries.</li>
+    <li>Roast at 300&deg;F, skin up, uncovered, about 45 minutes per pound &mdash; low and slow until it shreds with a fork.</li>
+    <li>Final 20&ndash;30 minutes: crank to 450&deg;F to blister the skin into crackling cuerito. Rest 20 minutes before pulling.</li>
+  </ol>
+  <div class="story">Pigs arrived with the Spanish in the 1500s &mdash; but slow-roasting them whole over fire became its own island art form, and lech&oacute;n asado at a roadside lechonera in the mountains is still one of the island's great experiences.</div>
+</div>
+
+<div class="recipe">
+  <span class="tag">Straight from the Taíno</span>
+  <h3>Mofongo</h3>
+  <div class="sub">Fried green plantain, mashed with garlic and chicharr&oacute;n</div>
+  <h4>Ingredients</h4>
+  <ul>
+    <li>3 green plantains, peeled and cut into 1-inch rounds</li>
+    <li>3 cloves garlic, mashed with a pinch of salt</li>
+    <li>&frac12; cup chicharr&oacute;n (pork cracklings), crushed &mdash; or crispy bacon in a pinch</li>
+    <li>2 tbsp olive oil &middot; oil for frying &middot; chicken broth to moisten</li>
+  </ul>
+  <h4>Method</h4>
+  <ol>
+    <li>Fry the plantain rounds at 350&deg;F until golden and cooked through, about 6&ndash;7 minutes.</li>
+    <li>In a pil&oacute;n (wooden mortar &mdash; itself a Taíno-descended tool) mash the hot plantains with the garlic paste, olive oil, and chicharr&oacute;n, in batches.</li>
+    <li>Pack into a bowl, unmold onto the plate, and serve with broth, or stuffed with garlic shrimp or pernil.</li>
+  </ol>
+  <div class="story">The plantain came from Africa, the pork from Spain &mdash; but mashing starches in a wooden pil&oacute;n is the direct descendant of how the Taíno processed yuca a thousand years ago. The tool on the counter is the oldest thing in the kitchen.</div>
+</div>
+
+<div class="recipe">
+  <span class="tag">The holiday marathon</span>
+  <h3>Pasteles</h3>
+  <div class="sub">Green banana and root masa around stewed pork, wrapped in banana leaf &mdash; the all-day family assembly line</div>
+  <h4>The short version</h4>
+  <ul>
+    <li><b>Masa:</b> grated green bananas, yaut&iacute;a (taro), and a little calabaza squash, seasoned with achiote oil and salt</li>
+    <li><b>Filling:</b> pork shoulder stewed with sofrito, olives, capers, tomato, garbanzos</li>
+    <li><b>Assembly:</b> spread masa on a banana leaf square, spoon filling in the center, fold into a packet, tie in pairs with string</li>
+    <li><b>Cook:</b> boil 45&ndash;60 minutes in salted water. Freeze beautifully &mdash; which is why families make a hundred at a time.</li>
+  </ul>
+  <div class="story">Nobody makes pasteles alone &mdash; it's an assembly line of grandmothers, cousins, and anyone who can be trusted to fold a leaf. The dish is the gathering. If anyone in this family has the family's own pasteles recipe, it belongs here in place of this one.</div>
+</div>
+
+<div class="section-lead">
+  <h2>The sides</h2>
+</div>
+
+<div class="recipe">
+  <span class="tag">Every table</span>
+  <h3>Habichuelas Guisadas</h3>
+  <div class="sub">Stewed beans &mdash; the everyday soul of the plate</div>
+  <h4>Ingredients</h4>
+  <ul>
+    <li>2 cans pink or red beans, undrained &middot; 3 tbsp sofrito</li>
+    <li>2 tbsp tomato sauce &middot; 1 packet saz&oacute;n &middot; a few olives</li>
+    <li>&frac12; cup diced calabaza squash or potato &middot; 1 cup water</li>
+  </ul>
+  <h4>Method</h4>
+  <ol>
+    <li>Sizzle the sofrito in a little oil until fragrant. Add tomato sauce, saz&oacute;n, olives.</li>
+    <li>Add beans with their liquid, the squash, and water. Simmer 20&ndash;25 minutes until the squash is tender and the broth thickens.</li>
+    <li>Serve over white rice. This plus rice is dinner for most of the island most nights.</li>
+  </ol>
+</div>
+
+<div class="recipe">
+  <span class="tag">Twice-fried</span>
+  <h3>Tostones</h3>
+  <div class="sub">Smashed, twice-fried green plantains</div>
+  <h4>Method</h4>
+  <ol>
+    <li>Fry 1-inch green plantain rounds at 325&deg;F for 5 minutes. Remove.</li>
+    <li>Smash each one flat with a tostonera or the bottom of a glass.</li>
+    <li>Dip briefly in salted garlic water (the secret step), then fry again at 375&deg;F until crisp and golden. Salt immediately.</li>
+  </ol>
+</div>
+
+<div class="recipe">
+  <span class="tag">The oldest recipe on this page</span>
+  <h3>Casabe</h3>
+  <div class="sub">Yuca flatbread &mdash; the actual bread of the Taíno, still made today</div>
+  <h4>Method</h4>
+  <ol>
+    <li>Peel and finely grate fresh yuca. Squeeze the gratings hard in a cloth to press out as much liquid as possible &mdash; this step matters; the fresh juice of bitter yuca varieties is toxic until pressed and cooked, which the Taíno knew and solved a thousand years before food science.</li>
+    <li>Spread the pressed, crumbly yuca meal in a thin round on a hot, dry pan or griddle.</li>
+    <li>Cook until it sets into a firm flatbread, flip, cook the other side. That's it &mdash; no salt, no oil, no yeast.</li>
+  </ol>
+  <div class="story">This is the direct, unbroken line: the exact bread the Taíno made on clay burenes, still sold in Puerto Rican markets today. Every other recipe on this page is a fusion. This one isn't &mdash; it's simply theirs, still here. See the <a href="../boriken/" style="color:var(--sea);font-weight:700;">Boriken page</a> for the history.</div>
+</div>
+
+<div class="section-lead">
+  <h2>Sweet, and to drink</h2>
+</div>
+
+<div class="recipe">
+  <span class="tag">Christmas in a bottle</span>
+  <h3>Coquito</h3>
+  <div class="sub">Coconut rum punch &mdash; every family guards its own ratio</div>
+  <h4>Ingredients</h4>
+  <ul>
+    <li>1 can (13.5 oz) coconut milk &middot; 1 can (15 oz) cream of coconut</li>
+    <li>1 can (12 oz) evaporated milk &middot; 1 can (14 oz) sweetened condensed milk</li>
+    <li>1&frac12; cups white Puerto Rican rum (to taste &mdash; and it must be Puerto Rican)</li>
+    <li>1 tsp vanilla &middot; &frac12; tsp ground cinnamon &middot; whole cinnamon sticks for the bottles</li>
+  </ul>
+  <h4>Method</h4>
+  <ol>
+    <li>Blend everything. Bottle with a cinnamon stick in each. Refrigerate at least 4 hours &mdash; better after 2 days.</li>
+    <li>Shake before serving, over ice or straight, dusted with cinnamon.</li>
+  </ol>
+  <div class="story">Every Puerto Rican family swears theirs is the correct recipe and everyone else's is wrong. If this family has its own ratio, it goes here, and then it becomes the correct one.</div>
+</div>
+
+<div class="recipe">
+  <span class="tag">The gentle one</span>
+  <h3>Tembleque</h3>
+  <div class="sub">Coconut pudding that trembles &mdash; that's literally the name</div>
+  <h4>Ingredients</h4>
+  <ul>
+    <li>2 cans (13.5 oz each) coconut milk &middot; &frac12; cup sugar</li>
+    <li>&frac12; cup cornstarch &middot; &frac14; tsp salt &middot; ground cinnamon to finish</li>
+  </ul>
+  <h4>Method</h4>
+  <ol>
+    <li>Whisk everything cold in a saucepan until the cornstarch dissolves completely.</li>
+    <li>Cook over medium heat, whisking constantly, until it thickens and turns glossy, 8&ndash;10 minutes.</li>
+    <li>Pour into a mold or cups, chill 4+ hours, unmold, dust generously with cinnamon. It should wobble &mdash; hence the name.</li>
+  </ol>
+</div>
+
+</div>
+
+<div class="fam-source-note">
+  These are traditional island recipes in their common form, written for this family's kitchen. The standing rule, same as everywhere else on this site: family versions outrank general ones &mdash; when a relative's own recipe for any dish surfaces, it replaces what's here, credited by name.
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">The pil&oacute;n on the counter is the oldest thing in the kitchen.</div>
+  <a href="../boriken/">Boriken &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
