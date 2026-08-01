@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>Open Leads · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+:root { --pop: #0e6e71; --pop-wash: #e2eef1; }
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+
+.lead-section { padding: 0 18px; margin: 30px 0 14px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.lead-section h2 { font-size: 22px; margin: 4px 0 6px; }
+.lead-section > p { font-size: 13.5px; color: var(--ink-soft); }
+.lead-grid { max-width: 800px; margin: 0 auto; padding: 0 18px; }
+.lead-row { background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start; }
+.lead-row .needs { flex-shrink: 0; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--pop); background: var(--pop-wash); border-radius: 999px; padding: 4px 10px; margin-top: 2px; white-space: nowrap; }
+.lead-row .body h3 { font-family: 'Instrument Serif', serif; font-size: 17px; font-weight: 400; margin: 0 0 3px; }
+.lead-row .body p { font-size: 13.5px; color: var(--ink-soft); margin: 0; }
+.lead-row .body a { color: var(--sea); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family archive</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../island/">The Island Itself</a>
+  <a href="../military/">Who Served</a>
+  <a href="../map/">Indigenous Map</a>
+  <a href="../cookbook/">Cookbook</a>
+  <a href="../remembered/">Remembered</a>
+  <a href="./" class="active">Open Leads</a>
+  <a href="../funfacts/">You Didn't Know</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">Nothing gets lost in the scroll</div>
+  <h1>Open <em>leads</em></h1>
+  <p class="fam-sub">Every unresolved thread across the whole site, in one place, so nothing sits scattered and forgotten in a page nobody revisits. Each one says exactly what's missing and what it would take to close it.</p>
+</header>
+
+<div class="lead-section">
+  <h2>Needs you specifically</h2>
+  <p>These can't be closed by more research alone &mdash; they need a name, a memory, or you logged into an account.</p>
+</div>
+<div class="lead-grid">
+  <div class="lead-row">
+    <span class="needs">Your memory</span>
+    <div class="body"><h3>Uncle Ray's children</h3><p>Raymond "Uncle Ray" Ceballo (Rosa's brother) had a number of kids, Omar's actual cousins &mdash; no names recorded yet. Give any names/details and they go straight into <a href="../story/">the book</a>.</p></div>
+  </div>
+  <div class="lead-row">
+    <span class="needs">Your memory</span>
+    <div class="body"><h3>Elkyn's children</h3><p>Elkyn Johnathan Huertas Vargas, Omar's brother, has kids not yet documented anywhere on the site.</p></div>
+  </div>
+  <div class="lead-row">
+    <span class="needs">Ancestry/Fold3 login</span>
+    <div class="body"><h3>The actual draft card images</h3><p>Seven family members' WWI/WWII draft registrations are described in detail on <a href="../military/">Who Served</a>, but the source images themselves (Guillermo, Eusebio, Amado, Moncho, Pedro Marrero y Medina, Juan Casiano Vargas Lebr&oacute;n, Joaqu&iacute;n Rivera Cruz) were never pulled into the <a href="../archive/">Image Archive</a>. Needs a logged-in session to download and embed.</p></div>
+  </div>
+  <div class="lead-row">
+    <span class="needs">Family memory</span>
+    <div class="body"><h3>The sterilization program</h3><p>No archival record type can confirm or rule out whether anyone in the family was affected by Puerto Rico's mid-century sterilization program &mdash; only family memory of "la operaci&oacute;n" could surface this, documented on <a href="../history/">The Colonial Record</a>.</p></div>
+  </div>
+</div>
+
+<div class="lead-section">
+  <h2>Needs more research access</h2>
+  <p>Real leads, blocked by a tool limitation rather than a missing fact.</p>
+</div>
+<div class="lead-grid">
+  <div class="lead-row">
+    <span class="needs">PARES access</span>
+    <div class="body"><h3>Spain's own national archive</h3><p>The Archivo General de Indias, searchable through PARES (pares.cultura.gob.es), likely holds material on Puerto Rico going back to the 1490s &mdash; slave-trade authorizations, early colonial correspondence &mdash; that no automated search has been able to pull. Worth a human sitting down at the actual site directly.</p></div>
+  </div>
+  <div class="lead-row">
+    <span class="needs">Not yet digitized anywhere found</span>
+    <div class="body"><h3>The other slave-registry districts</h3><p>Only District 1 of the 1872 Registro Central de Esclavos has been found digitized online. Puerto Rico had multiple districts &mdash; the others may exist only on microfilm or in physical archives not yet searched.</p></div>
+  </div>
+  <div class="lead-row">
+    <span class="needs">Careful manual pass needed</span>
+    <div class="body"><h3>Matching names to birthplaces in the registry</h3><p>Only 4 of 566 names on the <a href="../remembered/">Remembered</a> page have a confirmed birthplace tag &mdash; automated OCR matching couldn't reliably link most names to their own birthplace field. A slower, page-by-page manual read against the actual scans would close this properly.</p></div>
+  </div>
+</div>
+
+<div class="lead-section">
+  <h2>Unverified, flagged honestly</h2>
+  <p>Real leads from other researchers, not yet backed by a primary document this project has actually seen &mdash; kept separate from confirmed fact on purpose.</p>
+</div>
+<div class="lead-grid">
+  <div class="lead-row">
+    <span class="needs">Non-primary source only</span>
+    <div class="body"><h3>Maria de los Angeles Ortiz</h3><p>Would be Omar's 8th great-grandmother if verified &mdash; proposed by another researcher's public tree, not backed by any document this project has seen. Two more Calderón siblings (Nemecio, Juana Francisca) come from the same unverified source.</p></div>
+  </div>
+  <div class="lead-row">
+    <span class="needs">Family-told, service unconfirmed</span>
+    <div class="body"><h3>Angel A. Marrero's military service</h3><p>Omar remembers Angel serving; no record has surfaced across every U.S. military collection searched. Stays open on <a href="../military/">Who Served</a> until a document closes it either way.</p></div>
+  </div>
+</div>
+
+<div class="fam-source-note">
+  This page only lists what's genuinely still open &mdash; everything already resolved lives on its own proper page, not here.
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">A gap named plainly is easier to close than one nobody remembers is there.</div>
+  <a href="../story/">Read the book &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
