@@ -199,17 +199,48 @@ function fit(){
   scale=Math.min(v.width/(w+40), v.height/(h+40), 1);
   tx=10; ty=Math.max(10,(v.height - h*scale)/2); apply();
 }
-document.getElementById('zin').onclick=()=>{scale=Math.min(2.2,scale*1.2);apply();};
-document.getElementById('zout').onclick=()=>{scale=Math.max(.15,scale/1.2);apply();};
+document.getElementById('zin').onclick=()=>{scale=Math.min(2.2,scale*1.15);apply();};
+document.getElementById('zout').onclick=()=>{scale=Math.max(.15,scale/1.15);apply();};
 document.getElementById('zfit').onclick=fit;
 let drag=null;
 vp.addEventListener('pointerdown',e=>{ if(e.target.closest('.toggle'))return;
   drag={x:e.clientX-tx,y:e.clientY-ty}; vp.classList.add('dragging'); vp.setPointerCapture(e.pointerId);});
 vp.addEventListener('pointermove',e=>{ if(!drag)return; tx=e.clientX-drag.x; ty=e.clientY-drag.y; apply();});
 vp.addEventListener('pointerup',()=>{drag=null;vp.classList.remove('dragging');});
+/* Zoom is deliberately gentle: each wheel/trackpad tick nudges scale by at most ~4%,
+   so a fast trackpad swipe doesn't fling the tree past a readable size. */
 vp.addEventListener('wheel',e=>{ e.preventDefault();
-  const k = e.deltaY<0?1.1:1/1.1; const nx=e.offsetX, ny=e.offsetY;
-  tx = nx-(nx-tx)*k; ty = ny-(ny-ty)*k; scale=Math.max(.15,Math.min(2.2,scale*k)); apply(); },{passive:false});
+  const step = Math.max(-1, Math.min(1, -e.deltaY / 100));
+  const k = 1 + step*0.04;
+  const r = vp.getBoundingClientRect();
+  const nx = e.clientX - r.left, ny = e.clientY - r.top;
+  const newScale = Math.max(.15,Math.min(2.2,scale*k));
+  const actualK = newScale/scale;
+  tx = nx-(nx-tx)*actualK; ty = ny-(ny-ty)*actualK; scale = newScale; apply(); },{passive:false});
+
+/* Pinch-to-zoom on touch (two fingers), separate from single-finger pan */
+let pinch=null;
+vp.addEventListener('touchstart',e=>{
+  if(e.touches.length===2){
+    const [a,b]=e.touches;
+    pinch={ d: Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY), scale };
+    drag=null;
+  }
+},{passive:true});
+vp.addEventListener('touchmove',e=>{
+  if(e.touches.length===2 && pinch){
+    e.preventDefault();
+    const [a,b]=e.touches;
+    const d = Math.hypot(a.clientX-b.clientX, a.clientY-b.clientY);
+    const r = vp.getBoundingClientRect();
+    const midx = (a.clientX+b.clientX)/2 - r.left, midy = (a.clientY+b.clientY)/2 - r.top;
+    const newScale = Math.max(.15,Math.min(2.2, pinch.scale * (d/pinch.d)));
+    const actualK = newScale/scale;
+    tx = midx-(midx-tx)*actualK; ty = midy-(midy-ty)*actualK; scale = newScale; apply();
+  }
+},{passive:false});
+vp.addEventListener('touchend',e=>{ if(e.touches.length<2) pinch=null; },{passive:true});
+
 setTimeout(fit, 120);
 
 (function () {
