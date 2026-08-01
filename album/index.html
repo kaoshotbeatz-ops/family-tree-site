@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>The Family Album · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+
+.album-section { margin-bottom: 40px; }
+.album-section-head { padding: 0 18px; margin-bottom: 12px; }
+.album-section-head h2 { font-size: 26px; margin: 4px 0 6px; }
+.album-section-head p { font-size: 14px; color: var(--ink-soft); max-width: 640px; }
+.album-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px; padding: 0 18px;
+}
+.album-item {
+  background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-lg);
+  overflow: hidden; box-shadow: var(--shadow-card);
+}
+.album-item img { width: 100%; height: 270px; object-fit: cover; display: block; cursor: zoom-in; }
+.album-item .cap { padding: 10px 14px 14px; font-size: 12.5px; color: var(--ink-soft); }
+.album-item .cap b { display: block; color: var(--ink); font-size: 13.5px; margin-bottom: 2px; }
+.memorial-note { background: var(--paper-raised); border-left: 4px solid #8a6d6d; border-radius: var(--radius-lg);
+  padding: 14px 18px; margin: 0 18px 16px; font-size: 14px; color: var(--ink-soft); max-width: 680px; }
+
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 200; background: rgba(20,16,10,.92);
+  align-items: center; justify-content: center; padding: 20px; cursor: zoom-out;
+}
+#lightbox img { max-width: 100%; max-height: 90vh; border-radius: 6px; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family album</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../story/">Book</a>
+  <a href="./" class="active">Family Album</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../island/">The Island Itself</a>
+  <a href="../military/">Who Served</a>
+  <a href="../map/">Indigenous Map</a>
+  <a href="../funfacts/">You Didn't Know</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<div class="fam-hero-photo" style="background-image:url('../archive/img/family/christmas_ita_thelma_rosa.jpg');background-position:center 30%;">
+  <div class="fam-hero-caption">Ita, Thelma &amp; Rosa &mdash; one Christmas, one frame</div>
+</div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">Shared and identified by Omar &middot; July 2026 &middot; digitally remastered</div>
+  <h1>The family <em>album</em></h1>
+  <p class="fam-sub">The people themselves &mdash; not records, faces. Every photo here came from Omar's own hands and albums, was identified by him, and was digitally cleaned and color-recovered from the faded originals. The untouched originals are preserved forever in the family archive on our own servers.</p>
+</header>
+
+<div class="album-section">
+  <div class="album-section-head">
+    <h2>Thelma Ruth Broadbent, 1943&ndash;2019</h2>
+    <p>Omar's grandmother. Her chapter in the book runs from Arecibo to El Paso and back; these are her later years, at home with her puppies.</p>
+  </div>
+  <div class="album-grid">
+    <div class="album-item"><img src="../archive/img/family/thelma_black_puppy_1.jpg" alt="Thelma with the black puppy" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Thelma</b>With the black puppy.</div></div>
+    <div class="album-item"><img src="../archive/img/family/thelma_black_puppy_2.jpg" alt="Thelma with the black puppy, second frame" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Thelma</b>Same visit, second frame.</div></div>
+    <div class="album-item"><img src="../archive/img/family/thelma_portrait_navy.jpg" alt="Thelma, portrait in navy" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Thelma &mdash; portrait</b>At home among her plates and china.</div></div>
+    <div class="album-item"><img src="../archive/img/family/thelma_white_puppy_1.jpg" alt="Thelma with the white puppy" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Thelma</b>With the white puppy.</div></div>
+    <div class="album-item"><img src="../archive/img/family/thelma_white_puppy_2.jpg" alt="Thelma with the white puppy, second frame" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Thelma</b>Second frame.</div></div>
+  </div>
+</div>
+
+<div class="album-section">
+  <div class="album-section-head">
+    <h2>Ita &mdash; Milagros Arocho Hern&aacute;ndez, 1923&ndash;1996</h2>
+    <p>The heart of the Arecibo line, in Polaroids and Christmas prints.</p>
+  </div>
+  <div class="album-grid">
+    <div class="album-item"><img src="../archive/img/family/ita_milagros_christmas_gift_1.jpg" alt="Ita opening a Christmas gift" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Ita &mdash; Christmas gift</b>Opening a present, 1970s, vinyl record on the wall.</div></div>
+    <div class="album-item"><img src="../archive/img/family/ita_milagros_christmas_gift_2.jpg" alt="Ita opening a Christmas gift, second frame" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Ita &mdash; Christmas gift</b>Moments later.</div></div>
+    <div class="album-item"><img src="../archive/img/family/ita_polaroid_sorting_photos.jpg" alt="Ita sorting photographs" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Ita sorting photographs</b>Doing exactly what this page does &mdash; keeping the family's photos.</div></div>
+    <div class="album-item"><img src="../archive/img/family/ita_with_omar_elkyn_cake.jpg" alt="Ita with Omar and Elkyn" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Ita with Omar &amp; Elkyn</b>Cake on the cart, Last Supper on the wall.</div></div>
+    <div class="album-item"><img src="../archive/img/family/christmas_ita_thelma_rosa.jpg" alt="Ita, Thelma and Rosa at Christmas" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Ita, Thelma &amp; Rosa</b>Three of the book's central women, one Christmas frame.</div></div>
+    <div class="album-item"><img src="../archive/img/family/birthday_ita_yadyra_elkyn_omar_polaroid.jpg" alt="Birthday party with Ita, Yadyra, Elkyn and Omar" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Birthday party</b>Ita, Yadyra, Elkyn and Omar &mdash; Polaroid.</div></div>
+  </div>
+</div>
+
+<div class="album-section">
+  <div class="album-section-head">
+    <h2>Growing up &mdash; Omar, Elkyn &amp; Yadyra</h2>
+  </div>
+  <div class="album-grid">
+    <div class="album-item"><img src="../archive/img/family/omar_first_birthday_with_yadyra.jpg" alt="Omar's first birthday" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Omar's first birthday</b>The cake reads "Happy Birthday Omar" &mdash; young Yadyra beside him.</div></div>
+    <div class="album-item"><img src="../archive/img/family/christmas_toys_yadyra_elkyn_omar_polaroid.jpg" alt="Christmas morning with toys" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Christmas morning</b>Yadyra with Omar and Elkyn and the Fisher-Price fire truck.</div></div>
+    <div class="album-item"><img src="../archive/img/family/album_page_paris_elsa_omar_elkyn_yadyra_liberty.jpg" alt="Paris and Elsa with Omar, Elkyn and Yadyra near the Statue of Liberty" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Uncle Paris &amp; Elsa</b>Harbor bleachers, Statue of Liberty in the distance &mdash; with Omar, Elkyn and Yadyra.</div></div>
+    <div class="album-item"><img src="../archive/img/family/album_page_yadyra_cecilia_kimmy_rosa.jpg" alt="Album page with Yadyra, Cecilia, Kimmy and Rosa" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Yadyra, Cecilia, Kimmy &amp; Rosa</b>Top: Yadyra with Cecilia (Yvonne's daughter). Middle: Kimmy. Bottom: Rosa.</div></div>
+    <div class="album-item"><img src="../archive/img/family/omar_with_beat_machine.jpg" alt="Omar with his beat machine" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Omar</b>With the beat machine.</div></div>
+    <div class="album-item"><img src="../archive/img/family/omar_and_poli.jpg" alt="Omar and Poli at home" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Omar &amp; Poli</b>At home.</div></div>
+  </div>
+</div>
+
+<div class="album-section">
+  <div class="album-section-head">
+    <h2>Papi &mdash; Juan Jos&eacute; Huertas Vargas, 1946&ndash;2021</h2>
+  </div>
+  <div class="album-grid">
+    <div class="album-item"><img src="../archive/img/family/juan_jose_and_mother_beatriz_nyc_1970s.jpg" alt="Juan José with his mother Beatriz, 1970s New York" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Juan Jos&eacute; &amp; his mother Beatriz</b>1970s, New York backdrop &mdash; the only photo of Beatriz Vargas y Rom&aacute;n in this archive.</div></div>
+    <div class="album-item"><img src="../archive/img/family/juan_jose_driving.jpg" alt="Juan José driving" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Papi driving</b>At the wheel.</div></div>
+    <div class="album-item"><img src="../archive/img/family/papi_bed_visit_omar_omarjr_elkyn_manny.jpg" alt="Visiting Papi" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Visiting Papi</b>Omar, Omar Jr, Elkyn and Manny around Juan Jos&eacute;.</div></div>
+    <div class="album-item"><img src="../archive/img/family/papi_bed_visit_with_elkyn.jpg" alt="Papi and Elkyn, thumbs up" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Papi &amp; Elkyn</b>Thumbs up.</div></div>
+    <div class="album-item"><img src="../archive/img/family/papi_bed_visit_group_juanjr_pablo.jpg" alt="Visiting Papi with Juan Jr and Pablo" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Visiting Papi</b>With Juan Jr and Pablo.</div></div>
+    <div class="album-item"><img src="../archive/img/family/pablo_huertas.jpg" alt="Pablo Huertas" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Pablo Huertas</b>Omar's uncle &mdash; whose text message settled the Jos&eacute; Manuel question in the book.</div></div>
+  </div>
+</div>
+
+<div class="album-section">
+  <div class="album-section-head">
+    <h2>The Ceballo side &mdash; Angel, Rosa's family &amp; friends</h2>
+  </div>
+  <div class="album-grid">
+    <div class="album-item"><img src="../archive/img/family/angel_marrero_young_birthday_1980s.jpg" alt="Young Angel at a birthday" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Angel &mdash; young</b>Brown tracksuit, birthday cake, Bacard&iacute; and Shasta on the table.</div></div>
+    <div class="album-item"><img src="../archive/img/family/angel_marrero_now_2026.jpg" alt="Angel today" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Angel &mdash; now</b>The man who raised Omar, in a Puerto Rico shirt.</div></div>
+    <div class="album-item"><img src="../archive/img/family/family_party_moncho_alicia_rosa_yadyra_omar.jpg" alt="Family party" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Family party</b>Moncho, Alicia, Rosa, Yadyra and Omar as a boy &mdash; per Omar's identification.</div></div>
+    <div class="album-item"><img src="../archive/img/family/raymond_ceballo_beach.jpg" alt="Raymond Ceballo at the beach" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Raymond Ceballo</b>At the beach with two children &mdash; possibly Rosa and Iris's brother; research open.</div></div>
+    <div class="album-item"><img src="../archive/img/family/album_page_angilo_and_maria_friends_of_rosa.jpg" alt="Angilo and Maria, friends of Rosa" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Angilo &amp; Maria</b>Friends of Rosa (not blood family), from Rosa's own album.</div></div>
+    <div class="album-item"><img src="../archive/img/family/album_page_angilo_maria_party_3up.jpg" alt="Angilo and Maria, three more frames" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Angilo &amp; Maria (2)</b>Three more frames from the same night.</div></div>
+  </div>
+</div>
+
+<div class="album-section">
+  <div class="album-section-head">
+    <h2>The oldest prints</h2>
+    <p>The family's oldest paper &mdash; some faces now named, some still waiting. If you recognize anyone, tell Omar.</p>
+  </div>
+  <div class="album-grid">
+    <div class="album-item"><img src="../archive/img/family/huertas_oval_portrait_and_young_man.jpg" alt="Oval portrait and young man" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Two old prints</b>The young man is believed to be <b style="display:inline">Amado Marrero Montalvo</b> (Omar: "I think that's Amado"); the woman in the oval is family, name still to be recovered.</div></div>
+    <div class="album-item"><img src="../archive/img/family/boy_white_suit_first_communion.jpg" alt="Boy in white suit" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Juan Ram&oacute;n Marrero Arocho, 1945&ndash;1959</b>Ita's lost son &mdash; Omar's great-uncle, who died at thirteen in Arecibo. Until tonight he was only a death record; this is his face. Identified by Omar.</div></div>
+    <div class="album-item"><img src="../archive/img/family/man_in_suit_1950s.jpg" alt="Man in a suit, 1950s" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Moncho &mdash; Ram&oacute;n Ceballo Vargas</b>1950s print. Rosa and Iris's father, who lived to 103. Identified by Omar.</div></div>
+    <div class="album-item"><img src="../archive/img/family/woman_on_swing_nyc.jpg" alt="Woman on a swing" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Alicia Marrero Alvelo</b>Moncho's wife, on a playground swing &mdash; New York era. Identified by Omar.</div></div>
+    <div class="album-item"><img src="../archive/img/family/two_children_vintage.jpg" alt="Two children" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Believed to be Angel &amp; Yadyra as children</b>Omar: "I think that's mom and Angel" &mdash; the ages fit (Angel b. 1954, Yadyra b. 1959).</div></div>
+  </div>
+</div>
+
+<div class="album-section">
+  <div class="album-section-head">
+    <h2>In memory</h2>
+    <p>Rosa A. Marrero's services, and Thelma's card &mdash; kept here with the same care the family gave them.</p>
+  </div>
+  <div class="memorial-note"><b>Rosa A. Marrero (1933&ndash;2022)</b> &mdash; services by Hungerford &amp; Clark Funeral Home; interment at Greenfield Cemetery, Hempstead/Uniondale, NY. <b>Thelma Ruth Broadbent (Sep 27, 1943 &ndash; Sep 14, 2019)</b> &mdash; her card gave this archive her middle name and her exact dates.</div>
+  <div class="album-grid">
+    <div class="album-item"><img src="img/memorial/thelma_funeral_card.jpg" alt="Thelma Ruth Broadbent funeral card" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Thelma's card</b>"When Tomorrow Starts Without Me" &mdash; September 27, 1943 &ndash; September 14, 2019.</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_full_collage_board.jpg" alt="Photo collage board from Rosa's services" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Rosa's life, one board</b>The collage the family made &mdash; her whole life in a hundred small circles.</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_full_collage_board_2.jpg" alt="Second collage board" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>The collage, again</b>Worth two photographs.</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_mothers_day_frame.jpg" alt="Mother's Day tribute frame" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Mother's Day frame</b>The note inside is signed "your son, Angel."</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_framed_portrait.jpg" alt="Framed portrait of Rosa" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Rosa, framed</b>With family, sunset behind them.</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_beloved_mother_spray.jpg" alt="Beloved Mother casket spray" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>"Beloved Mother"</b>Roses and hydrangeas on the casket.</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_beloved_abuela_wreath.jpg" alt="Beloved Abuela wreath" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>"Beloved Abuela"</b>&nbsp;</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_flower_cross.jpg" alt="Flower cross with ribbon" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>The cross</b>"Loving Nana and Great Grandma."</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_white_flowers_stand.jpg" alt="White flowers from her children" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>From her children</b>"De tus hijos y familia."</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_casket_wide.jpg" alt="The chapel" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Chapel A</b>&nbsp;</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_casket_bench.jpg" alt="The kneeler before the casket" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>The kneeler</b>&nbsp;</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_collage_on_easel.jpg" alt="Collage on the easel" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>On the easel</b>&nbsp;</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_chapel_easel_collage.jpg" alt="The easel across the room" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>Across the room</b>&nbsp;</div></div>
+    <div class="album-item"><img src="img/memorial/rosa_chapel_sign.jpg" alt="Chapel sign for Rosa A. Marrero" onclick="openLightbox(this.src)" loading="lazy"><div class="cap"><b>The sign</b>Hungerford &amp; Clark &middot; interment Greenfield Cemetery &mdash; the record this archive didn't have until tonight.</div></div>
+  </div>
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">Every face here was named by someone who loved them. That's the whole point of this site.</div>
+  <a href="../story/">Read the full book &rarr;</a>
+</footer>
+
+</div>
+
+<div id="lightbox" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox').style.display = 'flex';
+}
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+<script src="../assets/read-aloud.js"></script>
+</body>
+</html>
