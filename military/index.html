@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>Who Served · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+:root { --pop: #2f4a3c; --pop-wash: #e9efe9; }
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+
+.section-lead { padding: 0 18px; margin: 34px 0 14px; }
+.section-lead h2 { font-size: 24px; margin: 4px 0 6px; }
+.section-lead p { font-size: 14px; color: var(--ink-soft); max-width: 620px; }
+
+.vet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; padding: 0 18px; }
+.vet-card { background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 22px 24px; box-shadow: var(--shadow-card); }
+.vet-card .badge { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--pop); background: var(--pop-wash); border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
+.vet-card .badge.open { color: #8a7a4f; background: #f3ecd8; }
+.vet-card h3 { font-family: 'Instrument Serif', serif; font-size: 24px; margin: 0 0 4px; font-weight: 400; }
+.vet-card .dates { font-size: 12.5px; color: var(--ink-soft); margin-bottom: 12px; }
+.vet-card p { font-size: 14.5px; color: var(--ink-soft); margin: 0 0 10px; }
+.vet-card p:last-of-type { margin-bottom: 0; }
+.vet-card .who { font-size: 12px; color: #8a9490; border-top: 1px dashed var(--line); margin-top: 14px; padding-top: 10px; }
+
+.plain-box { background: var(--paper-raised); border: 1px dashed var(--line); border-radius: var(--radius-lg); padding: 16px 20px; margin: 0 18px 30px; font-size: 14px; color: var(--ink-soft); max-width: 700px; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>Family only</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../island/">The Island Itself</a>
+  <a href="./" class="active">Who Served</a>
+  <a href="../funfacts/">You Didn't Know</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<div class="fam-hero-photo" style="background-image:url('img/puerto_ricans_wwii.jpg');">
+  <div class="fam-hero-caption">Puerto Ricans in U.S. military service, World War II</div>
+</div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">One name confirmed, one still open</div>
+  <h1>Who <em>served</em></h1>
+  <p class="fam-sub">Every family member who wore a U.S. uniform gets a page here &mdash; documented where the record allows, honestly marked open where it doesn't. This section grows as more service records surface.</p>
+</header>
+
+<div class="section-lead">
+  <h2>Confirmed service</h2>
+  <p>Backed by primary military and government records, not family memory alone.</p>
+</div>
+
+<div class="vet-grid">
+  <div class="vet-card">
+    <span class="badge">U.S. Army &middot; Vietnam</span>
+    <h3>Orlando Cruz Arocho</h3>
+    <div class="dates">25 Jan 1947 &ndash; 19 Apr 2000 &middot; Arecibo, Puerto Rico</div>
+    <p>Son of Rosa Mar&iacute;a Arocho Hern&aacute;ndez and V&iacute;ctor Cruz Feliciano &mdash; first cousin once removed on Angel A. Marrero's side of the family. The U.S. Veterans' Gravesites index names him directly: <strong>Pv2, U.S. Army, Vietnam</strong>. He's buried at Cementerio Municipal in Arecibo.</p>
+    <p>Nothing about his service had ever been passed down as family story before this project found the record &mdash; it was the Veterans' Gravesites index itself that first revealed he'd served at all. Five more independent sources (an obituary, the Social Security Death Index, the Social Security Applications and Claims Index, and the VA's own BIRLS Death File) all agree on his date of death, and the Applications and Claims Index independently reconfirms his parents.</p>
+    <div class="who">U.S. Veterans' Gravesites ca. 1775-2019; U.S. Obituary Collection 1930-Current; U.S. Social Security Death Index 1935-2014; U.S. Social Security Applications and Claims Index 1936-2007; U.S. Department of Veterans Affairs BIRLS Death File 1850-2020. Confirmed 2026-07-23.</div>
+  </div>
+</div>
+
+<div class="section-lead">
+  <h2>Remembered, still being confirmed</h2>
+  <p>Family testimony counts as fact in this project &mdash; but it's still worth naming plainly when the paper trail hasn't caught up yet.</p>
+</div>
+
+<div class="vet-grid">
+  <div class="vet-card">
+    <span class="badge open">Service unconfirmed by record</span>
+    <h3>Angel A. Marrero</h3>
+    <div class="dates">b. 24 Jan 1954 &middot; the man who raised Omar</div>
+    <p>Omar remembers Angel having served, and that memory is recorded here because this project treats direct testimony from immediate family as fact, not as a hint that needs a document to be true.</p>
+    <p>But it's honest to say plainly: no military record has surfaced for him yet. His own Ancestry hint queue (9 hints, all reviewed) has no service, draft, or discharge record among them, and a direct search of every U.S. military collection reachable &mdash; muster rolls, BIRLS, Veterans' Gravesites, enlistment and service records &mdash; under his name and birthdate returned no match.</p>
+    <p>That's not proof he didn't serve. Angel would have come of draft age in 1972, right as draft registration itself was winding down, and a lot of that era's service &mdash; especially without a combat deployment or a death record to trigger VA files &mdash; simply isn't digitized yet on the databases this project can search. This entry stays open until a record closes it one way or the other, or his own discharge paperwork (DD-214) turns up.</p>
+    <div class="who">Family testimony (Omar Huertas). Ancestry hint queue reviewed 2026-07-31 (9/9, no service records). Direct Military-category search (U.S. Navy Muster Rolls 1949-1971, U.S. Marine Corps Muster Rolls 1798-1958, VA BIRLS 1850-2020) returned no exact match for Angel A. Marrero b. 24 Jan 1954.</div>
+  </div>
+</div>
+
+<div class="plain-box">
+  <b>If you know of anyone else</b> &mdash; on any side of the family, in any branch of service, any war or peacetime era &mdash; tell Omar directly. Family testimony about immediate and near family is entered as fact here without needing a document first; this section exists specifically so nobody who served gets left out while the paperwork catches up.
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">Every name here wore the uniform for real, whether or not the paperwork has caught up yet.</div>
+  <a href="../story/">Read the full book &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+<script src="../assets/read-aloud.js"></script>
+</body>
+</html>
