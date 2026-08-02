@@ -59,6 +59,15 @@
 }
 
 * { box-sizing: border-box; }
+
+/* Images never overflow their container, and never blow up to full page width
+   on wide screens — a photo stretched to 1400px then cropped to 300px tall is
+   unreadable. Cap them at a sane display size and let them keep their shape. */
+img { max-width: 100%; height: auto; }
+.artifact-photo, .era-photo, .doc-photo, .fam-photo {
+  max-width: 720px; max-height: none; height: auto;
+  object-fit: contain; border-radius: 10px; display: block; margin: 12px 0 4px;
+}
 .lang-btn.active { background: var(--accent-wash) !important; color: var(--accent-deep) !important; border-color: var(--accent) !important; }
 body {
   font-family: 'Public Sans', -apple-system, sans-serif; color: var(--ink); line-height: 1.6;

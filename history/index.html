@@ -7,7 +7,7 @@
 <title>Puerto Rico — The Colonial Record · Omar &amp; Poli</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/theme.css?v=4">
+<link rel="stylesheet" href="../assets/theme.css?v=5">
 <style>
 :root{
   --sand:#F7F3EA; --ink:#1E2726; --bomba-red:#B3271E; --bomba-black:#20201E;
@@ -31,7 +31,7 @@ h1 em{font-style:italic;color:var(--bomba-red)}
 .era h2{font-family:'Instrument Serif',serif;font-size:26px;margin:4px 0 10px}
 .era p{font-size:15px;color:#3a423f}
 .era p em{font-style:italic}
-.era-photo{width:100%;max-height:300px;object-fit:cover;border-radius:10px;margin:12px 0 4px;display:block}
+.era-photo{width:100%;max-width:720px;height:auto;object-fit:contain;border-radius:10px;margin:12px 0 4px;display:block}
 .era-photo-cap{font-size:12px;color:#6a756f;margin-bottom:4px}
 .source-note{max-width:none;margin:10px 24px 0;padding:16px 18px;font-size:12.5px;color:#6a756f;border-top:1px dashed #cfc6b0}
 .backlink{position:fixed;top:14px;left:14px;z-index:5;font-family:'Public Sans',sans-serif;font-size:12px;font-weight:700;color:#0E6E71;text-decoration:none;background:#fff;border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px}
@@ -99,10 +99,12 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
 <div class="stripes"></div>
 
 <div class="fam-hero-photo" style="background-image:url('../archive/img/abad_lasierra_1788_title.jpg');background-position:center 20%;">
-  <div class="fam-hero-caption">Abad y Lasierra's 1788 history of Puerto Rico — the deepest 18th-century account of the island</div>
+  <div class="i18n-en"><div class="fam-hero-caption">Abad y Lasierra's 1788 history of Puerto Rico — the deepest 18th-century account of the island</div></div>
+  <div class="i18n-es" style="display:none;"><div class="fam-hero-caption">La historia de Puerto Rico de Abad y Lasierra, de 1788 — el relato más profundo de la isla en el siglo XVIII</div></div>
 </div>
 
 <header>
+  <div class="i18n-en">
   <div class="eyebrow">Why the island is the way it is</div>
   <h1>The <em>colonial</em> record</h1>
   <p class="sub">Not opinion, not folklore &mdash; every line below traces to a specific act of Congress, a Supreme Court ruling, or a government report. This is the paper trail behind why Arecibo, and every town like it, ended up the way it did.</p>
@@ -112,8 +114,21 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
     <div class="stat"><b>0</b><span>voting seats in Congress</span></div>
     <div class="stat"><b>7</b><span>status referendums</span></div>
   </div>
+  </div>
+  <div class="i18n-es" style="display:none;">
+  <div class="eyebrow">Por qué la isla es como es</div>
+  <h1>El registro <em>colonial</em></h1>
+  <p class="sub">No es opinión ni folclore &mdash; cada línea de abajo se remonta a una ley específica del Congreso, a un fallo del Tribunal Supremo o a un informe del gobierno. Este es el rastro documental detrás de por qué Arecibo, y cada pueblo como él, terminó como terminó.</p>
+  <div class="stats">
+    <div class="stat"><b>127</b><span>años como territorio de EE.UU.</span></div>
+    <div class="stat"><b>0</b><span>votos para presidente</span></div>
+    <div class="stat"><b>0</b><span>escaños con voto en el Congreso</span></div>
+    <div class="stat"><b>7</b><span>referéndums de estatus</span></div>
+  </div>
+  </div>
 </header>
 
+<div class="i18n-en">
 <div style="max-width:none;margin:0 0 8px;padding:0 18px;overflow-x:auto;">
   <div style="display:flex;gap:8px;padding:4px 0 14px;border-bottom:2px solid var(--ink);">
     <a href="#tl-spain" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">1493 Spain arrives</a>
@@ -126,9 +141,25 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
     <a href="#tl-now" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">Now</a>
   </div>
 </div>
+</div>
+<div class="i18n-es" style="display:none;">
+<div style="max-width:none;margin:0 0 8px;padding:0 18px;overflow-x:auto;">
+  <div style="display:flex;gap:8px;padding:4px 0 14px;border-bottom:2px solid var(--ink);">
+    <a href="#tl-spain-es" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">1493 Llega España</a>
+    <a href="#tl-1898-es" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">1898 Invasión de EE.UU.</a>
+    <a href="#tl-insular-es" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">1901 Casos Insulares</a>
+    <a href="#tl-jones-es" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">1917 Ley Jones</a>
+    <a href="#tl-1950-es" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">1950 Insurrección</a>
+    <a href="#tl-promesa-es" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">2016 PROMESA</a>
+    <a href="#tl-maria-es" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">2017 María</a>
+    <a href="#tl-now-es" style="white-space:nowrap;font-size:12px;font-weight:700;color:var(--sea);text-decoration:none;background:var(--paper);border:1px solid #e4ddcd;border-radius:999px;padding:6px 12px;">Ahora</a>
+  </div>
+</div>
+</div>
 
 <div class="wrap">
 
+<div class="i18n-en">
 <div class="era" style="background:linear-gradient(135deg,#f3e4c4,#e8d4a8);">
   <div class="yr">Start here if this is new to you</div>
   <h2>What this page actually is, in plain terms</h2>
@@ -147,7 +178,30 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
   <img class="era-photo" src="img/el_morro_walls.jpg" alt="Walls of El Morro fortress, San Juan">
   <div class="era-photo-cap">The walls of El Morro, San Juan &mdash; among the largest Spanish military engineering projects in the New World, built substantially with forced and enslaved labor. CC BY-SA 4.0.</div>
 </div>
+</div>
 
+<div class="i18n-es" style="display:none;">
+<div class="era" style="background:linear-gradient(135deg,#f3e4c4,#e8d4a8);">
+  <div class="yr">Empieza aquí si esto es nuevo para ti</div>
+  <h2>Qué es realmente esta página, en términos sencillos</h2>
+  <p>Esta es la manera más sencilla de imaginar los últimos 500 años de la historia de Puerto Rico: <strong>la isla nunca se ha gobernado a sí misma.</strong> Ni una sola vez, ni por un solo año. España la administró como colonia durante unos cuatro siglos, luego Estados Unidos la tomó por la fuerza en 1898 y la ha administrado como territorio desde entonces &mdash; más de 125 años ya, y contando. Dos potencias extranjeras distintas, una tras otra, y las personas que realmente vivían en la isla nunca fueron las que tomaron la decisión final sobre su propio gobierno.</p>
+  <p>Eso no es una opinión ni un agravio disfrazado de historia &mdash; es un hecho jurídico que se puede rastrear documento por documento, y eso es exactamente lo que hace esta página: recorre las leyes, los fallos judiciales y los acontecimientos reales, una era a la vez, que explican <em>por qué</em> la isla todavía no se gobierna plenamente a sí misma hoy. Imagínalo como una cadena, eslabón por eslabón: una invasión, luego una ley, luego un fallo judicial que hizo que esa ley se sostuviera, luego otra ley construida sobre ese fallo, hasta el día de hoy. Nada en esta página te pide tomar partido sobre cuál debería ser el estatus de Puerto Rico &mdash; solo expone, con claridad, lo que realmente pasó y bajo qué autoridad, para que veas la cadena por ti mismo.</p>
+</div>
+
+<div class="era" id="tl-spain-es">
+  <div class="yr">1493&ndash;1898 &middot; 405 años</div>
+  <h2>Cómo se involucró España, y qué hizo una vez aquí</h2>
+  <p>El segundo viaje de Colón avistó la isla en noviembre de 1493, pero España no la colonizó realmente hasta 1508, cuando la corona envió a <strong>Juan Ponce de León</strong> &mdash; ya veterano de la brutal conquista de La Española &mdash; a establecer una colonia. Ponce de León logró primero que el propio cacique principal de la isla, Agüeybaná, permitiera pacíficamente un asentamiento español. Esa paz duró solo unos pocos años, una vez que quedó claro el verdadero propósito de la colonia: el oro.</p>
+  <p>El interés de la corona española en la isla fue casi enteramente extractivo desde el principio. Ponce de León fundó <strong>Caparra</strong> en 1508 (trasladada al sitio del actual San Juan en 1521) específicamente para organizar el lavado de oro en los ríos de la isla, usando mano de obra taína. En 1509 y 1510, la corona formalizó el <strong>repartimiento</strong> &mdash; una "distribución" legal de toda la población taína de la isla entre los colonos españoles, asignando caciques concretos, nombrados, y su gente a amos españoles concretos. Esto se convirtió en el sistema de la <strong>encomienda</strong>: los colonos eran nominalmente responsables de convertir al cristianismo a las personas que se les asignaban, a cambio de un derecho ilimitado sobre su trabajo forzado. En la práctica era un sistema esclavista en todo menos en el nombre &mdash; familias y aldeas desmembradas y reasignadas como propiedad, obligadas a trabajar en los ríos auríferos y en la agricultura sin salario y sin derecho a negarse.</p>
+  <p>El costo humano fue inmediato y severo. El exceso de trabajo, la desnutrición y las enfermedades importadas ante las cuales la población no tenía inmunidad mataron a miles de personas taínas en unos pocos años desde el inicio de la encomienda &mdash; un colapso demográfico que los propios cronistas españoles de la época documentaron, aun cuando era la política de su propia corona la que lo causaba. En 1511, el cacique <strong>Agüeybaná II</strong> organizó los cacicazgos taínos de la isla en una sublevación coordinada, matando a varios colonos españoles en la primera resistencia indígena armada a gran escala contra el dominio español en cualquier parte de las Américas. Las fuerzas de Ponce de León la aplastaron ese mismo año, y el sistema de la encomienda continuó después prácticamente sin cambios.</p>
+  <p>Mientras la población taína seguía colapsando bajo el peso del sistema construido para explotarla, la respuesta de la corona española no fue poner fin al trabajo forzado &mdash; fue importar un nuevo suministro de él. La autorización real oficial para transportar personas africanas esclavizadas directamente a las colonias españolas del Caribe llegó en 1513, y Puerto Rico recibió sus primeras personas africanas esclavizadas documentadas a los pocos años de esa autorización, iniciando un capítulo nuevo y aún más largo de trabajo forzado una vez que la economía del lavado de oro dio paso al cultivo de la caña de azúcar más adelante en el siglo XVI. Las fortificaciones construidas después para defender la colonia &mdash; incluidas las enormes murallas de piedra de El Morro y San Cristóbal en San Juan, entre los mayores proyectos de ingeniería militar española en todo el Nuevo Mundo &mdash; fueron levantadas en buena medida con trabajo forzado y esclavizado durante los dos siglos siguientes.</p>
+  <p>Durante los siguientes 300 años aproximadamente, Puerto Rico funcionó dentro del sistema colonial español principalmente como una plaza militar fortificada que guardaba la ruta marítima hacia las colonias más lucrativas de México y Suramérica, y como fuente de azúcar, café y tabaco cultivados con trabajo esclavizado y luego mal pagado, con riqueza extraída mediante un rígido monopolio comercial (durante casi todo ese período todo comercio legal tenía que pasar por la propia España) y una administración colonial en la que los puertorriqueños nacidos en la isla, sin importar su riqueza, tenían poco poder político real frente a los funcionarios enviados desde España. La esclavitud misma no fue abolida en la isla hasta 1873 &mdash; uno de los últimos lugares del hemisferio en terminarla, y solo 25 años antes de que España perdiera la isla por completo ante Estados Unidos en 1898.</p>
+  <img class="era-photo" src="img/el_morro_walls.jpg" alt="Murallas de la fortaleza de El Morro, San Juan">
+  <div class="era-photo-cap">Las murallas de El Morro, San Juan &mdash; entre los mayores proyectos de ingeniería militar española en el Nuevo Mundo, construidas en buena medida con trabajo forzado y esclavizado. CC BY-SA 4.0.</div>
+</div>
+</div>
+
+<div class="i18n-en">
 <div class="era">
   <div class="yr">The two men who started it</div>
   <h2>Ponce de León, follow the actual man</h2>
@@ -172,7 +226,36 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
   <p><strong>A second thing worth being precise about: Columbus had nothing to do with Florida at all.</strong> Columbus died in 1506, seven years before Ponce de León ever sighted Florida in 1513, and Columbus's own four voyages (1492&ndash;1504) never went anywhere near it &mdash; his farthest points north were Cuba and the Bahamas on the first voyage; everything after that turned south, toward Central and South America. Florida is entirely Ponce de León's own find, on his own expedition, well after Columbus was gone. What actually connects the two men isn't Florida &mdash; it's Hispaniola and Puerto Rico: Ponce de León crossed the Atlantic on Columbus's own second voyage in 1493 as a young soldier and learned the conquest trade inside Columbus's own colonial system there, years before he ever struck out on his own.</p>
   <p>Laid out in order: <strong>Bahamas &rarr; Cuba &rarr; Hispaniola (1492, Columbus alone) &rarr; Dominica &rarr; the Lesser Antilles &rarr; Puerto Rico &rarr; Hispaniola again (1493, both men together) &rarr; fifteen years in Hispaniola (Ponce de León) &rarr; Puerto Rico (1508, Ponce de León's own conquest) &rarr; the Bahamas &rarr; Florida (1513) &rarr; Florida again (1521, where he died).</strong> Puerto Rico was never the first stop for either man &mdash; it was a later target, reached only after the pattern had already been set and proven on other islands first.</p>
 </div>
+</div>
 
+<div class="i18n-es" style="display:none;">
+<div class="era">
+  <div class="yr">Los dos hombres que lo empezaron</div>
+  <h2>Ponce de León: sigámosle la pista al hombre real</h2>
+  <p>Juan Ponce de León no era un administrador colonial lejano que firmaba papeles desde España &mdash; estuvo en el terreno, personalmente, en todo esto. Llegó en el segundo viaje de Colón en 1493 como joven soldado, y se hizo un nombre primero como comandante en la brutal conquista de La Española bajo Nicolás de Ovando, una de las fases más violentas de toda la conquista temprana. Puerto Rico no fue su primera isla; fue su segundo acto, usando tácticas que ya había aprendido.</p>
+  <p>No se limitó a autorizar el repartimiento y el sistema de encomienda descritos arriba &mdash; como primer gobernador de la isla, los organizó personalmente: qué colono español recibía la gente de qué cacique, dónde iban las operaciones de lavado de oro, cómo se extraía la mano de obra. Cuando Agüeybaná II encabezó la sublevación de 1511, Ponce de León dirigió personalmente la respuesta militar que la aplastó. Cada paso del sistema que quebró a la población taína de la isla en una sola generación pasó directamente por él.</p>
+  <p>No conservó el poder por mucho tiempo. El propio hijo de Cristóbal Colón, <strong>Diego Colón</strong>, heredó un derecho hereditario a gobernar todo el territorio español que su padre había hallado, incluido Puerto Rico, y lo usó para forzar la salida de Ponce de León como gobernador en 1511&ndash;1512 &mdash; una pura lucha de poder entre dos colonizadores sobre quién controlaría la isla y a su gente, sin voz taína en el desenlace en ningún caso. Expulsado de Puerto Rico, Ponce de León pasó sus últimos años persiguiendo la siguiente conquista: una expedición a lo que hoy es Florida en 1513 (el mismo año en que España autorizó formalmente el transporte de personas africanas esclavizadas a sus colonias del Caribe, discutido arriba), buscando tierra, oro y estatus, no literalmente una "fuente de la juventud" &mdash; ese detalle se le añadió a su leyenda solo después de su muerte. Volvió a Florida en 1521 para intentar fundar allí también una colonia, y fue alcanzado por una flecha de los calusa nativos durante los combates que siguieron. Murió de esa herida en Cuba poco después &mdash; el mismo patrón básico de violencia sobre el cual había construido toda su carrera, vuelto contra él al final.</p>
+  <p>Colón abrió la puerta en 1492&ndash;93; Ponce de León es quien de hecho la cruzó hacia Puerto Rico y construyó la maquinaria que gobernó la isla durante los siglos siguientes. A ambos hombres se los trata en la mayoría de la historia popular como exploradores. El registro documentado &mdash; el repartimiento, la encomienda, la sublevación aplastada, el trabajo esclavo importado que vino después &mdash; dice algo más cercano a arquitecto y ejecutor.</p>
+</div>
+
+<div class="era">
+  <div class="yr">La ruta real, isla por isla</div>
+  <h2>Adónde iban realmente, y en qué orden</h2>
+  <p><strong>El primer viaje de Colón (1492)</strong> nunca llegó a Puerto Rico. Tocó tierra en las Bahamas (una isla que llamó San Salvador, probablemente la actual Guanahaní), luego pasó a Cuba, y después a La Española &mdash; donde dejó a 39 hombres en un fuerte llamado La Navidad y regresó a casa. Puerto Rico no formó parte de ese viaje.</p>
+  <p><strong>El segundo viaje de Colón (1493)</strong> es el que sí alcanza la historia de esta familia. Navegando con una flota mucho mayor, tocó tierra primero en Dominica, luego avanzó hacia el norte por las Antillas Menores en secuencia &mdash; Marie-Galante, Guadalupe, Montserrat, Antigua y las Islas Vírgenes &mdash; antes de avistar Puerto Rico el 19 de noviembre de 1493. No se dejó ningún grupo de desembarco ni se construyó asentamiento alguno; la flota ancló brevemente, tomó agua dulce y siguió su camino. Desde Puerto Rico, Colón continuó a La Española, donde encontró La Navidad quemada y a los 39 hombres muertos, matados por taínos que resistían exactamente los abusos que el propio registro de esta isla repetiría quince años más tarde. Fundó un nuevo asentamiento, La Isabela, y ese fracaso &mdash; no Puerto Rico &mdash; es donde realmente comenzó la administración colonial española en el Caribe.</p>
+  <p><strong>El camino propio de Ponce de León</strong> pasó primero por La Española, no por Puerto Rico. Llegó como soldado en ese mismo viaje de 1493, y luego pasó unos quince años en la conquista de La Española &mdash; comandando tropas que sofocaron la rebelión de Higüey alrededor de 1504, lo que le valió la gobernación de esa provincia oriental. Fue desde allí, ya como administrador colonial experimentado y violento, que oyó del oro en la isla vecina que los españoles llamaban San Juan Bautista. Obtuvo permiso del gobernador de La Española, Nicolás de Ovando, navegó a Puerto Rico y desembarcó cerca de lo que hoy es Aguada o Aguadilla, en la costa oeste de la isla, en 1508 &mdash; toda una generación después del inicio de la colonización española del Caribe, no en su comienzo.</p>
+  <p><strong>Después de Puerto Rico</strong>, expulsado por Diego Colón en 1511&ndash;12, Ponce de León navegó al norte en 1513 a través de las Bahamas buscando una isla rumoreada llamada Bimini, y en cambio se convirtió en el primer europeo documentado en llegar a Florida &mdash; avistando tierra a principios de abril de 1513 cerca de donde hoy se ubica San Agustín, nombrando todo el territorio <em>La Florida</em>, antes de cartografiar buena parte de la costa hacia el sur, alrededor de la península y las Dry Tortugas. Después regresó a Puerto Rico.</p>
+  <p><strong>La expedición de 1521, en detalle real.</strong> Fue un genuino intento de colonización, no otro viaje de exploración &mdash; dos barcos, unos 200 colonos, sacerdotes, animales de granja y semillas, enviados bajo su propia concesión real para poblar de verdad la tierra que había cartografiado ocho años antes. Desembarcó en la costa suroeste de Florida, sobre el Golfo, en territorio de los <strong>calusa</strong> &mdash; una nación poderosa y organizada que ya había repelido un contacto español anterior y no estaba interesada en un segundo. Poco después de que el grupo de desembarco bajara a tierra, los calusa atacaron. Ponce de León fue alcanzado por una flecha, la expedición se derrumbó y los sobrevivientes navegaron hacia la Cuba española. Murió de la herida en La Habana poco después, en julio de 1521.</p>
+  <img class="era-photo" src="img/oviedo_ponce_death_ch13.jpg" alt="Crónica de Oviedo del siglo XVI, Capítulo XIII, De la muerte del adelantado Johan Ponce de Leon">
+  <div class="era-photo-cap">La fuente primaria real: Gonzalo Fernández de Oviedo y Valdés, funcionario colonial español que escribía cuando estos hechos aún eran recientes, le dedicó un capítulo entero &mdash; "De la muerte del adelantado Johan Ponce de Leon, primero conquistador de la isla de Boriquen". La edición completa de 1851 de su crónica está archivada en el <a href="../archive/" style="color:var(--sea);font-weight:700;">Archivo de Imágenes</a>.</div>
+  <p>El relato de Oviedo es inusualmente directo para la época: llama a toda la historia de Bimini y la "fuente de la juventud" un <em>disparate</em> en el que Ponce de León cayó por confiar en lo que le dijeron informantes taínos, aun cuando en otros pasajes lo elogia como soldado honorable y capaz. Las propias palabras de Oviedo sobre el final, en el español original: <em>"gastó mucho en el armada y volvió de allá desbaratado y herido de una flecha, de la qual herida vino á morir á la isla de Cuba"</em>. Oviedo añade que Ponce de León no fue el único que lo perdió todo persiguiendo esa expedición &mdash; muchos de los hombres que lo siguieron también murieron, algunos a manos de los calusa, otros de enfermedad, cerrando el capítulo con una línea que se lee casi como un epitafio: <em>"É assi acabaron el adelantado y el adelantamiento"</em> &mdash; "Y así acabaron el adelantado y su gobernación, juntos."</p>
+  <p><strong>Algo que conviene precisar: Ponce de León no fundó San Agustín.</strong> Nunca construyó ningún asentamiento duradero en Florida &mdash; tanto su desembarco de 1513 como su fallido intento de colonización de 1521 pasaron sin dejar nada permanente. La ciudad de San Agustín no fue fundada hasta <strong>1565</strong>, por otro español, <strong>Pedro Menéndez de Avilés</strong>, enviado específicamente para aniquilar una colonia protestante francesa cercana y asegurar Florida para España &mdash; 44 años después de que Ponce de León ya hubiera muerto. San Agustín es real e importante por sus propios méritos: es la ciudad de fundación europea ocupada de forma continua más antigua en lo que hoy es Estados Unidos, 42 años más antigua que Jamestown y 55 años más antigua que Plymouth. El legado real de Ponce de León en Florida es el nombre y el primer avistamiento, no la ciudad misma &mdash; ambas cosas se confunden en la memoria popular, pero el registro documentado las mantiene separadas por casi medio siglo.</p>
+  <p><strong>Una segunda cosa que conviene precisar: Colón no tuvo nada que ver con Florida.</strong> Colón murió en 1506, siete años antes de que Ponce de León avistara Florida en 1513, y los cuatro viajes de Colón (1492&ndash;1504) nunca se acercaron a ella &mdash; sus puntos más al norte fueron Cuba y las Bahamas en el primer viaje; todo lo posterior giró hacia el sur, hacia Centroamérica y Suramérica. Florida es enteramente un hallazgo propio de Ponce de León, en su propia expedición, bastante después de que Colón ya no estuviera. Lo que realmente conecta a los dos hombres no es Florida &mdash; es La Española y Puerto Rico: Ponce de León cruzó el Atlántico en el propio segundo viaje de Colón en 1493 como joven soldado y aprendió el oficio de la conquista dentro del propio sistema colonial de Colón allí, años antes de lanzarse por su cuenta.</p>
+  <p>Puesto en orden: <strong>Bahamas &rarr; Cuba &rarr; La Española (1492, Colón solo) &rarr; Dominica &rarr; las Antillas Menores &rarr; Puerto Rico &rarr; La Española otra vez (1493, ambos hombres juntos) &rarr; quince años en La Española (Ponce de León) &rarr; Puerto Rico (1508, la conquista propia de Ponce de León) &rarr; las Bahamas &rarr; Florida (1513) &rarr; Florida otra vez (1521, donde murió).</strong> Puerto Rico nunca fue la primera parada para ninguno de los dos &mdash; fue un objetivo posterior, alcanzado solo después de que el patrón ya se hubiera establecido y probado antes en otras islas.</p>
+</div>
+</div>
+
+<div class="i18n-en">
 <div class="era">
   <div class="yr">The bigger picture</div>
   <h2>Spain's actual order of conquest &mdash; who fell first</h2>
@@ -202,7 +285,41 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
   <p><strong>The Valladolid debate had another side, and it mattered directly to Puerto Rico:</strong> Bartolomé de las Casas &mdash; the same eyewitness priest already cited elsewhere on this page for documenting the destruction of the Indies &mdash; argued the opposite: that Indigenous people were fully rational, fully human, and that the conquest itself had been a moral catastrophe. He won the argument in the sense that Spain never issued an official doctrine declaring Indigenous people subhuman. But Las Casas's own remedy, earlier in his life, was to suggest replacing Indigenous forced labor with enslaved Africans instead &mdash; a position he later regretted and renounced in writing, but one that had already helped legitimize exactly the system this page documents. The debate over Indigenous personhood, in other words, is part of the same history that produced African slavery in Puerto Rico, not a separate, unrelated argument.</p>
   <p><strong>Third justification, once the system was already running on both Indigenous and African labor: race itself.</strong> As the earlier religious and legal arguments wore thin over the following centuries, colonial society developed its own racial ideology &mdash; a hierarchy that treated Africans and their descendants as inherently suited to enslavement, encoded directly into law by the 1789 <em>Código Negro Español</em> discussed above. This is the version of the justification that lasted longest, because it didn't depend on a specific Pope's bull or a specific theologian's argument &mdash; it was baked into the everyday legal and social structure of the colony itself, which is exactly why it took until 1873 to actually end.</p>
 </div>
+</div>
 
+<div class="i18n-es" style="display:none;">
+<div class="era">
+  <div class="yr">El panorama más amplio</div>
+  <h2>El orden real de conquista de España &mdash; quién cayó primero</h2>
+  <p>Puerto Rico no solo llegó tarde para Colón y Ponce de León en lo personal &mdash; llegó tarde para todo el proyecto colonial español. Esta es la secuencia real, isla por isla y territorio por territorio, en el orden en que España efectivamente los tomó:</p>
+  <p><strong>1. La Española, 1493&ndash;96.</strong> El primer objetivo real. Después de que el asentamiento de La Navidad de 1492 fuera arrasado, Colón fundó La Isabela en 1493 en su segundo viaje, y luego, en 1496, su hermano Bartolomé fundó Santo Domingo &mdash; la primera ciudad europea permanente en las Américas, y la base desde la cual se lanzó toda conquista posterior. Aquí es donde España construyó su verdadera maquinaria administrativa: el sistema de encomienda, los primeros tribunales coloniales, el primer obispado. Todo lo que después le ocurrió a Puerto Rico se ensayó primero aquí, sobre una población mucho mayor, durante más de una década antes de que Ponce de León zarpara.</p>
+  <p><strong>2. Puerto Rico, 1508&ndash;09.</strong> La segunda isla importante tomada, y solo porque los colonos de La Española ya habían agotado su oro fácil y buscaban activamente la próxima isla que explotar. La expedición de Ponce de León no fue un descubrimiento &mdash; fue una expansión, lanzada por un gobierno colonial ya establecido que buscaba más.</p>
+  <p><strong>3. Jamaica, 1509.</strong> Tomada casi simultáneamente con Puerto Rico, por Juan de Esquivel, bajo la misma autoridad radicada en La Española. La población taína de Jamaica sufrió el mismo patrón de repartimiento/encomienda y el mismo colapso.</p>
+  <p><strong>4. Cuba, 1511&ndash;15.</strong> La isla más grande del Caribe, conquistada la última entre las cuatro grandes, por Diego Velázquez de Cuéllar &mdash; zarpando de La Española con soldados entre los que iba un joven Hernán Cortés. La conquista de Cuba incluyó la muerte del cacique Hatuey, quien había huido del sistema de encomienda de La Española solo para ser capturado y quemado en la hoguera en Cuba &mdash; un vínculo directo y documentado entre lo que pasó en una isla y lo que siguió en la próxima.</p>
+  <p><strong>5. El continente, desde la década de 1510 en adelante.</strong> Solo después de que las cuatro islas mayores del Caribe estuvieran bajo control español la conquista se volvió hacia el continente &mdash; Balboa cruzando Panamá para llegar al Pacífico en 1513, luego Cortés hacia México en 1519, luego Pizarro hacia el Perú en 1532. Las islas no fueron una nota al pie de la "verdadera" conquista de México y Suramérica; fueron el campo de entrenamiento, la base de suministros y el banco de pruebas del mismo sistema de encomienda usado en todo lo que vino después.</p>
+  <p>El orden importa: <strong>La Española &rarr; Puerto Rico y Jamaica (más o menos juntas) &rarr; Cuba &rarr; el continente.</strong> Para cuando España llegó a los imperios mucho mayores y más ricos de México, ya había pasado casi tres décadas perfeccionando exactamente el mismo manual &mdash; repartimiento, encomienda, trabajo forzado, enfermedades importadas, resistencia aplastada &mdash; en las islas del Caribe y sobre su gente primero.</p>
+</div>
+
+<div class="era">
+  <div class="yr">1789&ndash;1873</div>
+  <h2>Lo que España dejó por escrito sobre las personas que esclavizó</h2>
+  <p>El código legal colonial español que regía la esclavitud, el <em>Código Negro Español</em> de 1789, reguló formalmente (sin restringirla nunca en serio) la manera en que las personas esclavizadas en Puerto Rico y en las demás colonias de España podían ser compradas, vendidas, castigadas y puestas a trabajar. Un decreto real de 1815, la <em>Real Cédula de Gracias</em>, abrió la isla a la inmigración católica no española y a concesiones de tierra específicamente para hacer crecer la economía de plantación &mdash; y con ella creció la demanda de trabajo esclavizado, junto al auge azucarero que ese decreto ayudó a crear. Para principios del siglo XIX, el gobierno colonial exigía algo que no había exigido en siglos anteriores: una contabilidad formal y nominal de exactamente a quiénes tenía esclavizados.</p>
+  <p>Esa contabilidad sobrevive. El <strong>Registro Central de Esclavos</strong> era un censo colonial español de cada persona esclavizada en la isla, parte de la maquinaria de las propias leyes de abolición gradual de España en los años previos a la emancipación final de 1873. Una copia digitalizada del registro del Distrito 1 de 1872 &mdash; un año completo antes de la abolición &mdash; está ahora archivada fuera del sitio junto a la investigación de esta familia. No es un resumen ni un relato secundario; es el papeleo colonial español mismo, página tras página de entradas individuales, cada una registrando el nombre de una persona real, el nombre de quien decía ser su dueño, su pueblo, una clasificación racial colonial española (<em>negro</em>, <em>mulato</em> y términos similares usados en la época), su edad, su filiación y los nombres de sus propios hijos &mdash; porque bajo la ley colonial española, los hijos nacidos de una madre esclavizada nacían ellos mismos esclavizados, y la burocracia de la corona rastreaba ese hecho por nombre, generación tras generación, hasta el año anterior a que finalmente terminara. Leerlo es un tipo de evidencia distinto de lo que jamás podrá ser el resumen de la esclavitud en un libro de historia: es la mano misma de España escribiendo, línea por línea, exactamente a quiénes tenía como propiedad.</p>
+  <p>La abolición final llegó el 22 de marzo de 1873, bajo la efímera Primera República española &mdash; tardía en cualquier comparación regional, y solo tras décadas de medidas graduales (como el registro citado arriba) diseñadas para retrasar la emancipación plena en lugar de acelerarla.</p>
+</div>
+
+<div class="era">
+  <div class="yr">La justificación</div>
+  <h2>Por qué España creía que esto estaba permitido</h2>
+  <p>Nadie en el gobierno de España se despertó un día y sencillamente decidió ignorar la moral &mdash; construyeron un verdadero argumento legal y religioso, pieza por pieza, y vale la pena saber cuál fue ese argumento, porque cambió dos veces en tres siglos y cada versión explica una parte distinta de lo que pasó.</p>
+  <p><strong>Primera justificación: el Papa dio permiso.</strong> En 1455, el papa Nicolás V emitió <em>Romanus Pontifex</em>, una bula papal que autorizaba a Portugal (y pronto a España, mediante bulas similares) a conquistar y esclavizar a los pueblos no cristianos encontrados en la exploración &mdash; presentado como una misión religiosa, convertir almas, con la esclavitud como efecto colateral aceptable de llevar el cristianismo a quienes no lo tenían. Esta es la autoridad legal de raíz en la que se apoyó España durante todo el primer período colonial: no un reclamo secular de propiedad, sino uno religioso.</p>
+  <p><strong>Segunda justificación, dirigida específicamente a los taínos y otros pueblos indígenas: no eran plenamente racionales.</strong> El teólogo español Juan Ginés de Sepúlveda argumentó, apoyándose en la antigua idea aristotélica de la "esclavitud natural", que los indígenas americanos eran naturalmente aptos para la servidumbre y que conquistarlos y controlarlos era por tanto justo &mdash; no una injusticia, sino su lugar correcto en un orden natural. No era una postura marginal; se argumentó formalmente, ante la corona española, en la <strong>controversia de Valladolid (1550&ndash;51)</strong> &mdash; una audiencia real convocada de verdad sobre la cuestión de si los pueblos indígenas tenían almas plenamente racionales y podían ser justamente esclavizados.</p>
+  <p><strong>La controversia de Valladolid tuvo otra parte, y le importó directamente a Puerto Rico:</strong> Bartolomé de las Casas &mdash; el mismo sacerdote testigo presencial ya citado en otra parte de esta página por documentar la destrucción de las Indias &mdash; argumentó lo contrario: que los indígenas eran plenamente racionales, plenamente humanos, y que la conquista misma había sido una catástrofe moral. Ganó el argumento en el sentido de que España nunca emitió una doctrina oficial declarando infrahumanos a los indígenas. Pero el propio remedio de Las Casas, en una etapa anterior de su vida, fue proponer sustituir el trabajo forzado indígena por personas africanas esclavizadas &mdash; una postura de la que después se arrepintió y que se retractó por escrito, pero que ya había ayudado a legitimar exactamente el sistema que esta página documenta. El debate sobre la personalidad indígena, dicho de otro modo, es parte de la misma historia que produjo la esclavitud africana en Puerto Rico, no un argumento separado y ajeno.</p>
+  <p><strong>Tercera justificación, cuando el sistema ya funcionaba con trabajo tanto indígena como africano: la raza misma.</strong> A medida que los argumentos religiosos y legales anteriores se fueron desgastando en los siglos siguientes, la sociedad colonial desarrolló su propia ideología racial &mdash; una jerarquía que trataba a los africanos y sus descendientes como inherentemente aptos para la esclavización, codificada directamente en la ley por el <em>Código Negro Español</em> de 1789 discutido arriba. Esta es la versión de la justificación que más duró, porque no dependía de la bula de un Papa concreto ni del argumento de un teólogo concreto &mdash; estaba incrustada en la estructura legal y social cotidiana de la colonia misma, que es exactamente por lo que tomó hasta 1873 terminar con ella de verdad.</p>
+</div>
+</div>
+
+<div class="i18n-en">
 <div class="era">
   <div class="yr">The actual trade route</div>
   <h2>The transatlantic slave trade, and did ships land in Puerto Rico</h2>
@@ -220,7 +337,29 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
   <p><strong>How a young country got strong enough to actually do this:</strong> at its founding, the US wasn't remotely capable of fighting a European empire and winning &mdash; that changed over roughly the next 120 years, and it changed for concrete, traceable reasons. After the Civil War (1861&ndash;65), the country industrialized at enormous speed &mdash; railroads, steel, mass manufacturing &mdash; turning it from a mostly agricultural nation into one of the world's largest industrial economies within a generation. Starting in 1883, Congress funded a "New Navy" of modern steel warships to replace the country's outdated wooden fleet, directly influenced by naval strategist Alfred Thayer Mahan's argument that a nation needed a powerful navy and overseas coaling stations to be a real world power &mdash; the exact fleet that would fight Spain fifteen years later. And by 1890, the US Census Bureau declared the western frontier officially "closed" &mdash; no more open land to expand into within the continent itself &mdash; which pushed a lot of that same expansionist energy outward, overseas, instead. By 1898, all three pieces were in place: the industrial money to build a navy, the navy itself, and a political class already primed to look past the continent's own borders for the next target.</p>
   <p>By 1898, Spain's remaining empire was down to Cuba, Puerto Rico, and the Philippines &mdash; and Cuba had already been fighting its own war of independence against Spain since 1895. The United States intervened, officially over the sinking of the USS Maine in Havana harbor (still disputed as accidental or not) but really at the intersection of American sugar and business interests in Cuba, sympathy for Cuban independence, and a US military and political class that had spent the prior half-century getting comfortable with exactly the kind of territorial expansion the Mexican-American War had already proven the country was willing to use force for. The resulting <strong>Spanish-American War</strong> lasted only a few months and ended in a total Spanish defeat. The <em>Treaty of Paris (1898)</em> that closed it is the exact document that appears at the top of this page: Spain gave up Cuba and ceded Puerto Rico, Guam, and the Philippines directly to the United States &mdash; the same move, the same imbalance of force, the same absence of any vote by the people actually living on the land, playing out one more time, on this family's own island.</p>
 </div>
+</div>
 
+<div class="i18n-es" style="display:none;">
+<div class="era">
+  <div class="yr">La ruta comercial real</div>
+  <h2>La trata transatlántica de esclavos, y si llegaron barcos a Puerto Rico</h2>
+  <p><strong>Sí &mdash; y el registro archivado de esta propia familia es prueba directa de ello, no solo una afirmación histórica general.</strong> El Registro Central de Esclavos de 1872, archivado íntegro en este sitio, no solo registra a personas nacidas en la isla. Leyendo el campo de lugar de nacimiento a lo largo de las 715 páginas del registro del Distrito 1: <strong>664 personas figuran como nacidas en el propio Puerto Rico, pero 149 figuran como nacidas directamente en África</strong> &mdash; sobrevivientes reales, nombrados uno a uno, de la travesía transatlántica misma, todavía vivos y todavía esclavizados solo en este distrito, un año antes de la abolición. Unas cuantas más figuran como nacidas en Venezuela y Curazao, mostrando la red comercial regional más amplia a la que Puerto Rico estaba conectado, no un sistema aislado.</p>
+  <p>La mecánica de cómo llegaron allí cambió con el tiempo. Durante la mayor parte de los siglos XVI y XVII, las reglas comerciales de España fueron deliberadamente restrictivas: casi todo el transporte marítimo legal, incluida la trata de esclavos, tenía que pasar por un número reducido de puertos autorizados bajo un sistema llamado el <em>asiento</em> &mdash; un contrato que la corona española otorgaba a comerciantes específicos o incluso a otras potencias europeas (en distintos momentos, compañías portuguesas, neerlandesas, francesas y británicas tuvieron el asiento) por el derecho exclusivo de suministrar personas africanas esclavizadas a la América española. Puerto Rico, pequeño y comparativamente pobre al lado de México o el Perú, fue a menudo una escala secundaria más que un puerto principal &mdash; las personas esclavizadas llegaban con frecuencia primero por centros mayores como Cartagena o Santo Domingo, y de ahí eran trasladadas a colonias más pequeñas, incluida Puerto Rico.</p>
+  <p>Eso cambió directamente por decisiones ya cubiertas en esta página. El <em>Código Negro Español</em> de 1789 que reguló el estatus legal de las personas esclavizadas también relajó las restricciones sobre quién podía importarlas. La <em>Real Cédula de Gracias</em> de 1815 abrió deliberadamente los puertos y la economía de la isla para hacer crecer el sistema de plantación &mdash; y con esa política, las llegadas directas a <strong>San Juan</strong>, el puerto principal de la isla, aumentaron sustancialmente desde principios hasta mediados del siglo XIX, conforme se expandía la economía azucarera que esta página ya describe. Para la época del registro de 1872, Puerto Rico llevaba décadas recibiendo personas esclavizadas de forma directa, no solo de segunda mano a través de otras colonias &mdash; y los 149 nombres de personas nacidas en África en el registro de ese solo distrito son el resultado documental directo de ese tráfico, hoy en el archivo de esta propia familia.</p>
+</div>
+
+<div class="era">
+  <div class="yr">El tejido conectivo</div>
+  <h2>Colón, México y cómo el imperio español terminó entregando Puerto Rico a EE.UU.</h2>
+  <p><strong>El propio Colón</strong> no trabajaba para un país llamado España en el sentido moderno &mdash; fue financiado personalmente por los Reyes Católicos, el rey Fernando de Aragón y la reina Isabel de Castilla, quienes acababan de unir sus reinos y de expulsar a los últimos gobernantes musulmanes de la península ibérica ese mismo año, 1492. Financiaron su viaje hacia el oeste buscando una ruta comercial a Asia, no por interés alguno en el Caribe en sí. Lo que en realidad encontró &mdash; tierras cuya existencia los europeos desconocían &mdash; se convirtió en el acto inicial de tres siglos de colonización española a lo largo de casi todo el hemisferio occidental, y su segundo viaje en 1493 es el mismo viaje que puso a Borikén en un mapa europeo por primera vez, tratado en detalle en la propia <a href="../boriken/" style="color:var(--sea);font-weight:700;">página de Borikén</a> de esta familia.</p>
+  <p>En su apogeo, el imperio español en las Américas se extendía desde California, pasando por México, Centroamérica, la mayor parte de Suramérica y todo el Caribe &mdash; Puerto Rico fue siempre una pieza pequeña y comparativamente pobre de un imperio mucho mayor, valiosa sobre todo por su puerto estratégico y su posición militar, no por su riqueza. Ese imperio empezó a desmoronarse desde el continente hacia afuera: entre aproximadamente 1810 y 1825, la mayoría de las colonias americanas continentales de España &mdash; México y casi toda Suramérica &mdash; libraron y ganaron sus propias guerras de independencia, dejando a España, a mediados del siglo XIX, aferrada solo a un puñado de colonias: Cuba, Puerto Rico y las Filipinas al otro lado del mundo.</p>
+  <p>Mientras tanto, un conflicto aparte y anterior muestra el mismo patrón que después golpearía a Puerto Rico, solo que dirigido contra México y no contra España directamente: la <strong>Guerra Mexicano-Estadounidense (1846&ndash;1848)</strong>. Estados Unidos, movido por la creencia de que estaba destinado a expandirse por todo el continente (ampliamente conocida en la época como "Destino Manifiesto"), fue a la guerra con México y ganó de manera decisiva. El <em>Tratado de Guadalupe Hidalgo</em> que la terminó obligó a México a ceder aproximadamente la mitad de su territorio nacional a EE.UU. &mdash; lo que hoy es California, Nevada, Utah, la mayor parte de Arizona y Nuevo México, y partes de Colorado y Wyoming. Es la misma jugada básica que EE.UU. haría contra España cincuenta años después, solo que primero contra un vecino distinto y más débil: usar la fuerza militar para tomar una enorme cantidad de tierra de un país que no podía impedirlo, y luego absorber a la gente que vivía allí dentro de un país que no les había preguntado si querían entrar.</p>
+  <p><strong>Cómo un país joven se hizo lo bastante fuerte para hacer esto:</strong> en su fundación, EE.UU. no era ni remotamente capaz de pelear contra un imperio europeo y ganar &mdash; eso cambió a lo largo de los siguientes 120 años aproximadamente, y cambió por razones concretas y rastreables. Después de la Guerra Civil (1861&ndash;65), el país se industrializó a enorme velocidad &mdash; ferrocarriles, acero, manufactura en masa &mdash; pasando de ser una nación mayormente agrícola a una de las mayores economías industriales del mundo en una generación. A partir de 1883, el Congreso financió una "Nueva Armada" de modernos buques de guerra de acero para reemplazar la anticuada flota de madera del país, influido directamente por el argumento del estratega naval Alfred Thayer Mahan de que una nación necesitaba una armada poderosa y estaciones carboneras en ultramar para ser una verdadera potencia mundial &mdash; exactamente la flota que pelearía contra España quince años después. Y para 1890, la Oficina del Censo de EE.UU. declaró oficialmente "cerrada" la frontera occidental &mdash; ya no quedaba tierra abierta hacia la cual expandirse dentro del propio continente &mdash; lo que empujó buena parte de esa misma energía expansionista hacia afuera, hacia ultramar. Para 1898, las tres piezas estaban en su sitio: el dinero industrial para construir una armada, la armada misma y una clase política ya predispuesta a mirar más allá de las fronteras del continente en busca del próximo objetivo.</p>
+  <p>Para 1898, el imperio que le quedaba a España se reducía a Cuba, Puerto Rico y las Filipinas &mdash; y Cuba llevaba desde 1895 peleando su propia guerra de independencia contra España. Estados Unidos intervino, oficialmente por el hundimiento del USS Maine en el puerto de La Habana (todavía en disputa si fue accidental o no), pero en realidad en la intersección de los intereses azucareros y empresariales estadounidenses en Cuba, la simpatía por la independencia cubana y una clase militar y política estadounidense que había pasado el medio siglo anterior acomodándose exactamente al tipo de expansión territorial que la Guerra Mexicano-Estadounidense ya había demostrado que el país estaba dispuesto a imponer por la fuerza. La <strong>Guerra Hispano-Estadounidense</strong> resultante duró solo unos meses y terminó en una derrota total de España. El <em>Tratado de París (1898)</em> que la cerró es exactamente el documento que aparece al comienzo de esta página: España renunció a Cuba y cedió Puerto Rico, Guam y las Filipinas directamente a Estados Unidos &mdash; la misma jugada, el mismo desequilibrio de fuerzas, la misma ausencia de cualquier voto de la gente que realmente vivía en esa tierra, repitiéndose una vez más, en la isla de esta propia familia.</p>
+</div>
+</div>
+
+<div class="i18n-en">
 <div class="era" id="tl-1898">
   <div class="yr">1898</div>
   <h2>Invasion, and the Foraker Act</h2>
@@ -270,7 +409,61 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
   <h2>Where it stands</h2>
   <p>Seven status referendums since 1967, no result binding on Congress &mdash; only Congress can change the island's status under the Constitution's territorial clause. Statehood, independence, free association, and the current commonwealth arrangement remain the options on the table, each with real, disputed consequences for citizenship, taxes, and federal benefits that Congress alone gets to decide.</p>
 </div>
+</div>
 
+<div class="i18n-es" style="display:none;">
+<div class="era" id="tl-1898-es">
+  <div class="yr">1898</div>
+  <h2>La invasión y la Ley Foraker</h2>
+  <p>EE.UU. invadió Puerto Rico durante la Guerra Hispano-Estadounidense y lo tomó como botín de guerra bajo el Tratado de París &mdash; sin ningún voto del pueblo puertorriqueño de por medio. La Ley Foraker de 1900 (Foraker Act) estableció un gobierno civil en el que el gobernador y todos los altos funcionarios eran nombrados por el presidente de EE.UU., no elegidos localmente, y la isla no tenía voto en el Congreso que la gobernaba.</p>
+</div>
+
+<div class="era" id="tl-insular-es">
+  <div class="yr">1901&ndash;1922</div>
+  <h2>Los Casos Insulares</h2>
+  <p>El Tribunal Supremo, empezando con <em>Downes v. Bidwell</em> (1901), inventó la categoría jurídica de "territorio no incorporado" &mdash; tierra que pertenece a EE.UU. pero no forma parte plena de él, donde la Constitución se aplica solo parcialmente. <em>Dorr v. United States</em> (1904) y <em>Balzac v. Porto Rico</em> (1922) confirmaron que a los residentes de ese territorio no se les garantizan derechos como el juicio por jurado. Estos fallos nunca han sido revocados. Siguen siendo el fundamento jurídico del estatus de Puerto Rico hoy.</p>
+</div>
+
+<div class="era" id="tl-jones-es">
+  <div class="yr">1917</div>
+  <h2>Ley Jones-Shafroth</h2>
+  <p>El Congreso concedió la ciudadanía estadounidense estatutaria a los puertorriqueños &mdash; no mediante la Enmienda 14, sino por ley ordinaria que el Congreso en teoría podría deshacer. Ese mismo año, el servicio militar obligatorio se extendió a los hombres puertorriqueños justo cuando comenzaba la Primera Guerra Mundial. La ley también fijó la ley de cabotaje conocida como la "Ley Jones" (Jones Act): la carga entre puertos estadounidenses, incluida la que va a la isla, debe viajar en barcos construidos, poseídos y tripulados por estadounidenses &mdash; una restricción que estudios federales y académicos han vinculado directamente con el mayor costo de los bienes en Puerto Rico desde entonces.</p>
+</div>
+
+<div class="era" id="tl-1950-es">
+  <div class="yr">1937 y 1950</div>
+  <h2>Ponce y la insurrección nacionalista</h2>
+  <p>La policía disparó contra una marcha civil en Ponce en 1937, matando a manifestantes y transeúntes. En 1950, una insurrección nacionalista armada fue respondida con arrestos masivos; algunos de los propios expedientes de vigilancia del FBI sobre activistas independentistas de ese período han sido desclasificados desde entonces. La Ley Pública 600, aprobada ese mismo año, permitió a Puerto Rico redactar su propia constitución local &mdash; la isla se convirtió en "estado libre asociado" en 1952, pero siguió siendo, y sigue siendo, un territorio no incorporado bajo los Casos Insulares.</p>
+</div>
+
+<div class="era" id="tl-promesa-es">
+  <div class="yr">2016</div>
+  <h2>PROMESA y la junta de control fiscal</h2>
+  <p>Ante una crisis de deuda, el Congreso creó una Junta de Supervisión y Administración Financiera &mdash; siete miembros nombrados por el presidente de EE.UU., ninguno elegido por puertorriqueños &mdash; con poder para pasar por encima del propio gobierno electo de la isla en asuntos presupuestarios. El Tribunal Supremo avaló la estructura de la junta en 2020, dictaminando que la Cláusula de Nombramientos de la Constitución no restringe cómo se escoge una junta territorial.</p>
+</div>
+
+<div class="era" id="tl-maria-es">
+  <div class="yr">2017</div>
+  <h2>El huracán María</h2>
+  <p>Un estudio independiente encargado por el propio gobierno de Puerto Rico (Universidad George Washington, 2018) situó la cifra de muertes en exceso en aproximadamente 2,975 &mdash; muy por encima del conteo inicial del gobierno de 64. La red eléctrica tardó casi 11 meses en restablecerse por completo: el apagón más largo en la historia de EE.UU.</p>
+  <img class="era-photo" src="img/hurricane_maria_landfall.png" alt="El huracán María tocando tierra en Puerto Rico, imagen satelital">
+  <div class="era-photo-cap">El huracán María tocando tierra, 20 de septiembre de 2017 &mdash; imagen satelital de NOAA/CIRA. Dominio público.</div>
+</div>
+
+<div class="era">
+  <div class="yr">2022</div>
+  <h2>Vaello Madero</h2>
+  <p>El Tribunal Supremo avaló una ley federal que excluye a los residentes de Puerto Rico del Seguro de Ingreso Suplementario (Supplemental Security Income), aun cuando pagan los mismos impuestos sobre la nómina que todos los demás. La opinión mayoritaria se apoyó directamente en el estatus territorial que los Casos Insulares construyeron más de un siglo antes.</p>
+</div>
+
+<div class="era" id="tl-now-es">
+  <div class="yr">Ahora</div>
+  <h2>Dónde está la cosa</h2>
+  <p>Siete referéndums de estatus desde 1967, ningún resultado vinculante para el Congreso &mdash; solo el Congreso puede cambiar el estatus de la isla bajo la cláusula territorial de la Constitución. La estadidad, la independencia, la libre asociación y el actual arreglo de estado libre asociado siguen siendo las opciones sobre la mesa, cada una con consecuencias reales y disputadas para la ciudadanía, los impuestos y los beneficios federales que solo el Congreso puede decidir.</p>
+</div>
+</div>
+
+<div class="i18n-en">
 <h2 style="font-family:'Instrument Serif',serif;font-size:30px;margin:34px 0 6px;">A fuller pattern, incident by incident</h2>
 <p style="font-size:14px;color:#5c6a66;margin-bottom:18px;max-width:620px;">The eras above are the legal skeleton. Below are specific documented moments &mdash; each one a real event with a real death toll, arrest count, or court finding, not a general grievance.</p>
 
@@ -539,6 +732,6 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
 })();
 </script>
 
-<script src="../assets/i18n.js?v=4"></script>
+<script src="../assets/i18n.js?v=5"></script>
 </body>
 </html>

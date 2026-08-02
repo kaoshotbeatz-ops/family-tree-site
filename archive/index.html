@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow" />
 <title>The Image Archive · Omar &amp; Poli</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/theme.css?v=4">
+<link rel="stylesheet" href="../assets/theme.css?v=5">
 <style>
 #gate {
   position: fixed; inset: 0; z-index: 999;
@@ -93,12 +93,20 @@
 <div class="fam-stripes"></div>
 
 <header class="fam-header">
-  <div class="fam-eyebrow">Primary sources, in the actual paper</div>
-  <h1>The image <em>archive</em></h1>
-  <p class="fam-sub">Real document scans, not summaries &mdash; the actual pages behind the facts on this site. This grows over time as more records are pulled and added.</p>
+  <div class="i18n-en">
+    <div class="fam-eyebrow">Primary sources, in the actual paper</div>
+    <h1>The image <em>archive</em></h1>
+    <p class="fam-sub">Real document scans, not summaries &mdash; the actual pages behind the facts on this site. This grows over time as more records are pulled and added.</p>
+  </div>
+  <div class="i18n-es" style="display:none;">
+    <div class="fam-eyebrow">Fuentes primarias, en el papel mismo</div>
+    <h1>El <em>archivo</em> de imágenes</h1>
+    <p class="fam-sub">Escaneos de documentos reales, no resúmenes &mdash; las páginas mismas detrás de los datos de este sitio. Esto crece con el tiempo, según se van consiguiendo y añadiendo más registros.</p>
+  </div>
 </header>
 
 <div class="archive-section">
+  <div class="i18n-en">
   <div class="archive-section-head">
     <span class="fam-eyebrow">1872 &middot; one year before abolition</span>
     <h2>Registro Central de Esclavos</h2>
@@ -122,19 +130,54 @@
       <div class="cap"><b>Page 200</b>Still District 1 alone &mdash; one year before final abolition, 22 March 1873.</div>
     </div>
   </div>
+  </div>
+  <div class="i18n-es" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">1872 &middot; un año antes de la abolición</span>
+    <h2>Registro Central de Esclavos</h2>
+    <p>El propio registro colonial de esclavos de España, Distrito 1, Puerto Rico, 1872 &mdash; el documento completo de 715 páginas está archivado fuera del sitio; estas son páginas de muestra reales de él. Cada entrada registra por nombre a una persona esclavizada real: su dueño, su pueblo, una clasificación racial colonial española, la edad, la filiación y los nombres de sus propios hijos. Contexto completo en <a href="../history/" style="color:var(--sea);font-weight:700;">El Registro Colonial</a>.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_cover.jpg" alt="Registro Central de Esclavos de 1872, Puerto Rico, primera página" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Primera página</b>La portada del registro, Distrito 1, 1872.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p5.jpg" alt="Registro Central de Esclavos de 1872, página 5" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Página 5</b>Entradas individuales: nombre, dueño, pueblo, edad, filiación, hijos.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p50.jpg" alt="Registro Central de Esclavos de 1872, página 50" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Página 50</b>Más adentro del registro &mdash; el documento continúa por 715 páginas.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p200.jpg" alt="Registro Central de Esclavos de 1872, página 200" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Página 200</b>Todavía solo el Distrito 1 &mdash; un año antes de la abolición final, el 22 de marzo de 1873.</div>
+    </div>
+  </div>
+  </div>
 </div>
 
 <div class="archive-section">
+  <div class="i18n-en">
   <div class="archive-section-head">
     <span class="fam-eyebrow">The complete document, all 715 pages</span>
     <h2>Page through the full registry</h2>
     <p>Every page of District 1, in order. This is the actual record, not a sample &mdash; individual entries for real enslaved people, one year before abolition. Enter a page number or use the arrows.</p>
   </div>
+  </div>
+  <div class="i18n-es" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">El documento completo, las 715 páginas</span>
+    <h2>Hojee el registro completo</h2>
+    <p>Cada página del Distrito 1, en orden. Este es el documento mismo, no una muestra &mdash; entradas individuales de personas esclavizadas reales, un año antes de la abolición. Escriba un número de página o use las flechas.</p>
+  </div>
+  </div>
   <div style="padding:0 18px;">
     <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
-      <button id="pv-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">&larr; Prev</button>
-      <span style="font-size:14px;">Page <input id="pv-num" type="number" min="1" max="715" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> of 715</span>
-      <button id="pv-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">Next &rarr;</button>
+      <button id="pv-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span></button>
+      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><input id="pv-num" type="number" min="1" max="715" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 715</span><span class="i18n-es" style="display:none;">de 715</span></span>
+      <button id="pv-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span></button>
     </div>
     <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
       <img id="pv-img" src="img/registry-full/page-001.jpg" alt="Registro Central de Esclavos page viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
@@ -143,6 +186,7 @@
 </div>
 
 <div class="archive-section">
+  <div class="i18n-en">
   <div class="archive-section-head">
     <span class="fam-eyebrow">1788 &middot; the deepest 18th-century account of the island</span>
     <h2>Abad y Lasierra's History of Puerto Rico</h2>
@@ -166,11 +210,37 @@
       <div class="cap"><b>Page 250</b>Later chapters, covering population and colonial life.</div>
     </div>
   </div>
+  </div>
+  <div class="i18n-es" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">1788 &middot; el relato más profundo de la isla en el siglo XVIII</span>
+    <h2>La Historia de Puerto Rico de Abad y Lasierra</h2>
+    <p>La <em>Historia geográfica, civil y política de la isla de S. Juan Bautista de Puerto Rico</em> de Fray Íñigo Abad y Lasierra &mdash; escrita por un obispo que de verdad vivió en la isla, y que cubre en detalle la población, la economía esclavista y la vida colonial casi un siglo antes del registro de 1872 de arriba. El libro completo de 420 páginas está archivado fuera del sitio; estas son páginas de muestra reales de él.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/abad_lasierra_1788_title.jpg" alt="Portada, Abad y Lasierra, Historia geografica civil y politica de Puerto Rico, 1788" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Portada</b>La apertura del propio libro, 1788.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/abad_lasierra_1788_p15.jpg" alt="Abad y Lasierra 1788, página 15" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Página 15</b>Al comienzo del relato sobre la isla.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/abad_lasierra_1788_p100.jpg" alt="Abad y Lasierra 1788, página 100" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Página 100</b>Más adentro, en la geografía y los pueblos de la isla.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/abad_lasierra_1788_p250.jpg" alt="Abad y Lasierra 1788, página 250" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Página 250</b>Capítulos posteriores, sobre la población y la vida colonial.</div>
+    </div>
+  </div>
+  </div>
   <div style="padding:16px 18px 0;">
     <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
-      <button id="ab-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">&larr; Prev</button>
-      <span style="font-size:14px;">Page <input id="ab-num" type="number" min="1" max="420" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> of 420 &mdash; full book</span>
-      <button id="ab-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">Next &rarr;</button>
+      <button id="ab-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span></button>
+      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><input id="ab-num" type="number" min="1" max="420" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 420 &mdash; full book</span><span class="i18n-es" style="display:none;">de 420 &mdash; libro completo</span></span>
+      <button id="ab-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span></button>
     </div>
     <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
       <img id="ab-img" src="img/abad-full/page-001.jpg" alt="Abad y Lasierra 1788 full-book viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
@@ -179,6 +249,7 @@
 </div>
 
 <div class="archive-section">
+  <div class="i18n-en">
   <div class="archive-section-head">
     <span class="fam-eyebrow">1899 &middot; real excavated Taíno objects, cataloged</span>
     <h2>The Latimer Collection</h2>
@@ -198,11 +269,33 @@
       <div class="cap"><b>Page 150</b>Further into the catalog.</div>
     </div>
   </div>
+  </div>
+  <div class="i18n-es" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">1899 &middot; objetos taínos reales excavados, catalogados</span>
+    <h2>La Colección Latimer</h2>
+    <p><em>The Latimer Collection of Antiquities from Porto Rico in the National Museum</em> &mdash; un catálogo del Smithsonian de objetos taínos reales excavados en la isla, publicado en 1899. El catálogo completo de 178 páginas está archivado fuera del sitio.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/latimer_1899_title.jpg" alt="Colección Latimer de antigüedades puertorriqueñas, 1899, portada" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Portada</b>La apertura del propio catálogo, 1899.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/latimer_1899_p100.jpg" alt="Colección Latimer, 1899, página 100" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Página 100</b>Objetos catalogados y láminas.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/latimer_1899_p150.jpg" alt="Colección Latimer, 1899, página 150" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Página 150</b>Más adentro del catálogo.</div>
+    </div>
+  </div>
+  </div>
   <div style="padding:16px 18px 0;">
     <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
-      <button id="lt-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">&larr; Prev</button>
-      <span style="font-size:14px;">Page <input id="lt-num" type="number" min="1" max="178" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> of 178 &mdash; full catalog</span>
-      <button id="lt-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;">Next &rarr;</button>
+      <button id="lt-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span></button>
+      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><input id="lt-num" type="number" min="1" max="178" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 178 &mdash; full catalog</span><span class="i18n-es" style="display:none;">de 178 &mdash; catálogo completo</span></span>
+      <button id="lt-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span></button>
     </div>
     <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
       <img id="lt-img" src="img/latimer-full/page-001.jpg" alt="Latimer Collection 1899 full-catalog viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
@@ -211,14 +304,24 @@
 </div>
 
 <div class="archive-section">
+  <div class="i18n-en">
   <div class="archive-section-head">
     <span class="fam-eyebrow">Coming as they're pulled</span>
     <h2>What else belongs here</h2>
     <p>This page is meant to grow: draft cards for the family members documented on <a href="../history/" style="color:var(--sea);font-weight:700;">The Colonial Record</a>'s "Those who served" section, the Taíno baptism record already in the book, census pages, and any other primary-source scan worth seeing in the original rather than just described in text.</p>
   </div>
+  </div>
+  <div class="i18n-es" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">Llegando según se van consiguiendo</span>
+    <h2>Qué más pertenece aquí</h2>
+    <p>Esta página está hecha para crecer: las tarjetas de reclutamiento de los familiares documentados en la sección "Quiénes sirvieron" de <a href="../history/" style="color:var(--sea);font-weight:700;">El Registro Colonial</a>, el acta de bautismo taína que ya está en el libro, páginas de censo, y cualquier otro escaneo de fuente primaria que valga la pena ver en el original y no solo descrito en texto.</p>
+  </div>
+  </div>
 </div>
 
 <div class="archive-section">
+  <div class="i18n-en">
   <div class="archive-section-head">
     <span class="fam-eyebrow">From Omar's own hands &middot; identified by Omar, 2026</span>
     <h2>The Family Album</h2>
@@ -362,6 +465,153 @@
       <div class="cap"><b>Album page — Angilo &amp; Maria (2)</b>Three more frames from the same night.</div>
     </div>
   </div>
+  </div>
+
+  <div class="i18n-es" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">De las propias manos de Omar &middot; identificadas por Omar, 2026</span>
+    <h2>El Álbum Familiar</h2>
+    <p>Fotografías familiares reales &mdash; no documentos, sino la gente misma. Compartidas e identificadas por Omar en julio de 2026, limpiadas digitalmente y con el color recuperado a partir de los originales descoloridos. Los originales sin tocar se conservan en el archivo familiar en nuestros propios servidores.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/family/juan_jose_and_mother_beatriz_nyc_1970s.jpg" alt="Juan José y su madre Beatriz" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Juan José y su madre Beatriz</b>Años 1970, con Nueva York de fondo — la única foto de Beatriz Vargas y Román en este archivo.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/christmas_ita_thelma_rosa.jpg" alt="Ita, Thelma y Rosa" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ita, Thelma y Rosa</b>Tres de las mujeres centrales de este libro en una sola foto de Navidad.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/family_party_moncho_alicia_rosa_yadyra_omar.jpg" alt="Fiesta familiar" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Fiesta familiar</b>Moncho, Alicia, Rosa, Yadyra y Omar de niño — según la propia identificación de Omar.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/ita_milagros_christmas_gift_1.jpg" alt="Ita — regalo de Navidad" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ita — regalo de Navidad</b>Milagros "Ita" Arocho Hernández abriendo un regalo, años 1970.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/ita_milagros_christmas_gift_2.jpg" alt="Ita — regalo de Navidad (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ita — regalo de Navidad (2)</b>Segunda foto, momentos después.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/ita_polaroid_sorting_photos.jpg" alt="Ita organizando fotografías" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ita organizando fotografías</b>Un Polaroid de Ita haciendo exactamente lo que hace esta página — guardar las fotos de la familia.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/ita_with_omar_elkyn_cake.jpg" alt="Ita con Omar y Elkyn" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ita con Omar y Elkyn</b>El bizcocho en el carrito, la Última Cena en la pared.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/birthday_ita_yadyra_elkyn_omar_polaroid.jpg" alt="Fiesta de cumpleaños" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Fiesta de cumpleaños</b>Ita, Yadyra, Elkyn y Omar — Polaroid.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/omar_first_birthday_with_yadyra.jpg" alt="El primer cumpleaños de Omar" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>El primer cumpleaños de Omar</b>El bizcocho dice "Happy Birthday Omar" — Yadyra, jovencita, a su lado.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/christmas_toys_yadyra_elkyn_omar_polaroid.jpg" alt="Mañana de Navidad" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Mañana de Navidad</b>Yadyra con Omar y Elkyn y el camión de bomberos de Fisher-Price.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_black_puppy_1.jpg" alt="Thelma" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Thelma</b>Con el perrito negro.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_black_puppy_2.jpg" alt="Thelma (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Thelma (2)</b>La misma visita, segunda foto.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_portrait_navy.jpg" alt="Thelma — retrato" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Thelma — retrato</b>De azul marino, en su casa entre sus platos y su vajilla.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_white_puppy_1.jpg" alt="Thelma" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Thelma</b>Con el perrito blanco.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_white_puppy_2.jpg" alt="Thelma (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Thelma (2)</b>Segunda foto.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/angel_marrero_young_birthday_1980s.jpg" alt="Ángel — joven" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ángel — joven</b>Chándal marrón, bizcocho de cumpleaños, Bacardí y Shasta sobre la mesa.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/angel_marrero_now_2026.jpg" alt="Ángel — hoy" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ángel — hoy</b>El hombre que crió a Omar, con una camisa de Puerto Rico.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/raymond_ceballo_beach.jpg" alt="Raymond Ceballo" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Raymond Ceballo</b>En la playa con dos niños — posiblemente el hermano de Rosa e Iris; investigación abierta.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/juan_jose_driving.jpg" alt="Juan José guiando" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Juan José guiando</b>El padre de Omar al volante.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/papi_bed_visit_omar_omarjr_elkyn_manny.jpg" alt="Visitando a Papi" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Visitando a Papi</b>Omar, Omar Jr., Elkyn y Manny alrededor de Juan José.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/papi_bed_visit_with_elkyn.jpg" alt="Papi y Elkyn" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Papi y Elkyn</b>Pulgares arriba.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/papi_bed_visit_group_juanjr_pablo.jpg" alt="Visitando a Papi (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Visitando a Papi (2)</b>Con Juan Jr. y Pablo.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/pablo_huertas.jpg" alt="Pablo Huertas" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Pablo Huertas</b>El tío de Omar — aquel cuyo mensaje de texto resolvió la cuestión de José Manuel.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/omar_with_beat_machine.jpg" alt="Omar" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Omar</b>Con la máquina de hacer beats.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/omar_and_poli.jpg" alt="Omar y Poli" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Omar y Poli</b>En casa.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/huertas_oval_portrait_and_young_man.jpg" alt="Dos retratos antiguos" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Dos retratos antiguos</b>Retrato ovalado y un joven — lado Huertas, sin identificar.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/boy_white_suit_first_communion.jpg" alt="Niño de traje blanco" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Niño de traje blanco</b>Probablemente una primera comunión — sin identificar.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/man_in_suit_1950s.jpg" alt="Hombre de traje" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Hombre de traje</b>Copia de los años 1950 — sin identificar.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/woman_on_swing_nyc.jpg" alt="Mujer en un columpio" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Mujer en un columpio</b>Copia de la época de Nueva York — sin identificar.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/two_children_vintage.jpg" alt="Dos niños" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Dos niños</b>Sin identificar.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/album_page_paris_elsa_omar_elkyn_yadyra_liberty.jpg" alt="Página de álbum: Paris y Elsa con Omar, Elkyn y Yadyra cerca de la Estatua de la Libertad" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Página de álbum — Paris, Elsa, Omar, Elkyn y Yadyra</b>Gradas del puerto, la Estatua de la Libertad a lo lejos — el tío Paris Broadbent y Elsa Monarez, la pareja cuyos hijos Mason y Corey documenta el libro. Identificados por Omar.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/album_page_yadyra_cecilia_kimmy_rosa.jpg" alt="Página de álbum: Yadyra y Cecilia, Kimmy, Rosa" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Página de álbum — Yadyra, Cecilia, Kimmy y Rosa</b>Arriba: Yadyra con Cecilia (la hija de Yvonne). Al medio: Kimmy. Abajo: Rosa con flores. Identificadas por Omar.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/album_page_angilo_and_maria_friends_of_rosa.jpg" alt="Página de álbum — Angilo y María" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Página de álbum — Angilo y María</b>Amigos de Rosa (no familia de sangre), del propio álbum de Rosa.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/album_page_angilo_maria_party_3up.jpg" alt="Página de álbum — Angilo y María (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Página de álbum — Angilo y María (2)</b>Tres fotos más de la misma noche.</div>
+    </div>
+  </div>
+  </div>
 </div>
 
 <div id="lightbox" onclick="this.style.display='none'">
@@ -369,8 +619,14 @@
 </div>
 
 <footer class="fam-footer">
-  <div class="fam-rule">The paper itself, not just what it says.</div>
-  <a href="../history/">The Colonial Record &rarr;</a>
+  <div class="i18n-en">
+    <div class="fam-rule">The paper itself, not just what it says.</div>
+    <a href="../history/">The Colonial Record &rarr;</a>
+  </div>
+  <div class="i18n-es" style="display:none;">
+    <div class="fam-rule">El papel mismo, no solo lo que dice.</div>
+    <a href="../history/">El Registro Colonial &rarr;</a>
+  </div>
 </footer>
 
 </div>
@@ -444,6 +700,6 @@ function openLightbox(src) {
 })();
 </script>
 
-<script src="../assets/i18n.js?v=4"></script>
+<script src="../assets/i18n.js?v=5"></script>
 </body>
 </html>

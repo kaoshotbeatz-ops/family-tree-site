@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow" />
 <title>The Full Tree · Omar &amp; Poli</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/theme.css?v=4">
+<link rel="stylesheet" href="../assets/theme.css?v=5">
 <style>
 #gate { position: fixed; inset: 0; z-index: 999; background: #1c150d; color: #ece0c8;
   display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; }
@@ -118,9 +118,16 @@
 <div class="fam-stripes"></div>
 
 <header class="fam-header" style="padding-bottom:10px">
-  <div class="fam-eyebrow">Every branch open &middot; drag to pan &middot; pinch or buttons to zoom</div>
-  <h1>The full <em>tree</em></h1>
-  <p class="fam-sub">Omar at the root, eight generations climbing right &mdash; exactly the shape Ancestry draws, rebuilt on the family's own site from the tree's own data export. Click <b>&minus;</b> on any card to fold a branch, <b>+</b> to open it again. Descendants are below.</p>
+  <div class="i18n-en">
+    <div class="fam-eyebrow">Every branch open &middot; drag to pan &middot; pinch or buttons to zoom</div>
+    <h1>The full <em>tree</em></h1>
+    <p class="fam-sub">Omar at the root, eight generations climbing right &mdash; exactly the shape Ancestry draws, rebuilt on the family's own site from the tree's own data export. Click <b>&minus;</b> on any card to fold a branch, <b>+</b> to open it again. Descendants are below.</p>
+  </div>
+  <div class="i18n-es" style="display:none;">
+    <div class="fam-eyebrow">Todas las ramas abiertas &middot; arrastra para desplazarte &middot; pellizca o usa los botones para acercar</div>
+    <h1>El árbol <em>completo</em></h1>
+    <p class="fam-sub">Omar en la raíz, ocho generaciones subiendo hacia la derecha &mdash; exactamente la forma que dibuja Ancestry, reconstruida en el sitio propio de la familia a partir de la exportación de datos del mismo árbol. Haz clic en <b>&minus;</b> en cualquier tarjeta para plegar una rama, y en <b>+</b> para volver a abrirla. Los descendientes están más abajo.</p>
+  </div>
 </header>
 
 <div class="viewport" id="vp">
@@ -130,18 +137,31 @@
     <button id="zout" aria-label="Zoom out">&minus;</button>
     <button id="zfit" aria-label="Fit" style="font-size:12px">Fit</button>
   </div>
-  <div class="legend"><span><i style="background:#7d9bb8"></i>Men</span><span><i style="background:#c98a7c"></i>Women</span><span><i style="background:#b7ac92"></i>Unknown</span></div>
+  <div class="legend i18n-en"><span><i style="background:#7d9bb8"></i>Men</span><span><i style="background:#c98a7c"></i>Women</span><span><i style="background:#b7ac92"></i>Unknown</span></div>
+  <div class="legend i18n-es" style="display:none;"><span><i style="background:#7d9bb8"></i>Hombres</span><span><i style="background:#c98a7c"></i>Mujeres</span><span><i style="background:#b7ac92"></i>Desconocido</span></div>
 </div>
 
 <div class="desc-strip">
-  <h2>Three generations down from Omar</h2>
-  <p>Children and grandchildren, from the same data export.</p>
+  <div class="i18n-en">
+    <h2>Three generations down from Omar</h2>
+    <p>Children and grandchildren, from the same data export.</p>
+  </div>
+  <div class="i18n-es" style="display:none;">
+    <h2>Tres generaciones hacia abajo desde Omar</h2>
+    <p>Hijos y nietos, de la misma exportación de datos.</p>
+  </div>
   <div class="desc-flex"><div id="descTree"></div></div>
 </div>
 
 <footer class="fam-footer">
-  <div class="fam-rule">Data: the family's own Ancestry tree export (2026-07-23). New people found since then join at the next export.</div>
-  <a href="../story/">Read the full book &rarr;</a>
+  <div class="i18n-en">
+    <div class="fam-rule">Data: the family's own Ancestry tree export (2026-07-23). New people found since then join at the next export.</div>
+    <a href="../story/">Read the full book &rarr;</a>
+  </div>
+  <div class="i18n-es" style="display:none;">
+    <div class="fam-rule">Datos: la exportación del propio árbol de Ancestry de la familia (2026-07-23). Las personas nuevas halladas desde entonces se añadirán en la próxima exportación.</div>
+    <a href="../story/">Lee el libro completo &rarr;</a>
+  </div>
 </footer>
 
 </div>
@@ -151,12 +171,21 @@
 <script>
 const DATA = {"anc": {"id": "I122790049048", "name": "Omar Huertas", "b": "1 Apr 1978", "d": "", "sex": "", "parents": [{"id": "I122790049141", "name": "Juan Jose Huertas Vargas", "b": "Sept 28 1946", "d": "Nov 2021", "sex": "M", "parents": [{"id": "I122790049282", "name": "Juan Jose Huertas", "b": "", "d": "", "sex": "M"}, {"id": "I122790049295", "name": "Beatriz Vargas y Rosa de Huertas", "b": "12 Dec 1922", "d": "18 Mar 2013", "sex": "F", "parents": [{"id": "I122790049347", "name": "Juan Casiano Vargas Lebr\u00f3n", "b": "13 Aug 1879", "d": "abt 1950", "sex": "M"}, {"id": "I122790049391", "name": "Ana Rosa Pineda", "b": "", "d": "", "sex": "F"}]}]}, {"id": "I122790049052", "name": "Yadyra H Marrero", "b": "Jun 1959", "d": "", "sex": "F", "parents": [{"id": "I122790049857", "name": "Miguel Cardona", "b": "", "d": "", "sex": "M", "parents": [{"id": "I122790067792", "name": "Miguel Cardona Reyes", "b": "5 Julio 1920", "d": "27 Jul 1942", "sex": "M"}, {"id": "I122790067799", "name": "Iraida Cruz Santiago", "b": "20 Nov 1925", "d": "21 Oct 1998", "sex": "F", "parents": [{"id": "I122790131881", "name": "Eleuterio Cruz y Olivo", "b": "abt 1887", "d": "July 31 1936", "sex": "M"}, {"id": "I122790129836", "name": "Dolores Santiago", "b": "", "d": "", "sex": "F"}]}]}, {"id": "I122790049245", "name": "Thelma Marrero y Arocho", "b": "27 Sep 1943", "d": "2019", "sex": "F", "parents": [{"id": "I122790049564", "name": "Amado Marrero Montalvo", "b": "11 May 1924", "d": "1982", "sex": "M", "parents": [{"id": "I122790049690", "name": "Juan Ram\u00f3n Marrero", "b": "1883", "d": "1942", "sex": "M", "parents": [{"id": "I122790065783", "name": "Juan MARRERO Gonzalez", "b": "abt 1861", "d": "29 Dec 1899", "sex": "M"}, {"id": "I122790067840", "name": "Carmen Evarista MEDINA Y RAMOS", "b": "abt 1863", "d": "", "sex": "F", "parents": [{"id": "I122790079450", "name": "JUAN BAUTISTA Medina y Medina", "b": "abt 1825", "d": "31 Ene 1903", "sex": "M"}, {"id": "I122790079568", "name": "Margarita Ramos", "b": "1840", "d": "", "sex": "F"}]}]}, {"id": "I122790065989", "name": "Maria Montalvo y Ramos", "b": "15 Jun 1896", "d": "8 Jun 1963", "sex": "F", "parents": [{"id": "I122790069425", "name": "Domingo Aquilino Montalvo Dominguez", "b": "17 Nov 1878", "d": "Oct 1970", "sex": "M", "parents": [{"id": "I122790079641", "name": "Hilario Montalvo Centeno", "b": "abt 1850", "d": "25 Nov 1900", "sex": "M", "parents": [{"id": "I122790081322", "name": "Tomasa Centeno", "b": "", "d": "", "sex": "F"}, {"id": "I122790081815", "name": "Nicolas Montalvo Nunez", "b": "abt 1819", "d": "14 Ene 1892", "sex": "M", "parents": [{"id": "I122790082261", "name": "Valentin Montalvo Montalvo", "b": "", "d": "", "sex": "M"}, {"id": "I122790082262", "name": "Juliana N\u00fa\u00f1ez Y Rodriguez", "b": "", "d": "", "sex": "F"}]}]}]}, {"id": "I122790069470", "name": "Dionicia Ramos Santiago De Montalvo", "b": "11 Apr 1876", "d": "29 Apr 1972", "sex": "F", "parents": [{"id": "I122790079211", "name": "Gabriel Ramos Garcia", "b": "abt 1850", "d": "", "sex": "M"}, {"id": "I122790079276", "name": "Maria Juana SANTIAGO", "b": "abt 1850", "d": "", "sex": "F"}]}]}]}, {"id": "I122790049637", "name": "Milagros Arocho Hern\u00e1ndez", "b": "20 Dec 1923", "d": "31 Jul 1996", "sex": "F", "parents": [{"id": "I122790066000", "name": "Juan Guillermo \"Guillo\" AROCHO Medina", "b": "25 Jun 1890", "d": "13 Nov 1967", "sex": "M", "parents": [{"id": "I122790077354", "name": "Mart\u00edn Arocho Y Rom\u00e1n", "b": "12 Nov 1828", "d": "10 Oct 1910", "sex": "M", "parents": [{"id": "I122790132331", "name": "Maximo (Mariano) Arocho Roman", "b": "abt 1800", "d": "", "sex": "M"}, {"id": "I122790132352", "name": "Ramona Roman", "b": "1800", "d": "6 Ene 1886", "sex": "F"}]}, {"id": "I122790077703", "name": "Felipa Delores Medina Caos (Cardi)", "b": "1845", "d": "12 Nov 1933", "sex": "F"}]}, {"id": "I122790067664", "name": "Maria \"Maro\" HERNANDEZ Nu\u00f1ez", "b": "7 Mar 1899", "d": "10 Apr 1956", "sex": "F", "parents": [{"id": "I122790067854", "name": "Manuel Antonio Hernandez y", "b": "abt 1850", "d": "abt 1916", "sex": "M"}, {"id": "I122790067866", "name": "Ricarda NU\u00d1EZ Mendez *", "b": "abt 1882", "d": "29 Oct 1936", "sex": "F", "parents": [{"id": "I122790069548", "name": "Juan Rosa NU\u00d1EZ Bosque *", "b": "abt 1858", "d": "15 Mar 1919", "sex": "M", "parents": [{"id": "I122790078867", "name": "Alberto NU\u00d1EZ Acevedo *", "b": "abt 1805", "d": "13 Mar 1895", "sex": "M"}, {"id": "I122790078953", "name": "Maria Anita BOSQUE *", "b": "abt 1805", "d": "", "sex": "F"}]}, {"id": "I122790069578", "name": "Juana Francisca Mendez Nunez", "b": "1844", "d": "26 Aug 1948", "sex": "F", "parents": [{"id": "I122790079017", "name": "Polinario Mendez", "b": "Abt. 1815", "d": "", "sex": "M"}, {"id": "I122790079096", "name": "Clemencia Nunez", "b": "Abt. 1820", "d": "", "sex": "F"}]}]}]}]}]}]}]}, "desc": {"id": "I122790049048", "name": "Omar Huertas", "b": "1 Apr 1978", "d": "", "sex": "", "spouses": ["Charlena", "Ericka Molina", "Polina Kudryavtseva"], "children": [{"id": "I122790050611", "name": "Chloe Huertas", "b": "", "d": "", "sex": "F"}, {"id": "I122790050641", "name": "Azure Huertas", "b": "", "d": "", "sex": "F", "children": [{"id": "azula-huertas", "name": "Azula", "b": "", "d": "", "sex": "F"}]}, {"id": "I122790050669", "name": "Omar Huertas Jr.", "b": "", "d": "", "sex": "M"}, {"id": "I122790050738", "name": "Natalia Huertas", "b": "", "d": "", "sex": "F"}, {"id": "I122790050845", "name": "Alicia Vostrova", "b": "", "d": "", "sex": "F"}]}};
 
+/* Labels the tree cards and controls render. Person names, places and dates are
+   never translated — only the little genealogical abbreviations around them. */
+const LABELS = {
+  en: { b: 'b. ', d: 'd. ', m: 'm. ', fit: 'Fit', zin: 'Zoom in', zout: 'Zoom out', zfit: 'Fit' },
+  es: { b: 'n. ', d: 'f. ', m: 'c. ', fit: 'Ajustar', zin: 'Acercar', zout: 'Alejar', zfit: 'Ajustar' }
+};
+function curLang(){ try { return localStorage.getItem('fam_lang') === 'es' ? 'es' : 'en'; } catch(e){ return 'en'; } }
+let L = LABELS[curLang()];
+
 function card(p, isRoot){
   const el = document.createElement('div');
   el.className = 'card ' + (p.sex==='M'?'M':p.sex==='F'?'F':'U') + (isRoot?' root':'');
-  let dt = (p.b?('b. '+p.b):'') + (p.d?((p.b?' · ':'')+'d. '+p.d):'');
+  let dt = (p.b?(L.b+p.b):'') + (p.d?((p.b?' · ':'')+L.d+p.d):'');
   el.innerHTML = '<div class="nm">'+p.name+'</div>' + (dt?('<div class="dt">'+dt+'</div>'):'') +
-    (p.spouses && p.spouses.length ? '<div class="sp">m. '+p.spouses.join(' · ')+'</div>' : '');
+    (p.spouses && p.spouses.length ? '<div class="sp">'+L.m+p.spouses.join(' · ')+'</div>' : '');
   return el;
 }
 
@@ -189,10 +218,29 @@ function buildDesc(p, isRoot){
 }
 
 const cv = document.getElementById('cv');
-const ped = document.createElement('div'); ped.className='ped';
-ped.appendChild(buildAnc(DATA.anc, true));
-cv.appendChild(ped);
-document.getElementById('descTree').appendChild(buildDesc(DATA.desc, true));
+const descTree = document.getElementById('descTree');
+
+function renderTrees(){
+  L = LABELS[curLang()];
+  cv.textContent = '';
+  descTree.textContent = '';
+  const ped = document.createElement('div'); ped.className='ped';
+  ped.appendChild(buildAnc(DATA.anc, true));
+  cv.appendChild(ped);
+  descTree.appendChild(buildDesc(DATA.desc, true));
+  document.getElementById('zfit').textContent = L.fit;
+  document.getElementById('zin').setAttribute('aria-label', L.zin);
+  document.getElementById('zout').setAttribute('aria-label', L.zout);
+  document.getElementById('zfit').setAttribute('aria-label', L.zfit);
+}
+renderTrees();
+
+/* i18n.js only shows/hides .i18n-* blocks; the tree is built in JS, so rebuild it
+   when the language toggle is clicked. Runs after i18n.js has stored the new value. */
+document.addEventListener('click', function (e) {
+  const btn = e.target.closest && e.target.closest('.lang-btn');
+  if (btn) setTimeout(renderTrees, 0);
+});
 
 /* pan + zoom */
 let scale=1, tx=0, ty=0;
@@ -200,6 +248,9 @@ const vp=document.getElementById('vp');
 function apply(){ cv.style.transform = 'translate('+tx+'px,'+ty+'px) scale('+scale+')'; }
 function fit(){
   const r=cv.getBoundingClientRect(), v=vp.getBoundingClientRect();
+  // While #content is still display:none everything measures 0 — bail out rather
+  // than latching scale to 0, which no later fit() could recover from.
+  if(!r.width || !r.height || !v.width || !v.height) return;
   const w=r.width/scale, h=r.height/scale;
   scale=Math.min(v.width/(w+40), v.height/(h+40), 1);
   tx=10; ty=Math.max(10,(v.height - h*scale)/2); apply();
@@ -270,6 +321,6 @@ setTimeout(fit, 120);
   try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
 })();
 </script>
-<script src="../assets/i18n.js?v=4"></script>
+<script src="../assets/i18n.js?v=5"></script>
 </body>
 </html>
