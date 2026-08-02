@@ -45,7 +45,6 @@
     --shadow-card: 0 1px 0 rgba(0,0,0,.2), 0 1px 12px rgba(0,0,0,.3);
   }
 }
-
 :root[data-theme="dark"] {
   --paper: #1c1712; --paper-raised: #251f18; --ink: #ece5d6; --ink-soft: #b9ae98;
   --line: #4c4535; --line-strong: #675e47; --accent: #93ab84; --accent-deep: #b9cca9;
@@ -133,7 +132,6 @@ h1, h2, h3, .fam-serif { font-family: 'Instrument Serif', Georgia, serif; font-w
     --nav-line: #4c4535; --nav-accent: #93ab84; --nav-accent-deep: #b9cca9; --nav-accent-wash: #2c3327;
   }
 }
-
 .fam-nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; gap: 6px;
