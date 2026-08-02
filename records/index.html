@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>Family Records · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css">
+<style>
+#gate { position: fixed; inset: 0; z-index: 999; background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; }
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input { font-family: -apple-system, sans-serif; font-size: 0.95rem; padding: 0.6rem 0.8rem;
+  border: 1px solid #4c4535; border-radius: 4px; background: #2a251e; color: #ece5d6; width: 100%;
+  box-sizing: border-box; margin-bottom: 0.7rem; }
+#gate button { font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52; background: #2c3327;
+  color: #b9cca9; cursor: pointer; width: 100%; }
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+
+.rec-section { margin-bottom: 36px; }
+.rec-section-head { padding: 0 18px; margin-bottom: 10px; }
+.rec-section-head h2 { font-size: 24px; margin: 4px 0 6px; }
+.rec-section-head p { font-size: 13.5px; color: var(--ink-soft); max-width: 660px; }
+.rec-table { margin: 0 18px; overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg); }
+table.rt { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--paper-raised); }
+table.rt th { text-align: left; padding: 9px 12px; background: var(--paper); font-size: 11px; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--ink-soft); border-bottom: 1px solid var(--line); }
+table.rt td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.rt tr:last-child td { border-bottom: none; }
+table.rt td.who { font-weight: 700; color: var(--ink); white-space: nowrap; }
+table.rt a.scan { color: var(--accent-deep); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--accent); white-space: nowrap; }
+.count-pill { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; color: var(--accent-deep); background: var(--accent-wash);
+  border: 1px solid var(--accent); border-radius: 999px; padding: 4px 12px; margin-bottom: 10px; }
+.note-box { background: var(--paper-raised); border: 1px dashed var(--line); border-radius: var(--radius-lg);
+  padding: 14px 18px; margin: 0 18px 30px; font-size: 13.5px; color: var(--ink-soft); max-width: 700px; }
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>Family records</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../pedigree/">Full Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../album/">Family Album</a>
+  <a href="./" class="active">Family Records</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../military/">Who Served</a>
+  <a href="../funfacts/">You Didn't Know</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<header class="fam-header">
+  <div class="fam-eyebrow">Every primary source this project stands on, in one list</div>
+  <h1>Family <em>records</em></h1>
+  <p class="fam-sub">Not a gallery, a ledger: every civil registration, church record, census, military file, and vital document that a fact in the tree or book actually rests on &mdash; who it's for, what it proves, and where the real image lives, if we have one. Private identity documents (licenses, SSNs) are cataloged the same way but kept off this page entirely &mdash; see the note at the bottom.</p>
+</header>
+
+<div class="rec-section">
+  <div class="rec-section-head">
+    <span class="count-pill">Puerto Rico Civil Registrations, 1885&ndash;2001</span>
+    <h2>Births, marriages &amp; deaths</h2>
+    <p>The backbone of this whole project &mdash; the official civil record Puerto Rico kept from 1885 onward.</p>
+  </div>
+  <div class="rec-table">
+  <table class="rt">
+    <tr><th>Person</th><th>Record</th><th>What it proves</th><th>Scan</th></tr>
+    <tr><td class="who">Alberto Núñez Acevedo</td><td>Death, 13 Mar 1895, Maricao</td><td>Names his parents Isidro Núñez &amp; Agustina Acevedo, confirming 6th great-grandparents</td><td><a class="scan" href="../story/img/alberto_nunez_acevedo_death_1895.jpg">View →</a></td></tr>
+    <tr><td class="who">Martín Arocho y Román</td><td>Death, 1910, Lares</td><td>Confirms birth year, parents, both marriages</td><td><a class="scan" href="../story/img/martin_arocho_death_cert-1.jpg">View →</a></td></tr>
+    <tr><td class="who">Guillermo Arocho &amp; María Hernández</td><td>Marriage certificate, 1916, Lares</td><td>Confirms their marriage &amp; both families</td><td><a class="scan" href="../story/img/guillermo_maria_marriage_cert-1.jpg">View →</a></td></tr>
+    <tr><td class="who">Eleuterio Cruz Olivo &amp; Nicolasa Santiago</td><td>Marriage (Acta de Matrimonio), 1913, Arecibo</td><td>Confirms the Cruz/Olivo union on the Cardona line</td><td><a class="scan" href="../story/img/eleuterio_cruz_marriage_1913.jpg">View →</a></td></tr>
+    <tr><td class="who">Juana Olivo Cabrera</td><td>Death (Certificado de Defunción), 1925, Hatillo</td><td>Confirms her death date &amp; place</td><td><a class="scan" href="../story/img/juana_olivo_death_cert_1925.jpg">View →</a></td></tr>
+    <tr><td class="who">Mercedes Cruz Olivo</td><td>Death certificate, 1944, Aguadilla</td><td>Confirms her death, closing that branch</td><td><a class="scan" href="../story/img/mercedes_cruz_olivo_death_cert_1944.jpg">View →</a></td></tr>
+    <tr><td class="who">Miguel Cardona Reyes</td><td>Death, 1942, Arecibo</td><td>Confirms he died at 22, before his son Miguel was raised by Iraida alone</td><td><a class="scan" href="../story/img/miguel_cardona_reyes_death_1942.jpg">View →</a></td></tr>
+    <tr><td class="who">Eduviges Calderón</td><td>Death, 1895</td><td>Confirms "Viuda de Mauricio Ceballos" &mdash; her widowhood status</td><td><a class="scan" href="../story/img/eduviges_calderon_death_1895.jpg">View →</a></td></tr>
+    <tr><td class="who">Juan Torres Núñez</td><td>Death, 11 Nov 1918, Arecibo</td><td>Confirms Ricarda's first documented child by her second marriage</td><td><a class="scan" href="../archive/img/family/">Archive →</a></td></tr>
+    <tr><td class="who">Mauricio Ceballos</td><td>Baptism, 22 Sep 1825, Loíza/Canóvanas</td><td>Names him "hijo natural de Concepción Zeballos, parda libre" &mdash; the deepest confirmed African-ancestry record in the tree</td><td><a class="scan" href="../story/img/mauricio_ceballos_baptism_1825.jpg">View →</a></td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="rec-section">
+  <div class="rec-section-head">
+    <span class="count-pill">U.S. Federal &amp; Puerto Rico Census, 1910&ndash;1950</span>
+    <h2>Census households</h2>
+    <p>Every decade a family shows up together on paper, under one roof, in the enumerator's own handwriting.</p>
+  </div>
+  <div class="rec-table">
+  <table class="rt">
+    <tr><th>Person / household</th><th>Year &amp; place</th><th>What it proves</th><th>Scan</th></tr>
+    <tr><td class="who">Martín Arocho y Román</td><td>1910, Lares</td><td>Household composition, confirms his second family</td><td><a class="scan" href="../story/img/martin_arocho_1910_census.jpg">View →</a></td></tr>
+    <tr><td class="who">Guillermo Arocho Medina</td><td>1950, La Cruz, Arecibo</td><td>Places Rosa María's children in the household, age 5 and under</td><td><a class="scan" href="../story/img/guillermo_arocho_1950_census.jpg">View →</a></td></tr>
+    <tr><td class="who">Ramón Ceballos y Calderón</td><td>1910</td><td>Race field records him "Mulatto" &mdash; independent confirmation of the Ceballos line's documented African ancestry</td><td><a class="scan" href="../story/img/ramon_ceballos_1910_census.jpg">View →</a></td></tr>
+    <tr><td class="who">Ángel Luis &amp; Norma González</td><td>1950, San Felipe, Arecibo</td><td>Places both siblings in Juan González Morales's household</td><td><a class="scan" href="../story/img/angel_luis_norma_1950_census.jpg">View →</a></td></tr>
+    <tr><td class="who">Ramón "Moncho" Ceballo Vargas household</td><td>1940, Bayamón (transcribed under "Vargas")</td><td>Reveals two previously unrecorded daughters, Rosario &amp; Herminia Torres Núñez</td><td><a class="scan" href="../story/img/ceballo_vargas_1940_census.jpg">View →</a></td></tr>
+    <tr><td class="who">Ramón Torres y Martínez household</td><td>1920, Río Prieto, Lares</td><td>Same two new daughters, first appearance in any record</td><td><a class="scan" href="../story/img/torres_nunez_1920_census.jpg">View →</a></td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="rec-section">
+  <div class="rec-section-head">
+    <span class="count-pill">Family tree &amp; genealogy exports</span>
+    <h2>The tree itself</h2>
+  </div>
+  <div class="rec-table">
+  <table class="rt">
+    <tr><th>What</th><th>Date</th><th>Used for</th><th>Location</th></tr>
+    <tr><td class="who">Omar Huertas Tree — GEDCOM export</td><td>2026-07-23</td><td>Source data for the Full Tree pedigree page</td><td>records/ancestry-gedcom-backups/ (private repo)</td></tr>
+    <tr><td class="who">Vostrov genealogy report</td><td>Undated, provided by family</td><td>Polina's line, the Vostrovs of Khimki</td><td><a class="scan" href="../story/img/vostrov_report_page1.jpg">Page 1 →</a> &middot; <a class="scan" href="../story/img/vostrov_report_page2.jpg">Page 2 →</a></td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="rec-section">
+  <div class="rec-section-head">
+    <span class="count-pill">Military records</span>
+    <h2>Service &amp; veterans' files</h2>
+    <p>Full write-ups, with sources, live on the <a href="../military/" style="color:var(--accent-deep);font-weight:700;">Who Served</a> page. Listed here for the ledger.</p>
+  </div>
+  <div class="rec-table">
+  <table class="rt">
+    <tr><th>Person</th><th>Record</th><th>What it proves</th></tr>
+    <tr><td class="who">Orlando Cruz Arocho</td><td>U.S. Veterans' Gravesites; Obituary Collection; SSDI; SS Applications &amp; Claims; VA BIRLS</td><td>Pv2, U.S. Army, Vietnam; buried Cementerio Municipal, Arecibo</td></tr>
+    <tr><td class="who">Robert Marrero Montalvo</td><td>PR Civil Registrations (birth); U.S. Veterans' Gravesites</td><td>Pfc, U.S. Army, Korean War, exact enlist/discharge dates; Long Island National Cemetery, Section 2J Site 4253</td></tr>
+    <tr><td class="who">Angel A. Marrero</td><td>Ancestry hint queue (9/9 reviewed); direct Military-category search</td><td>No documented record yet &mdash; entry stays open on testimony alone</td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="rec-section">
+  <div class="rec-section-head">
+    <span class="count-pill">Church &amp; genealogy tree records</span>
+    <h2>FamilySearch Family Tree &amp; Catholic Church Records</h2>
+    <p>Pre-1885 Puerto Rico has no civil registration &mdash; parish baptism, marriage, and burial books are the only paper that survives.</p>
+  </div>
+  <div class="rec-table">
+  <table class="rt">
+    <tr><th>Person</th><th>What it proves</th></tr>
+    <tr><td class="who">Máximo Arocho y Sánchez</td><td>Fuller name (mother's surname Sánchez); birth Añasco, death Lares; 4 children incl. 3 newly found siblings of Martín</td></tr>
+    <tr><td class="who">Marta Arocho Román</td><td>1825&ndash;1914, 15 sources; married Pedro Martir González Feliciano, 5 children in Utuado</td></tr>
+    <tr><td class="who">Concepción Zeballos</td><td>Confirms Mauricio's mother, no deeper record; ruled out force-matching to two unrelated Loíza Ceballos families of the same era</td></tr>
+  </table>
+  </div>
+</div>
+
+<div class="note-box">
+  <b>Private vital documents</b> &mdash; driver's licenses, Social Security cards, birth certificates, marriage licenses, green cards, and court filings for Omar's own household &mdash; are cataloged the same rigorous way, but deliberately <b>kept off this page and off GitHub entirely</b>. They contain live SSNs, license numbers, and USCIS numbers. That catalog lives in <code>records/private-vital-documents/</code> on the family's own servers (Mac, ai5080, ai3070), gitignored, never public. The facts extracted from them &mdash; names, dates, relationships &mdash; are the same facts that appear in the tree and book above.
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">Every fact in this project traces back to something on this page &mdash; or it isn't a fact yet.</div>
+  <a href="../story/">Read the full book &rarr;</a>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+<script src="../assets/read-aloud.js"></script>
+</body>
+</html>
