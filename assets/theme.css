@@ -101,30 +101,45 @@ body {
 }
 
 @media (min-width: 900px) {
-  .fam-wrap, .fam-header, .fam-footer, .fam-source-note, .fam-tocbar { max-width: 780px; }
-  .archive-grid, .fact-grid { max-width: 780px; margin-left: auto; margin-right: auto; }
+  /* Use the full page width — no narrow centered column */
+  .fam-wrap, .fam-header, .fam-footer, .fam-source-note, .fam-tocbar { max-width: none; }
+  .archive-grid, .fact-grid { max-width: none; margin-left: 0; margin-right: 0; }
 }
 
 h1, h2, h3, .fam-serif { font-family: 'Instrument Serif', Georgia, serif; font-weight: 400; }
 
 .fam-stripes { height: 12px; background: repeating-linear-gradient(135deg, var(--clay) 0 22px, var(--accent-deep) 22px 44px); }
 
-/* Top navigation bar — shared across every page */
+/* Top navigation bar — shared across every page.
+   Uses its own --nav-* palette (not --paper/--ink) so per-page :root overrides
+   can never change the nav's color — it looks identical on every page. */
+:root {
+  --nav-bg: #f1ede2; --nav-raised: #e8e2d3; --nav-ink: #2b2621; --nav-ink-soft: #57503f;
+  --nav-line: #c3b89f; --nav-accent: #5f7a52; --nav-accent-deep: #3c4f34; --nav-accent-wash: #e3e8db;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --nav-bg: #1c1712; --nav-raised: #251f18; --nav-ink: #ece5d6; --nav-ink-soft: #b9ae98;
+    --nav-line: #4c4535; --nav-accent: #93ab84; --nav-accent-deep: #b9cca9; --nav-accent-wash: #2c3327;
+  }
+}
 .fam-nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; gap: 6px;
-  padding: 10px 16px; background: var(--paper); border-bottom: 1px solid var(--line);
+  padding: 10px 16px; background: var(--nav-bg); border-bottom: 1px solid var(--nav-line);
   overflow-x: auto; white-space: nowrap;
 }
 .fam-nav a {
   font-family: 'Public Sans', sans-serif; font-size: 12.5px; font-weight: 600;
-  color: var(--ink-soft); text-decoration: none;
+  color: var(--nav-ink-soft); text-decoration: none;
   padding: 7px 13px; border-radius: 999px; border: 1px solid transparent;
   transition: all .15s ease;
 }
-.fam-nav a:hover { background: var(--paper-raised); color: var(--ink); }
-.fam-nav a.active { background: var(--accent-wash); color: var(--accent-deep); border-color: var(--accent); }
-.fam-nav .fam-nav-brand { font-family: 'Instrument Serif', serif; font-size: 17px; color: var(--ink); margin-right: 8px; text-decoration: none; flex-shrink: 0; }
+.fam-nav a:hover { background: var(--nav-raised); color: var(--nav-ink); }
+.fam-nav a.active { background: var(--nav-accent-wash); color: var(--nav-accent-deep); border-color: var(--nav-accent); }
+.fam-nav .fam-nav-brand { font-family: 'Instrument Serif', serif; font-size: 17px; color: var(--nav-ink); margin-right: 8px; text-decoration: none; flex-shrink: 0; }
+.fam-nav .lang-btn { background: var(--nav-raised) !important; border-color: var(--nav-line) !important; color: var(--nav-ink-soft) !important; }
+.fam-nav .lang-btn.active { background: var(--nav-accent-wash) !important; color: var(--nav-accent-deep) !important; border-color: var(--nav-accent) !important; }
 
 /* Sidebar nav on wider screens — same links, stacked down the left edge instead of a cramped scrolling top bar */
 @media (min-width: 900px) {
@@ -133,7 +148,7 @@ h1, h2, h3, .fam-serif { font-family: 'Instrument Serif', Georgia, serif; font-w
     width: 200px; height: 100vh;
     flex-direction: column; align-items: flex-start; gap: 2px;
     overflow-x: hidden; overflow-y: auto; white-space: normal;
-    border-bottom: none; border-right: 1px solid var(--line);
+    border-bottom: none; border-right: 1px solid var(--nav-line);
     padding: 22px 14px 30px;
   }
   .fam-nav .fam-nav-brand { margin-right: 0; margin-bottom: 10px; line-height: 1.25; }
@@ -157,9 +172,9 @@ h1, h2, h3, .fam-serif { font-family: 'Instrument Serif', Georgia, serif; font-w
 .fam-card p em { font-style: italic; color: var(--ink); }
 .fam-card p strong { color: var(--ink); }
 
-.fam-wrap { max-width: 720px; margin: 0 auto; padding: 10px 18px 30px; }
+.fam-wrap { max-width: none; margin: 0; padding: 10px 24px 30px; }
 
-.fam-header { padding: 40px 20px 26px; text-align: center; max-width: 760px; margin: 0 auto; }
+.fam-header { padding: 40px 24px 26px; text-align: center; max-width: none; margin: 0; }
 .fam-eyebrow { font-size: 11.5px; letter-spacing: .2em; text-transform: uppercase; color: var(--sea); font-weight: 700; }
 .fam-header h1 { font-size: clamp(36px, 6.5vw, 56px); line-height: 1.05; margin: 8px 0; }
 .fam-header h1 em { font-style: italic; color: var(--clay); }
@@ -169,16 +184,16 @@ h1, h2, h3, .fam-serif { font-family: 'Instrument Serif', Georgia, serif; font-w
 .fam-pill { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 10px; padding: 9px 15px; font-size: 12.5px; }
 .fam-pill b { color: var(--sea); }
 
-.fam-footer { max-width: 720px; margin: 20px auto 0; padding: 24px 16px 60px; text-align: center; font-size: 13px; color: var(--ink-soft); }
+.fam-footer { max-width: none; margin: 20px 0 0; padding: 24px 16px 60px; text-align: center; font-size: 13px; color: var(--ink-soft); }
 .fam-footer .fam-rule { font-family: 'Instrument Serif', serif; font-style: italic; font-size: 19px; color: var(--ink); margin-bottom: 8px; }
 .fam-footer a { color: var(--sea); text-decoration: none; font-weight: 600; }
 
-.fam-source-note { max-width: 720px; margin: 10px auto 0; padding: 16px 18px; font-size: 12.5px; color: var(--ink-soft); border-top: 1px dashed var(--line); }
+.fam-source-note { max-width: none; margin: 10px 24px 0; padding: 16px 18px; font-size: 12.5px; color: var(--ink-soft); border-top: 1px dashed var(--line); }
 
 .fam-photo { width: 100%; max-height: 340px; object-fit: cover; border-radius: var(--radius); margin: 12px 0 4px; display: block; }
 .fam-photo-cap { font-size: 12px; color: var(--ink-soft); margin-bottom: 8px; }
 
-.fam-tocbar { max-width: 720px; margin: 0 auto 4px; padding: 0 18px; overflow-x: auto; }
+.fam-tocbar { max-width: none; margin: 0 0 4px; padding: 0 18px; overflow-x: auto; }
 .fam-tocbar-inner { display: flex; gap: 8px; padding: 4px 0 14px; border-bottom: 2px solid var(--ink); }
 .fam-tocbar a {
   white-space: nowrap; font-size: 12px; font-weight: 700; color: var(--sea); text-decoration: none;
