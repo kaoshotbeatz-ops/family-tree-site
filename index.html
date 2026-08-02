@@ -26,21 +26,7 @@
     --radius: 4px;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --paper: #211d18;
-      --paper-raised: #2a251e;
-      --ink: #ece5d6;
-      --ink-soft: #b9ae98;
-      --line: #4c4535;
-      --line-strong: #675e47;
-      --accent: #93ab84;
-      --accent-deep: #b9cca9;
-      --accent-wash: #2c3327;
-      --grave: #d69684;
-      --grave-wash: #382723;
-    }
-  }
+  
   :root[data-theme="dark"] {
     --paper: #211d18;
     --paper-raised: #2a251e;
@@ -457,9 +443,7 @@
     margin: 0.8rem 0; padding: 0.2rem 0 0.2rem 1rem;
   }
   .rc-note { font-size: 0.92rem; line-height: 1.6; margin: 0.6rem 0 0; }
-  @media (prefers-color-scheme: dark) {
-    .remember-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.18); }
-  }
+  
 
   /* ===== Family Archive nav ===== */
   .archive-nav {
@@ -482,12 +466,7 @@
     scroll-margin-top: 4.5rem;
   }
   .tl-decade-count { font-size: 0.72rem; font-weight: 600; opacity: 0.55; margin-left: 0.5rem; }
-  @media (prefers-color-scheme: dark) {
-    .archive-nav { background: var(--bg, #111); border-bottom-color: rgba(255,255,255,0.15); }
-    .archive-nav a { border-color: rgba(255,255,255,0.25); }
-    .archive-nav a:hover { background: rgba(255,255,255,0.08); }
-    .tl-decade-head { border-top-color: rgba(255,255,255,0.3); }
-  }
+  
 </style>
 <style>
   #gate {
@@ -514,7 +493,7 @@
   #content { display: none; }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/theme.css?v=6">
+<link rel="stylesheet" href="assets/theme.css?v=7">
 
 </head>
 <body>
@@ -1186,6 +1165,6 @@
 })();
 </script>
 
-<script src="assets/i18n.js?v=6"></script>
+<script src="assets/i18n.js?v=7"></script>
 </body>
 </html>

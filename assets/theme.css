@@ -1,5 +1,9 @@
 /* Shared design system — warm editorial, family archive site */
 
+/* The site deliberately renders one consistent warm-paper look for every
+   visitor. No prefers-color-scheme dark variant: pages differed in whether
+   they honored it, which made the site look like two different sites. */
+
 :root {
   --paper: #f1ede2;
   --paper-raised: #e8e2d3;
@@ -23,28 +27,6 @@
   --shadow-card: 0 1px 0 rgba(0,0,0,.04), 0 1px 8px rgba(43,38,33,.04);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --paper: #1c1712;
-    --paper-raised: #251f18;
-    --ink: #ece5d6;
-    --ink-soft: #b9ae98;
-    --line: #4c4535;
-    --line-strong: #675e47;
-    --accent: #93ab84;
-    --accent-deep: #b9cca9;
-    --accent-wash: #2c3327;
-    --clay: #d17c4f;
-    --clay-deep: #e8a37a;
-    --clay-wash: #3a2418;
-    --gold: #d9ae5a;
-    --sea: #4fa5a8;
-    --sea-deep: #6fc0c2;
-    --grave: #d69684;
-    --grave-wash: #382723;
-    --shadow-card: 0 1px 0 rgba(0,0,0,.2), 0 1px 12px rgba(0,0,0,.3);
-  }
-}
 :root[data-theme="dark"] {
   --paper: #1c1712; --paper-raised: #251f18; --ink: #ece5d6; --ink-soft: #b9ae98;
   --line: #4c4535; --line-strong: #675e47; --accent: #93ab84; --accent-deep: #b9cca9;
@@ -126,12 +108,7 @@ h1, h2, h3, .fam-serif { font-family: 'Instrument Serif', Georgia, serif; font-w
   --nav-bg: #f1ede2; --nav-raised: #e8e2d3; --nav-ink: #2b2621; --nav-ink-soft: #57503f;
   --nav-line: #c3b89f; --nav-accent: #5f7a52; --nav-accent-deep: #3c4f34; --nav-accent-wash: #e3e8db;
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --nav-bg: #1c1712; --nav-raised: #251f18; --nav-ink: #ece5d6; --nav-ink-soft: #b9ae98;
-    --nav-line: #4c4535; --nav-accent: #93ab84; --nav-accent-deep: #b9cca9; --nav-accent-wash: #2c3327;
-  }
-}
+
 .fam-nav {
   position: sticky; top: 0; z-index: 50;
   display: flex; align-items: center; gap: 6px;
