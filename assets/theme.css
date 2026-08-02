@@ -59,6 +59,7 @@
 }
 
 * { box-sizing: border-box; }
+.lang-btn.active { background: var(--accent-wash) !important; color: var(--accent-deep) !important; border-color: var(--accent) !important; }
 body {
   font-family: 'Public Sans', -apple-system, sans-serif; color: var(--ink); line-height: 1.6;
   background-color: var(--paper);
