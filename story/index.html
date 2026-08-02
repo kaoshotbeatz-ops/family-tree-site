@@ -239,7 +239,7 @@ body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);
     background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
   }
   #gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
-  #content { display: none; }
+  #content { display: none; flex-direction: column; align-items: center; min-height: 100vh; width: 100%; }
 </style>
 
 </head>
@@ -257,28 +257,26 @@ body{font-family:Georgia,'Times New Roman',serif;color:var(--ink);
 <div id="content">
 <div class="grain"></div>
 
-<div class="topbar">
-  <a class="brand" href="../">
-    <span class="brand-mark">🌳</span>
-    <span class="brand-lock"><span class="b-name">Arocho–Marrero–Huertas</span><span class="b-sub">Family History</span></span>
-  </a>
-  <a class="backlink" href="../">&larr; Back to the tree</a>
-  <a class="backlink" href="../album/">Family Album &rarr;</a>
-  <a class="backlink" href="../pedigree/">Full Tree &rarr;</a>
-  <a class="backlink" href="../puerto-rico/">1st Puerto Rico Vacation &rarr;</a>
-  <a class="backlink" href="../history/">The Colonial Record &rarr;</a>
-  <a class="backlink" href="../boriken/">Boriken &rarr;</a>
-  <a class="backlink" href="../archive/">Image Archive &rarr;</a>
-  <a class="backlink" href="../island/">The Island Itself &rarr;</a>
-  <a class="backlink" href="../military/">Who Served &rarr;</a>
-  <a class="backlink" href="../map/">Indigenous Map &rarr;</a>
-  <a class="backlink" href="../cookbook/">Cookbook &rarr;</a>
-  <a class="backlink" href="../timeline/">Full Timeline &rarr;</a>
-  <a class="backlink" href="../remembered/">Remembered &rarr;</a>
-  <a class="backlink" href="../openleads/">Open Leads &rarr;</a>
-  <a class="backlink" href="../encomienda/">Encomienda &rarr;</a>
-  <a class="backlink" href="../funfacts/">You Didn't Know &rarr;</a>
-</div>
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../pedigree/">Full Tree</a>
+  <a href="./" class="active">Book</a>
+  <a href="../album/">Family Album</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../island/">The Island Itself</a>
+  <a href="../military/">Who Served</a>
+  <a href="../map/">Indigenous Map</a>
+  <a href="../cookbook/">Cookbook</a>
+  <a href="../timeline/">Full Timeline</a>
+  <a href="../remembered/">Remembered</a>
+  <a href="../openleads/">Open Leads</a>
+  <a href="../encomienda/">Encomienda</a>
+  <a href="../funfacts/">You Didn't Know</a>
+</nav>
 
 <div id="progress"><span></span></div>
 
@@ -1104,7 +1102,7 @@ render();
   }
   function unlock() {
     document.getElementById("gate").style.display = "none";
-    document.getElementById("content").style.display = "block";
+    document.getElementById("content").style.display = "flex";
     try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
   }
   async function tryPassword() {

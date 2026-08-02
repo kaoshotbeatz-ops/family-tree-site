@@ -530,6 +530,26 @@
 </div>
 <div id="content">
 
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="./" class="active">Tree</a>
+  <a href="pedigree/">Full Tree</a>
+  <a href="story/">Book</a>
+  <a href="album/">Family Album</a>
+  <a href="puerto-rico/">Trip</a>
+  <a href="history/">Colonial Record</a>
+  <a href="boriken/">Boriken</a>
+  <a href="archive/">Image Archive</a>
+  <a href="island/">The Island Itself</a>
+  <a href="military/">Who Served</a>
+  <a href="map/">Indigenous Map</a>
+  <a href="cookbook/">Cookbook</a>
+  <a href="timeline/">Full Timeline</a>
+  <a href="remembered/">Remembered</a>
+  <a href="openleads/">Open Leads</a>
+  <a href="encomienda/">Encomienda</a>
+  <a href="funfacts/">You Didn't Know</a>
+</nav>
 
 <div class="page">
   <div class="page-narrow">
@@ -1097,7 +1117,9 @@
     return '<a href="#' + s[1] + '">' + s[0] + '</a>';
   }).join('');
   var host = document.getElementById('content') || document.body;
-  host.insertBefore(nav, host.firstChild);
+  var famNav = host.querySelector('.fam-nav');
+  if (famNav) { famNav.insertAdjacentElement('afterend', nav); }
+  else { host.insertBefore(nav, host.firstChild); }
 
   // ---- 2. Rebuild the timeline: sort by year, group by decade, add year menu ----
   var tl = document.querySelector('.timeline');
