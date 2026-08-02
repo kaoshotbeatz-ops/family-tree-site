@@ -126,6 +126,22 @@ h1, h2, h3, .fam-serif { font-family: 'Instrument Serif', Georgia, serif; font-w
 .fam-nav a.active { background: var(--accent-wash); color: var(--accent-deep); border-color: var(--accent); }
 .fam-nav .fam-nav-brand { font-family: 'Instrument Serif', serif; font-size: 17px; color: var(--ink); margin-right: 8px; text-decoration: none; flex-shrink: 0; }
 
+/* Sidebar nav on wider screens — same links, stacked down the left edge instead of a cramped scrolling top bar */
+@media (min-width: 900px) {
+  .fam-nav {
+    position: fixed; top: 0; left: 0; bottom: 0; z-index: 50;
+    width: 200px; height: 100vh;
+    flex-direction: column; align-items: flex-start; gap: 2px;
+    overflow-x: hidden; overflow-y: auto; white-space: normal;
+    border-bottom: none; border-right: 1px solid var(--line);
+    padding: 22px 14px 30px;
+  }
+  .fam-nav .fam-nav-brand { margin-right: 0; margin-bottom: 10px; line-height: 1.25; }
+  .fam-nav a { width: 100%; }
+  .fam-nav .lang-toggle { margin-left: 0 !important; margin-top: 14px; }
+  #content { margin-left: 200px; }
+}
+
 /* Cards / "era" blocks — the shared content unit */
 .fam-card {
   background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius-lg);
