@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow" />
 <title>The Indigenous Map · Omar &amp; Poli</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/theme.css?v=20260802a">
+<link rel="stylesheet" href="../assets/theme.css?v=8">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <style>
 #gate {
@@ -93,6 +93,11 @@
     <h1>El mapa <em>indígena</em></h1>
     <p class="fam-sub">Cada marcador es un sitio taíno o pre-taíno real y documentado que puedes visitar hoy en persona &mdash; bateyes, cuevas con petroglifos, cementerios. Haz clic en un marcador o en una tarjeta abajo. Las coordenadas son aproximadas a la entrada del sitio, no de precisión topográfica.</p>
   </div>
+  <div class="i18n-ru" style="display:none;">
+    <div class="fam-eyebrow">Реальные места, стоящие до сих пор</div>
+    <h1>Индейская <em>карта</em></h1>
+    <p class="fam-sub">Каждая метка &mdash; это реальное, задокументированное поселение таино или дотаинского времени, которое можно физически посетить сегодня: площадки для игры в мяч, пещеры с петроглифами, места захоронений. Нажмите на метку или на карточку ниже. Координаты приблизительно указывают на вход на объект, они не геодезической точности.</p>
+  </div>
 </header>
 
 <div class="map-wrap">
@@ -123,6 +128,17 @@
 </footer>
 </div>
 
+<div class="i18n-ru" style="display:none;">
+<div class="fam-source-note">
+  Сведения об объектах: Институт пуэрто-риканской культуры (Instituto de Cultura Puertorriqueña), который управляет Кагуаной и Тибесом; списки Службы национальных парков США / Национального реестра исторических мест; а также археологические источники, приведённые на <a href="../boriken/" style="color:var(--sea);font-weight:700;">странице «Борикен»</a> (Fewkes 1907, Coll y Toste 1897, журналы El Mapa). Тайлы карты &copy; участники OpenStreetMap.
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">Каждое из этих мест — то, где эта семья действительно могла бы постоять.</div>
+  <a href="../boriken/">Борикен &rarr;</a>
+</footer>
+</div>
+
 </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
@@ -131,6 +147,9 @@ var SITES = [
   {
     name: "Caguana Ceremonial Ball Courts", muni: "Utuado", lat: 18.2447, lng: -66.7783,
     nameEs: "Centro Ceremonial Indígena de Caguana",
+    nameRu: "Церемониальные площадки для игры в мяч Кагуана (Caguana)",
+    descRu: "Наиболее хорошо сохранившийся церемониальный объект таино в Карибском бассейне — несколько обложенных камнем батей (bateyes) с монолитами, покрытыми петроглифами, построенных около 1270 года н. э. Национальный историко-архитектурный памятник США, находящийся в ведении Института пуэрто-риканской культуры.",
+    tieRu: "В ПОЕЗДКЕ — день 5, маршрут «Сердце земли таино»",
     desc: "The best-preserved Taíno ceremonial site in the Caribbean — multiple stone-lined bateyes with petroglyph-carved monoliths, built around 1270 CE. A National Historic Landmark, administered by the Instituto de Cultura Puertorriqueña.",
     descEs: "El sitio ceremonial taíno mejor conservado del Caribe — varios bateyes delineados en piedra con monolitos tallados con petroglifos, construidos alrededor del 1270 d.C. Es un National Historic Landmark, administrado por el Instituto de Cultura Puertorriqueña.",
     tie: "ON THE TRIP — Day 5, the Taíno Heartland route",
@@ -139,6 +158,9 @@ var SITES = [
   {
     name: "Tibes Indigenous Ceremonial Center", muni: "Ponce", lat: 18.0417, lng: -66.6215,
     nameEs: "Centro Ceremonial Indígena de Tibes",
+    nameRu: "Индейский церемониальный центр Тибес (Tibes)",
+    descRu: "Церемониальные площади и площадки для игры в мяч, построенные рядом с одним из древнейших могильников, найденных где-либо на Антильских островах — с захоронениями, предшествующими самой культуре таино, эпохи игнери/саладоид. Действующий археологический памятник и музей, открытый для посетителей.",
+    tieRu: "В ПОЕЗДКЕ — день 6, Понсе (Ponce)",
     desc: "Ceremonial plazas and ballcourts built beside one of the oldest cemeteries found anywhere in the Antilles — with burials predating Taíno culture itself, from the earlier Igneri/Saladoid era. Active archaeological site and museum, open to visitors.",
     descEs: "Plazas ceremoniales y bateyes construidos junto a uno de los cementerios más antiguos hallados en todas las Antillas — con enterramientos anteriores a la propia cultura taína, de la época igneri/saladoide. Sitio arqueológico activo y museo, abierto al público.",
     tie: "ON THE TRIP — Day 6, Ponce",
@@ -146,6 +168,9 @@ var SITES = [
   },
   {
     name: "Cueva del Indio", muni: "Arecibo", lat: 18.4909, lng: -66.6408,
+    nameRu: "Куэва-дель-Индио (Cueva del Indio)",
+    descRu: "Впечатляющая приморская пещера с петроглифами таино, вырезанными на её стенах, на северном побережье Пуэрто-Рико. Внесена в Национальный реестр исторических мест США.",
+    tieRu: "Тот же муниципалитет, что и задокументированная семейная линия Арочо (Arocho)",
     desc: "A dramatic seaside cave with Taíno petroglyphs carved into its walls, on Puerto Rico's north coast. Listed on the National Register of Historic Places.",
     descEs: "Una impresionante cueva junto al mar con petroglifos taínos tallados en sus paredes, en la costa norte de Puerto Rico. Está inscrita en el National Register of Historic Places.",
     tie: "Same municipality as the family's documented Arocho line",
@@ -153,16 +178,23 @@ var SITES = [
   },
   {
     name: "La Piedra Escrita", muni: "Jayuya", lat: 18.2261, lng: -66.5442,
+    nameRu: "Ла-Пьедра-Эскрита (La Piedra Escrita)",
+    descRu: "«Исписанный камень» — огромный валун в реке Рио-Салиенте (Río Saliente), покрытый десятками петроглифов таино; один из самых доступных крупных памятников наскального искусства на острове, с настилом, ведущим вниз к реке.",
     desc: "\"The written stone\" — a huge boulder in the Río Saliente covered in dozens of Taíno petroglyphs, one of the most accessible major rock-art sites on the island, with a walkway down to the river.",
     descEs: "\"La piedra escrita\" — un peñón enorme en el Río Saliente cubierto de decenas de petroglifos taínos, uno de los sitios principales de arte rupestre más accesibles de la isla, con un paseo que baja hasta el río."
   },
   {
     name: "Museo del Cemí", muni: "Jayuya", lat: 18.2200, lng: -66.5320,
+    nameRu: "Музей семи (Museo del Cemí)",
+    descRu: "Музей, построенный в форме самого семи (cemí), хранящий артефакты таино из окрестных гор — того самого горного внутреннего района, где население таино продержалось дольше всего.",
     desc: "A museum built in the shape of a zemí itself, holding Taíno artifacts from the surrounding mountains — the same mountain interior where Taíno populations survived longest.",
     descEs: "Un museo construido con la forma de un cemí, que guarda artefactos taínos de las montañas de los alrededores — el mismo interior montañoso donde las poblaciones taínas sobrevivieron por más tiempo."
   },
   {
     name: "Cueva María de la Cruz", muni: "Loíza", lat: 18.4297, lng: -65.8878,
+    nameRu: "Куэва-Мария-де-ла-Крус (Cueva María de la Cruz)",
+    descRu: "Пещера, где были раскопаны свидетельства о самых ранних жителях острова — людях архаической эпохи, живших до таино, — что отодвинуло известную историю человека в Пуэрто-Рико на тысячи лет назад.",
+    tieRu: "Лоиса (Loíza) — тот самый городок, через который проходит задокументированная семейная линия Себальос (Ceballos)",
     desc: "The cave where evidence of the island's earliest inhabitants — the Archaic-age people who came before the Taíno — was excavated, pushing Puerto Rico's known human history back thousands of years.",
     descEs: "La cueva donde se excavó la evidencia de los primeros habitantes de la isla — la gente de la época arcaica que vino antes de los taínos — llevando la historia humana conocida de Puerto Rico miles de años más atrás.",
     tie: "Loíza — the same town the family's documented Ceballos line runs through",
@@ -170,6 +202,9 @@ var SITES = [
   },
   {
     name: "Cueva Ventana", muni: "Arecibo", lat: 18.3852, lng: -66.6910,
+    nameRu: "Куэва-Вентана (Cueva Ventana)",
+    descRu: "Пещера на вершине утёса с пиктограммами таино, откуда через знаменитое отверстие-«окно» открывается вид на долину Рио-Гранде-де-Аресибо (Río Grande de Arecibo).",
+    tieRu: "В ПОЕЗДКЕ — день 5, Аресибо (Arecibo)",
     desc: "A clifftop cave with Taíno pictographs, overlooking the Río Grande de Arecibo valley through its famous \"window\" opening.",
     descEs: "Una cueva en lo alto de un risco con pictografías taínas, que domina el valle del Río Grande de Arecibo a través de su famosa abertura en forma de \"ventana\".",
     tie: "ON THE TRIP — Day 5, Arecibo",
@@ -178,11 +213,16 @@ var SITES = [
 ];
 
 function famLang() {
-  try { return localStorage.getItem('fam_lang') === 'es' ? 'es' : 'en'; } catch (e) { return 'en'; }
+  try {
+    var v = localStorage.getItem('fam_lang');
+    return (v === 'es' || v === 'ru') ? v : 'en';
+  } catch (e) { return 'en'; }
 }
 function siteField(s, key) {
-  var es = famLang() === 'es';
-  return (es && s[key + 'Es']) ? s[key + 'Es'] : s[key];
+  var lang = famLang();
+  if (lang === 'es' && s[key + 'Es']) return s[key + 'Es'];
+  if (lang === 'ru' && s[key + 'Ru']) return s[key + 'Ru'];
+  return s[key];
 }
 
 var map = null;
@@ -259,6 +299,6 @@ document.addEventListener('click', function (e) {
 })();
 </script>
 
-<script src="../assets/i18n.js?v=20260802a"></script>
+<script src="../assets/i18n.js?v=8"></script>
 </body>
 </html>

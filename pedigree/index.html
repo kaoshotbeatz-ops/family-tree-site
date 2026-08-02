@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow" />
 <title>The Full Tree · Omar &amp; Poli</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/theme.css?v=20260802a">
+<link rel="stylesheet" href="../assets/theme.css?v=8">
 <style>
 #gate { position: fixed; inset: 0; z-index: 999; background: #1c150d; color: #ece0c8;
   display: flex; align-items: center; justify-content: center; font-family: Georgia, serif; }
@@ -128,6 +128,11 @@
     <h1>El árbol <em>completo</em></h1>
     <p class="fam-sub">Omar en la raíz, ocho generaciones subiendo hacia la derecha &mdash; exactamente la forma que dibuja Ancestry, reconstruida en el sitio propio de la familia a partir de la exportación de datos del mismo árbol. Haz clic en <b>&minus;</b> en cualquier tarjeta para plegar una rama, y en <b>+</b> para volver a abrirla. Los descendientes están más abajo.</p>
   </div>
+  <div class="i18n-ru" style="display:none;">
+    <div class="fam-eyebrow">Все ветви раскрыты &middot; тяните, чтобы перемещаться &middot; сведение пальцев или кнопки для масштаба</div>
+    <h1>Полное <em>древо</em></h1>
+    <p class="fam-sub">Омар (Omar) в корне, восемь поколений поднимаются вправо &mdash; ровно та же форма, какую рисует Ancestry, воссозданная на собственном сайте семьи из экспорта данных того же древа. Нажмите <b>&minus;</b> на любой карточке, чтобы свернуть ветвь, и <b>+</b>, чтобы снова её раскрыть. Потомки &mdash; ниже.</p>
+  </div>
 </header>
 
 <div class="viewport" id="vp">
@@ -139,6 +144,7 @@
   </div>
   <div class="legend i18n-en"><span><i style="background:#7d9bb8"></i>Men</span><span><i style="background:#c98a7c"></i>Women</span><span><i style="background:#b7ac92"></i>Unknown</span></div>
   <div class="legend i18n-es" style="display:none;"><span><i style="background:#7d9bb8"></i>Hombres</span><span><i style="background:#c98a7c"></i>Mujeres</span><span><i style="background:#b7ac92"></i>Desconocido</span></div>
+  <div class="legend i18n-ru" style="display:none;"><span><i style="background:#7d9bb8"></i>Мужчины</span><span><i style="background:#c98a7c"></i>Женщины</span><span><i style="background:#b7ac92"></i>Неизвестно</span></div>
 </div>
 
 <div class="desc-strip">
@@ -149,6 +155,10 @@
   <div class="i18n-es" style="display:none;">
     <h2>Tres generaciones hacia abajo desde Omar</h2>
     <p>Hijos y nietos, de la misma exportación de datos.</p>
+  </div>
+  <div class="i18n-ru" style="display:none;">
+    <h2>Три поколения вниз от Омара</h2>
+    <p>Дети и внуки, из того же экспорта данных.</p>
   </div>
   <div class="desc-flex"><div id="descTree"></div></div>
 </div>
@@ -161,6 +171,10 @@
   <div class="i18n-es" style="display:none;">
     <div class="fam-rule">Datos: la exportación del propio árbol de Ancestry de la familia (2026-07-23). Las personas nuevas halladas desde entonces se añadirán en la próxima exportación.</div>
     <a href="../story/">Lee el libro completo &rarr;</a>
+  </div>
+  <div class="i18n-ru" style="display:none;">
+    <div class="fam-rule">Данные: экспорт собственного древа семьи из Ancestry (2026-07-23). Новые люди, найденные с тех пор, будут добавлены при следующем экспорте.</div>
+    <a href="../story/">Читать книгу целиком &rarr;</a>
   </div>
 </footer>
 
@@ -175,9 +189,10 @@ const DATA = {"anc": {"id": "I122790049048", "name": "Omar Huertas", "b": "1 Apr
    never translated — only the little genealogical abbreviations around them. */
 const LABELS = {
   en: { b: 'b. ', d: 'd. ', m: 'm. ', fit: 'Fit', zin: 'Zoom in', zout: 'Zoom out', zfit: 'Fit' },
-  es: { b: 'n. ', d: 'f. ', m: 'c. ', fit: 'Ajustar', zin: 'Acercar', zout: 'Alejar', zfit: 'Ajustar' }
+  es: { b: 'n. ', d: 'f. ', m: 'c. ', fit: 'Ajustar', zin: 'Acercar', zout: 'Alejar', zfit: 'Ajustar' },
+  ru: { b: 'р. ', d: 'ум. ', m: 'бр. ', fit: 'Вписать', zin: 'Приблизить', zout: 'Отдалить', zfit: 'Вписать' }
 };
-function curLang(){ try { return localStorage.getItem('fam_lang') === 'es' ? 'es' : 'en'; } catch(e){ return 'en'; } }
+function curLang(){ try { var v = localStorage.getItem('fam_lang'); return (v === 'es' || v === 'ru') ? v : 'en'; } catch(e){ return 'en'; } }
 let L = LABELS[curLang()];
 
 function card(p, isRoot){
@@ -321,6 +336,6 @@ setTimeout(fit, 120);
   try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
 })();
 </script>
-<script src="../assets/i18n.js?v=20260802a"></script>
+<script src="../assets/i18n.js?v=8"></script>
 </body>
 </html>

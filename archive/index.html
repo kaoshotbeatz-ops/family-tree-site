@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow" />
 <title>The Image Archive · Omar &amp; Poli</title>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/theme.css?v=20260802a">
+<link rel="stylesheet" href="../assets/theme.css?v=8">
 <style>
 #gate {
   position: fixed; inset: 0; z-index: 999;
@@ -103,6 +103,11 @@
     <h1>El <em>archivo</em> de imágenes</h1>
     <p class="fam-sub">Escaneos de documentos reales, no resúmenes &mdash; las páginas mismas detrás de los datos de este sitio. Esto crece con el tiempo, según se van consiguiendo y añadiendo más registros.</p>
   </div>
+  <div class="i18n-ru" style="display:none;">
+    <div class="fam-eyebrow">Первоисточники, на самой бумаге</div>
+    <h1><em>Архив</em> изображений</h1>
+    <p class="fam-sub">Настоящие сканы документов, а не пересказы &mdash; те самые страницы, за которыми стоят факты этого сайта. Раздел пополняется со временем, по мере того как находятся и добавляются новые документы.</p>
+  </div>
 </header>
 
 <div class="archive-section">
@@ -156,6 +161,31 @@
     </div>
   </div>
   </div>
+  <div class="i18n-ru" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">1872 &middot; за год до отмены рабства</span>
+    <h2>Registro Central de Esclavos</h2>
+    <p>Собственный колониальный реестр рабов Испании, Округ 1, Пуэрто-Рико, 1872 год &mdash; полный документ на 715 страниц хранится вне этого сайта; здесь приведены реальные образцы его страниц. Каждая запись фиксирует поимённо реального порабощённого человека: его владельца, город, испанскую колониальную расовую классификацию, возраст, происхождение и имена его собственных детей. Полный контекст &mdash; на странице <a href="../history/" style="color:var(--sea);font-weight:700;">Колониальная летопись</a>.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_cover.jpg" alt="Registro Central de Esclavos 1872 года, Пуэрто-Рико, первая страница" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Первая страница</b>Титульный лист реестра, Округ 1, 1872 год.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p5.jpg" alt="Registro Central de Esclavos 1872 года, страница 5" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Страница 5</b>Отдельные записи: имя, владелец, город, возраст, происхождение, дети.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p50.jpg" alt="Registro Central de Esclavos 1872 года, страница 50" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Страница 50</b>Дальше по реестру &mdash; документ продолжается на 715 страницах.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/slave_registry_1872_p200.jpg" alt="Registro Central de Esclavos 1872 года, страница 200" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Страница 200</b>И это всё ещё только Округ 1 &mdash; за год до окончательной отмены рабства 22 марта 1873 года.</div>
+    </div>
+  </div>
+  </div>
 </div>
 
 <div class="archive-section">
@@ -173,11 +203,18 @@
     <p>Cada página del Distrito 1, en orden. Este es el documento mismo, no una muestra &mdash; entradas individuales de personas esclavizadas reales, un año antes de la abolición. Escriba un número de página o use las flechas.</p>
   </div>
   </div>
+  <div class="i18n-ru" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">Документ целиком, все 715 страниц</span>
+    <h2>Пролистайте весь реестр</h2>
+    <p>Каждая страница Округа 1, по порядку. Это сам документ, а не выборка &mdash; отдельные записи о реальных порабощённых людях, за год до отмены рабства. Введите номер страницы или пользуйтесь стрелками.</p>
+  </div>
+  </div>
   <div style="padding:0 18px;">
     <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
-      <button id="pv-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span></button>
-      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><input id="pv-num" type="number" min="1" max="715" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 715</span><span class="i18n-es" style="display:none;">de 715</span></span>
-      <button id="pv-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span></button>
+      <button id="pv-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span><span class="i18n-ru" style="display:none;">&larr; Назад</span></button>
+      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><span class="i18n-ru" style="display:none;">Страница </span><input id="pv-num" type="number" min="1" max="715" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 715</span><span class="i18n-es" style="display:none;">de 715</span><span class="i18n-ru" style="display:none;">из 715</span></span>
+      <button id="pv-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span><span class="i18n-ru" style="display:none;">Вперёд &rarr;</span></button>
     </div>
     <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
       <img id="pv-img" src="img/registry-full/page-001.jpg" alt="Registro Central de Esclavos page viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
@@ -236,11 +273,36 @@
     </div>
   </div>
   </div>
+  <div class="i18n-ru" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">1788 &middot; самое подробное описание острова в XVIII веке</span>
+    <h2>«История Пуэрто-Рико» Абада-и-Ласьерры</h2>
+    <p>Труд фрая Иньиго Абада-и-Ласьерры (Íñigo Abad y Lasierra) <em>Historia geográfica, civil y política de la isla de S. Juan Bautista de Puerto Rico</em> &mdash; написанный епископом, который действительно жил на острове, и подробно охватывающий население, рабовладельческую экономику и колониальный быт почти за столетие до реестра 1872 года, приведённого выше. Полная книга на 420 страниц хранится вне этого сайта; здесь приведены реальные образцы её страниц.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/abad_lasierra_1788_title.jpg" alt="Титульный лист, Abad y Lasierra, Historia geografica civil y politica de Puerto Rico, 1788" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Титульный лист</b>Начало самой книги, 1788 год.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/abad_lasierra_1788_p15.jpg" alt="Abad y Lasierra 1788, страница 15" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Страница 15</b>В начале рассказа об острове.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/abad_lasierra_1788_p100.jpg" alt="Abad y Lasierra 1788, страница 100" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Страница 100</b>Дальше &mdash; о географии острова и его городах.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/abad_lasierra_1788_p250.jpg" alt="Abad y Lasierra 1788, страница 250" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Страница 250</b>Более поздние главы, о населении и колониальной жизни.</div>
+    </div>
+  </div>
+  </div>
   <div style="padding:16px 18px 0;">
     <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
-      <button id="ab-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span></button>
-      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><input id="ab-num" type="number" min="1" max="420" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 420 &mdash; full book</span><span class="i18n-es" style="display:none;">de 420 &mdash; libro completo</span></span>
-      <button id="ab-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span></button>
+      <button id="ab-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span><span class="i18n-ru" style="display:none;">&larr; Назад</span></button>
+      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><span class="i18n-ru" style="display:none;">Страница </span><input id="ab-num" type="number" min="1" max="420" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 420 &mdash; full book</span><span class="i18n-es" style="display:none;">de 420 &mdash; libro completo</span><span class="i18n-ru" style="display:none;">из 420 &mdash; книга целиком</span></span>
+      <button id="ab-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span><span class="i18n-ru" style="display:none;">Вперёд &rarr;</span></button>
     </div>
     <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
       <img id="ab-img" src="img/abad-full/page-001.jpg" alt="Abad y Lasierra 1788 full-book viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
@@ -291,11 +353,32 @@
     </div>
   </div>
   </div>
+  <div class="i18n-ru" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">1899 &middot; настоящие найденные при раскопках предметы таино, каталогизированные</span>
+    <h2>Коллекция Латимера</h2>
+    <p><em>The Latimer Collection of Antiquities from Porto Rico in the National Museum</em> &mdash; каталог Смитсоновского института, описывающий настоящие предметы таино, найденные при раскопках на острове, опубликован в 1899 году. Полный каталог на 178 страниц хранится вне этого сайта.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/latimer_1899_title.jpg" alt="Коллекция Латимера, пуэрто-риканские древности, 1899, титульный лист" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Титульный лист</b>Начало самого каталога, 1899 год.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/latimer_1899_p100.jpg" alt="Коллекция Латимера, 1899, страница 100" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Страница 100</b>Каталогизированные предметы и таблицы.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/latimer_1899_p150.jpg" alt="Коллекция Латимера, 1899, страница 150" onclick="openLightbox(this.src)">
+      <div class="cap"><b>Страница 150</b>Дальше по каталогу.</div>
+    </div>
+  </div>
+  </div>
   <div style="padding:16px 18px 0;">
     <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;">
-      <button id="lt-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span></button>
-      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><input id="lt-num" type="number" min="1" max="178" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 178 &mdash; full catalog</span><span class="i18n-es" style="display:none;">de 178 &mdash; catálogo completo</span></span>
-      <button id="lt-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span></button>
+      <button id="lt-prev" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">&larr; Prev</span><span class="i18n-es" style="display:none;">&larr; Anterior</span><span class="i18n-ru" style="display:none;">&larr; Назад</span></button>
+      <span style="font-size:14px;"><span class="i18n-en">Page </span><span class="i18n-es" style="display:none;">Página </span><span class="i18n-ru" style="display:none;">Страница </span><input id="lt-num" type="number" min="1" max="178" value="1" style="width:60px;padding:6px;border-radius:6px;border:1px solid var(--line);text-align:center;"> <span class="i18n-en">of 178 &mdash; full catalog</span><span class="i18n-es" style="display:none;">de 178 &mdash; catálogo completo</span><span class="i18n-ru" style="display:none;">из 178 &mdash; каталог целиком</span></span>
+      <button id="lt-next" style="padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:var(--paper-raised);cursor:pointer;font-weight:600;"><span class="i18n-en">Next &rarr;</span><span class="i18n-es" style="display:none;">Siguiente &rarr;</span><span class="i18n-ru" style="display:none;">Вперёд &rarr;</span></button>
     </div>
     <div style="text-align:center;background:var(--paper-raised);border:1px solid var(--line);border-radius:var(--radius-lg);padding:12px;">
       <img id="lt-img" src="img/latimer-full/page-001.jpg" alt="Latimer Collection 1899 full-catalog viewer" style="max-width:100%;max-height:75vh;border-radius:6px;cursor:zoom-in;" onclick="openLightbox(this.src)">
@@ -316,6 +399,13 @@
     <span class="fam-eyebrow">Llegando según se van consiguiendo</span>
     <h2>Qué más pertenece aquí</h2>
     <p>Esta página está hecha para crecer: las tarjetas de reclutamiento de los familiares documentados en la sección "Quiénes sirvieron" de <a href="../history/" style="color:var(--sea);font-weight:700;">El Registro Colonial</a>, el acta de bautismo taína que ya está en el libro, páginas de censo, y cualquier otro escaneo de fuente primaria que valga la pena ver en el original y no solo descrito en texto.</p>
+  </div>
+  </div>
+  <div class="i18n-ru" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">Появляется по мере того, как документы находятся</span>
+    <h2>Что ещё здесь должно быть</h2>
+    <p>Эта страница задумана как растущая: призывные карточки родственников, задокументированных в разделе «Кто служил» на странице <a href="../history/" style="color:var(--sea);font-weight:700;">Колониальная летопись</a>, запись о крещении таино, уже вошедшая в книгу, страницы переписей и любой другой скан первоисточника, который стоит увидеть в оригинале, а не только прочесть в пересказе.</p>
   </div>
   </div>
 </div>
@@ -612,6 +702,152 @@
     </div>
   </div>
   </div>
+
+  <div class="i18n-ru" style="display:none;">
+  <div class="archive-section-head">
+    <span class="fam-eyebrow">Из собственных рук Омара (Omar) &middot; опознано Омаром, 2026</span>
+    <h2>Семейный альбом</h2>
+    <p>Настоящие семейные фотографии &mdash; не документы, а сами люди. Переданы и опознаны Омаром в июле 2026 года, отреставрированы в цифровом виде, цвет восстановлен с выцветших оригиналов. Нетронутые оригиналы хранятся в семейном архиве на наших собственных серверах.</p>
+  </div>
+  <div class="archive-grid">
+    <div class="archive-item">
+      <img src="img/family/juan_jose_and_mother_beatriz_nyc_1970s.jpg" alt="Хуан Хосе и его мать Беатрис" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Хуан Хосе (Juan José) и его мать Беатрис (Beatriz)</b>1970-е годы, на фоне Нью-Йорка — единственная в этом архиве фотография Беатрис Варгас-и-Роман (Beatriz Vargas y Román).</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/christmas_ita_thelma_rosa.jpg" alt="Ита, Тельма и Роса" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ита (Ita), Тельма (Thelma) и Роса (Rosa)</b>Три центральные женщины этой книги в одном рождественском кадре.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/family_party_moncho_alicia_rosa_yadyra_omar.jpg" alt="Семейный праздник" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Семейный праздник</b>Мончо (Moncho), Алисия (Alicia), Роса, Ядира (Yadyra) и Омар в детстве — согласно опознанию самого Омара.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/ita_milagros_christmas_gift_1.jpg" alt="Ита — рождественский подарок" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ита — рождественский подарок</b>Милагрос «Ита» Арочо Эрнандес (Milagros "Ita" Arocho Hernández) открывает подарок, 1970-е годы.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/ita_milagros_christmas_gift_2.jpg" alt="Ита — рождественский подарок (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ита — рождественский подарок (2)</b>Второй кадр, сделанный мгновением позже.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/ita_polaroid_sorting_photos.jpg" alt="Ита разбирает фотографии" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ита разбирает фотографии</b>Полароидный снимок: Ита занимается ровно тем же, чем занята эта страница — хранит семейные фотографии.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/ita_with_omar_elkyn_cake.jpg" alt="Ита с Омаром и Элкином" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Ита с Омаром и Элкином (Elkyn)</b>Торт на тележке, «Тайная вечеря» на стене.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/birthday_ita_yadyra_elkyn_omar_polaroid.jpg" alt="День рождения" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>День рождения</b>Ита, Ядира, Элкин и Омар — полароид.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/omar_first_birthday_with_yadyra.jpg" alt="Первый день рождения Омара" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Первый день рождения Омара</b>На торте надпись «Happy Birthday Omar» — рядом юная Ядира.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/christmas_toys_yadyra_elkyn_omar_polaroid.jpg" alt="Рождественское утро" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Рождественское утро</b>Ядира с Омаром и Элкином и пожарная машина Fisher-Price.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_black_puppy_1.jpg" alt="Тельма" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Тельма</b>С чёрным щенком.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_black_puppy_2.jpg" alt="Тельма (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Тельма (2)</b>Тот же визит, второй кадр.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_portrait_navy.jpg" alt="Тельма — портрет" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Тельма — портрет</b>В тёмно-синем, дома среди своих тарелок и фарфора.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_white_puppy_1.jpg" alt="Тельма" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Тельма</b>С белым щенком.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/thelma_white_puppy_2.jpg" alt="Тельма (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Тельма (2)</b>Второй кадр.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/angel_marrero_young_birthday_1980s.jpg" alt="Анхель — в молодости" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Анхель (Angel) — в молодости</b>Коричневый спортивный костюм, именинный торт, Bacardí и Shasta на столе.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/angel_marrero_now_2026.jpg" alt="Анхель — сегодня" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Анхель — сегодня</b>Человек, который вырастил Омара, в футболке с надписью «Пуэрто-Рико».</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/raymond_ceballo_beach.jpg" alt="Раймонд Себальо" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Раймонд Себальо (Raymond Ceballo)</b>На пляже с двумя детьми — возможно, брат Росы и Ирис (Iris); вопрос остаётся открытым.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/juan_jose_driving.jpg" alt="Хуан Хосе за рулём" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Хуан Хосе за рулём</b>Отец Омара за рулём автомобиля.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/papi_bed_visit_omar_omarjr_elkyn_manny.jpg" alt="В гостях у Папи" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>В гостях у Папи (Papi)</b>Омар, Омар-младший (Omar Jr), Элкин и Мэнни (Manny) вокруг Хуана Хосе.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/papi_bed_visit_with_elkyn.jpg" alt="Папи и Элкин" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Папи и Элкин</b>Большой палец вверх.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/papi_bed_visit_group_juanjr_pablo.jpg" alt="В гостях у Папи (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>В гостях у Папи (2)</b>С Хуаном-младшим (Juan Jr) и Пабло (Pablo).</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/pablo_huertas.jpg" alt="Пабло Уэртас" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Пабло Уэртас (Pablo Huertas)</b>Дядя Омара — тот самый, чьё СМС закрыло вопрос о Хосе Мануэле (José Manuel).</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/omar_with_beat_machine.jpg" alt="Омар" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Омар</b>С драм-машиной.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/omar_and_poli.jpg" alt="Омар и Поли" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Омар и Поли (Poli)</b>Дома.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/huertas_oval_portrait_and_young_man.jpg" alt="Два старых отпечатка" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Два старых отпечатка</b>Овальный портрет и молодой человек — со стороны Уэртасов, личности не установлены.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/boy_white_suit_first_communion.jpg" alt="Мальчик в белом костюме" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Мальчик в белом костюме</b>Вероятно, первое причастие — личность не установлена.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/man_in_suit_1950s.jpg" alt="Мужчина в костюме" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Мужчина в костюме</b>Отпечаток 1950-х годов — личность не установлена.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/woman_on_swing_nyc.jpg" alt="Женщина на качелях" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Женщина на качелях</b>Отпечаток нью-йоркского периода — личность не установлена.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/two_children_vintage.jpg" alt="Двое детей" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Двое детей</b>Личности не установлены.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/album_page_paris_elsa_omar_elkyn_yadyra_liberty.jpg" alt="Страница альбома: Пэрис и Эльса с Омаром, Элкином и Ядирой возле статуи Свободы" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Страница альбома — Пэрис, Эльса, Омар, Элкин и Ядира</b>Трибуны в гавани, статуя Свободы вдали — дядя Пэрис Бродбент (Paris Broadbent) и Эльса Монарес (Elsa Monarez), пара, чьих сыновей Мейсона (Mason) и Кори (Corey) документирует книга. Опознано Омаром.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/album_page_yadyra_cecilia_kimmy_rosa.jpg" alt="Страница альбома: Ядира и Сесилия, Кимми, Роса" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Страница альбома — Ядира, Сесилия, Кимми и Роса</b>Вверху: Ядира с Сесилией (Cecilia), дочерью Ивонн (Yvonne). В середине: Кимми (Kimmy). Внизу: Роса с цветами. Опознано Омаром.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/album_page_angilo_and_maria_friends_of_rosa.jpg" alt="Страница альбома — Анхило и Мария" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Страница альбома — Анхило (Angilo) и Мария (Maria)</b>Друзья Росы (не кровные родственники), из собственного альбома Росы.</div>
+    </div>
+    <div class="archive-item">
+      <img src="img/family/album_page_angilo_maria_party_3up.jpg" alt="Страница альбома — Анхило и Мария (2)" onclick="openLightbox(this.src)" loading="lazy">
+      <div class="cap"><b>Страница альбома — Анхило и Мария (2)</b>Ещё три кадра того же вечера.</div>
+    </div>
+  </div>
+  </div>
 </div>
 
 <div id="lightbox" onclick="this.style.display='none'">
@@ -626,6 +862,10 @@
   <div class="i18n-es" style="display:none;">
     <div class="fam-rule">El papel mismo, no solo lo que dice.</div>
     <a href="../history/">El Registro Colonial &rarr;</a>
+  </div>
+  <div class="i18n-ru" style="display:none;">
+    <div class="fam-rule">Сама бумага, а не только то, что на ней написано.</div>
+    <a href="../history/">Колониальный архив &rarr;</a>
   </div>
 </footer>
 
@@ -700,6 +940,6 @@ function openLightbox(src) {
 })();
 </script>
 
-<script src="../assets/i18n.js?v=20260802a"></script>
+<script src="../assets/i18n.js?v=8"></script>
 </body>
 </html>
