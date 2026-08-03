@@ -209,12 +209,12 @@
            ru: 'Свидетельства, стоящие за именами в книге. Настоящая бумага, настоящие подписи, настоящие люди.' },
       books: [
         { y: '1916', c: C.leather, file: 'guillermo_arocho_maria_hernandez_marriage_cert_1916.pdf',
-          t: { en: 'Marriage · Guillermo Arocho & María Hernández', es: 'Matrimonio · Guillermo Arocho y María Hernández', ru: 'Брак · Гильермо Ароcho и Мария Эрнандес' },
+          t: { en: 'Marriage · Guillermo Arocho & María Hernández', es: 'Matrimonio · Guillermo Arocho y María Hernández', ru: 'Брак · Гильермо Арочо и Мария Эрнандес' },
           m: { en: 'The couple on the headstone at Cementerio Privado La Santa Cruz, Arecibo. The marriage this whole tree converges on.',
                es: 'La pareja de la lápida en el Cementerio Privado La Santa Cruz, Arecibo. El matrimonio en el que converge todo este árbol.',
                ru: 'Пара с надгробия на кладбище Cementerio Privado La Santa Cruz в Аресибо. Брак, к которому сходится всё это древо.' } },
         { y: '1910', c: C.tan, file: 'martin_arocho_y_roman_death_cert_1910.pdf',
-          t: { en: 'Death · Martín Arocho y Román, Lares', es: 'Defunción · Martín Arocho y Román, Lares', ru: 'Смерть · Мартин Ароcho-и-Роман, Ларес' },
+          t: { en: 'Death · Martín Arocho y Román, Lares', es: 'Defunción · Martín Arocho y Román, Lares', ru: 'Смерть · Мартин Арочо-и-Роман, Ларес' },
           m: { en: 'Died at Lares, 1910. Puerto Rico civil registry.', es: 'Falleció en Lares, 1910. Registro civil de Puerto Rico.', ru: 'Умер в Ларесе в 1910 году. Гражданский реестр Пуэрто-Рико.' } }
       ] }
   ];
