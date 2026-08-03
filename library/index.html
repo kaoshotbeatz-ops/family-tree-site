@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow" />
+<title>The Library · Omar &amp; Poli</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/theme.css?v=20260802y">
+<style>
+#gate {
+  position: fixed; inset: 0; z-index: 999;
+  background: #1c150d; color: #ece0c8;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif;
+}
+#gate .box { text-align: center; max-width: 320px; padding: 2rem; }
+#gate h2 { margin: 0 0 0.4rem; font-size: 1.3rem; font-weight: 400; font-style: italic; }
+#gate p { font-family: -apple-system, sans-serif; font-size: 0.85rem; color: #b9ae98; margin: 0 0 1.2rem; }
+#gate input {
+  font-family: -apple-system, sans-serif; font-size: 0.95rem;
+  padding: 0.6rem 0.8rem; border: 1px solid #4c4535; border-radius: 4px;
+  background: #2a251e; color: #ece5d6; width: 100%; box-sizing: border-box;
+  margin-bottom: 0.7rem;
+}
+#gate button {
+  font-family: -apple-system, sans-serif; font-size: 0.85rem; font-weight: 600;
+  padding: 0.55rem 1rem; border-radius: 4px; border: 1px solid #5f7a52;
+  background: #2c3327; color: #b9cca9; cursor: pointer; width: 100%;
+}
+#gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
+#content { display: none; }
+
+/* ---------------- the shelf ---------------- */
+.shelf-wrap { max-width: 1080px; margin: 0 auto; padding: 0 18px 10px; }
+.shelf-head { margin: 30px 0 6px; }
+.shelf-head h2 { font-size: 23px; margin: 0 0 2px; }
+.shelf-head p { font-size: 13.5px; color: var(--ink-soft); margin: 0; max-width: 640px; }
+
+.shelf {
+  position: relative;
+  display: flex; flex-wrap: wrap; align-items: flex-end; gap: 7px;
+  padding: 26px 18px 0;
+  margin: 14px 0 30px;
+  background:
+    linear-gradient(180deg, rgba(60,40,20,.05), transparent 60px),
+    linear-gradient(#efe6d2, #e6dbc2);
+  border-radius: 6px 6px 2px 2px;
+  border: 1px solid var(--line);
+}
+/* the wooden plank the books stand on */
+.shelf::after{
+  content:""; display:block; width:100%; height:16px; margin-top:16px;
+  border-radius:2px;
+  background:linear-gradient(180deg,#8a6a42,#6b5132 60%,#54402a);
+  box-shadow:0 5px 12px rgba(60,40,20,.30), inset 0 1px 0 rgba(255,255,255,.16);
+}
+
+.book {
+  position: relative;
+  width: 46px; min-height: 168px;
+  border: 0; padding: 12px 5px 10px; cursor: pointer;
+  border-radius: 3px 3px 1px 1px;
+  color: #f6efdd;
+  font-family: 'Public Sans', sans-serif;
+  display: flex; align-items: flex-start; justify-content: center;
+  transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+  box-shadow: inset -5px 0 8px rgba(0,0,0,.30), inset 3px 0 4px rgba(255,255,255,.13), 2px 3px 7px rgba(50,35,15,.28);
+  text-align: left;
+}
+.book:hover, .book:focus-visible {
+  transform: translateY(-14px);
+  box-shadow: inset -5px 0 8px rgba(0,0,0,.30), 3px 8px 18px rgba(50,35,15,.42);
+  filter: brightness(1.09);
+  outline: none;
+}
+.book .spine {
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-size: 10.5px; font-weight: 700; letter-spacing: .045em; line-height: 1.15;
+  max-height: 150px; overflow: hidden;
+  text-shadow: 0 1px 1px rgba(0,0,0,.42);
+}
+.book .yr-tag {
+  position: absolute; bottom: 7px; left: 0; right: 0; text-align: center;
+  font-size: 8px; letter-spacing: .04em; opacity: .82;
+}
+/* taller books read as older/bigger volumes */
+.book.tall { min-height: 200px; width: 52px; }
+.book.short { min-height: 150px; width: 42px; }
+.book.offsite::before{
+  content:"\2934"; position:absolute; top:4px; left:0; right:0; text-align:center;
+  font-size:9px; opacity:.75;
+}
+
+/* ---------------- the reader ---------------- */
+#reader {
+  position: fixed; inset: 0; z-index: 500; display: none;
+  background: rgba(20,15,8,.82); backdrop-filter: blur(3px);
+  padding: 22px;
+}
+#reader.open { display: flex; flex-direction: column; }
+#reader .rbar {
+  display: flex; align-items: center; gap: 12px;
+  background: #efe6d2; border: 1px solid var(--line);
+  border-radius: 6px 6px 0 0; padding: 10px 14px;
+}
+#reader .rtitle { font-family: 'Instrument Serif', serif; font-size: 17px; color: #2c2318; line-height: 1.2; }
+#reader .rmeta { font-size: 11px; color: #7d6844; font-family: 'Public Sans', sans-serif; }
+#reader .rspacer { margin-left: auto; }
+#reader a.rdl, #reader button.rclose {
+  font-family: 'Public Sans', sans-serif; font-size: 12px; font-weight: 700;
+  padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line);
+  background: #f6efdd; color: #4a3c26; cursor: pointer; text-decoration: none; white-space: nowrap;
+}
+#reader iframe { flex: 1; width: 100%; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 6px 6px; background: #fff; }
+#reader .rnote { display:none; flex:1; align-items:center; justify-content:center; text-align:center;
+  background:#f6efdd; border:1px solid var(--line); border-top:0; border-radius:0 0 6px 6px; padding:30px; }
+#reader .rnote div { max-width: 460px; font-family:'Public Sans',sans-serif; font-size:14px; color:#4a3c26; line-height:1.6; }
+@media (max-width: 640px){
+  #reader { padding: 8px; }
+  #reader .rbar { flex-wrap: wrap; gap: 8px; }
+  .book { width: 40px; min-height: 150px; }
+  .book.tall { width: 44px; min-height: 172px; }
+}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <div class="box">
+    <h2>The family archive</h2>
+    <p>This is a private family page &mdash; enter the password to continue.</p>
+    <input type="password" id="gate-pw" placeholder="Password" autocomplete="off" />
+    <button id="gate-go">Enter</button>
+    <div class="err" id="gate-err"></div>
+  </div>
+</div>
+
+<div id="content">
+
+<nav class="fam-nav">
+  <span class="fam-nav-brand">Arocho &middot; Marrero &middot; Huertas</span>
+  <a href="../">Tree</a>
+  <a href="../pedigree/">Full Tree</a>
+  <a href="../story/">Book</a>
+  <a href="../album/">Family Album</a>
+  <a href="../puerto-rico/">Trip</a>
+  <a href="../history/">Colonial Record</a>
+  <a href="../boriken/">Boriken</a>
+  <a href="./" class="active">Library</a>
+  <a href="../archive/">Image Archive</a>
+  <a href="../island/">The Island Itself</a>
+  <a href="../military/">Who Served</a>
+  <a href="../map/">Indigenous Map</a>
+  <a href="../cookbook/">Cookbook</a>
+  <a href="../timeline/">Full Timeline</a>
+  <a href="../remembered/">Remembered</a>
+  <a href="../openleads/">Open Leads</a>
+  <a href="../encomienda/">Encomienda</a>
+  <a href="../funfacts/">You Didn't Know</a>
+</nav>
+
+<div class="fam-stripes"></div>
+
+<header class="fam-header">
+  <div class="i18n-en">
+    <div class="fam-eyebrow">Every source, on one shelf</div>
+    <h1>The <em>Library</em></h1>
+    <p class="fam-sub">Every document this project actually used, kept together so it cannot be lost. Pull a book off the shelf and read it &mdash; the real page images, not a summary of them. Spanish royal law from 1681, an eyewitness to the conquest from 1552, the treaty that handed the island over, and the certificates of this family's own dead.</p>
+  </div>
+  <div class="i18n-es" style="display:none;">
+    <div class="fam-eyebrow">Cada fuente, en un solo estante</div>
+    <h1>La <em>Biblioteca</em></h1>
+    <p class="fam-sub">Cada documento que este proyecto realmente usó, guardado junto para que no se pierda. Saca un libro del estante y léelo &mdash; las imágenes reales de las páginas, no un resumen. Derecho real español de 1681, un testigo presencial de la conquista de 1552, el tratado que entregó la isla, y los certificados de los propios muertos de esta familia.</p>
+  </div>
+  <div class="i18n-ru" style="display:none;">
+    <div class="fam-eyebrow">Все источники на одной полке</div>
+    <h1><em>Библиотека</em></h1>
+    <p class="fam-sub">Каждый документ, который действительно использовал этот проект, собран вместе, чтобы он не потерялся. Снимите книгу с полки и читайте &mdash; настоящие изображения страниц, а не пересказ. Испанское королевское право 1681 года, очевидец завоевания 1552 года, договор, отдавший остров, и свидетельства о собственных умерших этой семьи.</p>
+  </div>
+</header>
+
+<div class="shelf-wrap" id="shelves"></div>
+
+<div class="fam-source-note">
+  <span class="i18n-en">Every book on these shelves is a public-domain government publication, a court opinion, a pre-copyright historical work, or this family's own record. Books marked <strong>&#8628;</strong> are held in the archive but are too large to serve from this site &mdash; they open at the institution that scanned them. Nothing here is a summary: each one is the document.</span>
+  <span class="i18n-es" style="display:none;">Cada libro en estos estantes es una publicación gubernamental de dominio público, una opinión judicial, una obra histórica anterior al derecho de autor, o el propio registro de esta familia. Los libros marcados con <strong>&#8628;</strong> están en el archivo pero son demasiado grandes para servirse desde este sitio &mdash; se abren en la institución que los escaneó. Nada aquí es un resumen: cada uno es el documento.</span>
+  <span class="i18n-ru" style="display:none;">Каждая книга на этих полках &mdash; государственное издание в общественном достоянии, судебное решение, историческая работа до эпохи авторского права или собственная запись этой семьи. Книги, помеченные <strong>&#8628;</strong>, хранятся в архиве, но слишком велики для раздачи с этого сайта &mdash; они открываются в оцифровавшем их учреждении. Здесь нет пересказов: каждая книга &mdash; это сам документ.</span>
+</div>
+
+<footer class="fam-footer">
+  <div class="fam-rule">
+    <span class="i18n-en">A people whose records are kept cannot be told they have no history.</span>
+    <span class="i18n-es" style="display:none;">A un pueblo cuyos registros se conservan no se le puede decir que no tiene historia.</span>
+    <span class="i18n-ru" style="display:none;">Народу, чьи записи сохранены, нельзя сказать, что у него нет истории.</span>
+  </div>
+  <a href="../history/">The Colonial Record &rarr;</a>
+</footer>
+
+</div>
+
+<div id="reader" role="dialog" aria-modal="true" aria-labelledby="rtitle">
+  <div class="rbar">
+    <div>
+      <div class="rtitle" id="rtitle"></div>
+      <div class="rmeta" id="rmeta"></div>
+    </div>
+    <span class="rspacer"></span>
+    <a class="rdl" id="rdl" href="#" target="_blank" rel="noopener">Open full page</a>
+    <button class="rclose" id="rclose">Close</button>
+  </div>
+  <iframe id="rframe" title="Document reader"></iframe>
+  <div class="rnote" id="rnote"><div id="rnotetext"></div></div>
+</div>
+
+<script>
+(function () {
+  var HASH = "58a03e386b049cffcd66a36fc38c28adb4461a86288fca76db5e76cb6e022042";
+  async function sha256(msg) {
+    var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(msg));
+    return Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unlock() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("content").style.display = "block";
+    try { sessionStorage.setItem("ft_unlocked", "1"); } catch (e) {}
+  }
+  async function tryPassword() {
+    var pw = document.getElementById("gate-pw").value;
+    var h = await sha256(pw);
+    if (h === HASH) { unlock(); } else { document.getElementById("gate-err").textContent = "Wrong password."; }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryPassword);
+  document.getElementById("gate-pw").addEventListener("keydown", function (e) { if (e.key === "Enter") tryPassword(); });
+  try { if (sessionStorage.getItem("ft_unlocked") === "1") unlock(); } catch (e) {}
+})();
+</script>
+
+<script src="books.js?v=20260802y"></script>
+<script src="../assets/i18n.js?v=20260802y"></script>
+</body>
+</html>
