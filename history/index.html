@@ -7,7 +7,7 @@
 <title>Puerto Rico — The Colonial Record · Omar &amp; Poli</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/theme.css?v=20260802s">
+<link rel="stylesheet" href="../assets/theme.css?v=20260802t">
 <style>
 :root{
   --sand:#F7F3EA; --ink:#1E2726; --bomba-red:#B3271E; --bomba-black:#20201E;
@@ -59,6 +59,69 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
 }
 #gate .err { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #d69684; margin-top: 0.6rem; min-height: 1em; }
 #content { display: none; }
+
+/* ---- Treaty of Paris facsimile: styled to read as the 1898 document itself.
+   Deliberately stays on aged paper in dark mode — it is a document, not UI. ---- */
+.treaty-doc{
+  position:relative;
+  margin:22px 0 6px;
+  padding:34px 30px 26px;
+  border-radius:2px;
+  color:#2c2318;
+  background:
+    radial-gradient(ellipse at 12% 8%, rgba(150,120,70,.10), transparent 55%),
+    radial-gradient(ellipse at 88% 92%, rgba(140,110,60,.12), transparent 55%),
+    linear-gradient(#f6efdd, #efe4cb);
+  border:1px solid #cbb68c;
+  box-shadow:0 1px 2px rgba(60,45,20,.18), 0 10px 26px rgba(60,45,20,.14), inset 0 0 44px rgba(160,130,80,.14);
+  font-family:'Instrument Serif', 'Iowan Old Style', Georgia, serif;
+  overflow:hidden;
+}
+/* faint fold line down the middle, like a folded engrossed sheet */
+.treaty-doc::after{
+  content:"";position:absolute;top:0;bottom:0;left:50%;width:1px;
+  background:linear-gradient(180deg,transparent,rgba(120,95,55,.16) 12%,rgba(120,95,55,.16) 88%,transparent);
+  pointer-events:none;
+}
+.treaty-doc .t-supra{
+  text-align:center;font-family:'Public Sans',sans-serif;font-size:9.5px;font-weight:700;
+  letter-spacing:.26em;text-transform:uppercase;color:#8a7448;margin-bottom:14px;
+}
+.treaty-doc .t-title{
+  text-align:center;font-size:25px;line-height:1.28;margin:0 0 4px;color:#241c12;
+}
+.treaty-doc .t-sub{
+  text-align:center;font-family:'Public Sans',sans-serif;font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:#7d6844;margin:0 0 6px;
+}
+.treaty-doc .t-rule{
+  width:120px;height:0;margin:14px auto 20px;border-top:1px solid #b8a071;position:relative;
+}
+.treaty-doc .t-rule::before{
+  content:"\2767";position:absolute;left:50%;top:-11px;transform:translateX(-50%);
+  background:#f3ead4;padding:0 8px;color:#a68d5e;font-size:13px;
+}
+.treaty-doc .t-art{
+  text-align:center;font-family:'Public Sans',sans-serif;font-size:11.5px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:#5d4c2e;margin:22px 0 8px;
+}
+.treaty-doc .t-body{
+  font-size:17.5px;line-height:1.62;text-align:justify;text-indent:2.2em;margin:0 0 10px;color:#2c2318;
+}
+.treaty-doc .t-body strong{font-weight:400;box-shadow:inset 0 -0.55em 0 rgba(200,160,70,.26);}
+.treaty-doc .t-foot{
+  margin-top:22px;padding-top:14px;border-top:1px solid rgba(160,130,80,.34);
+  font-family:'Public Sans',sans-serif;font-size:10.5px;letter-spacing:.06em;color:#7d6844;text-align:center;
+}
+.treaty-doc .t-sign{
+  text-align:right;font-style:italic;font-size:15px;color:#4a3c26;margin-top:16px;padding-right:6px;
+}
+@media (max-width:600px){
+  .treaty-doc{padding:24px 18px 20px}
+  .treaty-doc .t-title{font-size:21px}
+  .treaty-doc .t-body{font-size:16px;text-indent:1.4em}
+  .treaty-doc::after{display:none}
+}
 </style>
 </head>
 <body>
@@ -522,11 +585,20 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
 
   <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:22px;margin:18px 0 6px;">What is still missing</h3>
   <p><strong>Update &mdash; the Treaty of Paris is now archived too.</strong> The full text is on file (Yale Law School's Avalon Project transcription; a scanned facsimile of the signed original is still worth obtaining, so that narrower item stays on <a href="../openleads/" style="color:var(--sea);font-weight:700;">Open Leads</a>). Two articles matter, and here they are verbatim.</p>
-  <p><strong>Article II</strong> &mdash; the transfer itself:</p>
-  <p style="border-left:3px solid var(--sea);padding-left:14px;font-style:italic;">&ldquo;Spain cedes to the United States <strong>the island of Porto Rico</strong> and other islands now under Spanish sovereignty in the West Indies, and the island of Guam in the Marianas or Ladrones.&rdquo;</p>
-  <p>One sentence. An island and its people listed alongside Guam like items in an inventory, handed from one empire to another. No Puerto Rican signed it, and none was asked.</p>
-  <p><strong>Article IX</strong> &mdash; and this is the sentence the next 128 years hang on:</p>
-  <p style="border-left:3px solid var(--sea);padding-left:14px;font-style:italic;">&ldquo;<strong>The civil rights and political status of the native inhabitants of the territories hereby ceded to the United States shall be determined by the Congress.</strong>&rdquo;</p>
+<div class="treaty-doc">
+  <div class="t-supra">Treaty of Peace between the United States of America and the Kingdom of Spain</div>
+  <div class="t-title">Treaty of Paris</div>
+  <div class="t-sub">Concluded at Paris &middot; December 10, 1898</div>
+  <div class="t-rule"></div>
+  <div class="t-art">Article II</div>
+  <p class="t-body">Spain cedes to the United States <strong>the island of Porto Rico</strong> and other islands now under Spanish sovereignty in the West Indies, and the island of Guam in the Marianas or Ladrones.</p>
+  <div class="t-art">Article IX</div>
+  <p class="t-body"><strong>The civil rights and political status of the native inhabitants of the territories hereby ceded to the United States shall be determined by the Congress.</strong></p>
+  <div class="t-sign">Done at Paris, the tenth day of December, 1898.</div>
+  <div class="t-foot">Full text archived on this site &middot; transcription, Avalon Project, Yale Law School</div>
+</div>
+  <p>One sentence in Article II. An island and its people listed alongside Guam like items in an inventory, handed from one empire to another. No Puerto Rican signed it, and none was asked.</p>
+  <p>And Article IX is the sentence the next 128 years hang on.</p>
   <p>Not determined by the treaty. Not determined by the inhabitants. <strong>Determined by the Congress</strong> &mdash; a body Puerto Rico has never had a vote in. Everything else on this page is downstream of that one clause: the Foraker Act, the <em>Insular Cases</em>, the citizenship, PROMESA, all of it flows from Congress being handed a blank check in 1898 that it has never filled in.</p>
 </div>
 
@@ -679,11 +751,20 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
 
   <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:22px;margin:18px 0 6px;">Lo que aún falta</h3>
   <p><strong>Actualización &mdash; el Tratado de París ya está archivado también.</strong> El texto completo está en el archivo (transcripción del Avalon Project de la Facultad de Derecho de Yale; conseguir un facsímil escaneado del original firmado sigue valiendo la pena, así que ese punto más estrecho permanece en <a href="../openleads/" style="color:var(--sea);font-weight:700;">Pistas Abiertas</a>). Dos artículos importan, y aquí están textualmente.</p>
-  <p><strong>Artículo II</strong> &mdash; la transferencia misma:</p>
-  <p style="border-left:3px solid var(--sea);padding-left:14px;font-style:italic;">&ldquo;España cede a los Estados Unidos <strong>la isla de Puerto Rico</strong> y las demás que están ahora bajo su soberanía en las Indias Occidentales, y la isla de Guam en el archipiélago de las Marianas o Ladrones.&rdquo;</p>
-  <p>Una oración. Una isla y su gente listadas junto a Guam como artículos de un inventario, entregadas de un imperio a otro. Ningún puertorriqueño lo firmó, y a ninguno se le preguntó.</p>
-  <p><strong>Artículo IX</strong> &mdash; y esta es la frase de la que penden los siguientes 128 años:</p>
-  <p style="border-left:3px solid var(--sea);padding-left:14px;font-style:italic;">&ldquo;<strong>Los derechos civiles y la condición política de los habitantes naturales de los territorios aquí cedidos a los Estados Unidos se determinarán por el Congreso.</strong>&rdquo;</p>
+<div class="treaty-doc">
+  <div class="t-supra">Tratado de Paz entre los Estados Unidos de América y el Reino de España</div>
+  <div class="t-title">Tratado de París</div>
+  <div class="t-sub">Concluido en París &middot; 10 de diciembre de 1898</div>
+  <div class="t-rule"></div>
+  <div class="t-art">Artículo II</div>
+  <p class="t-body">España cede a los Estados Unidos <strong>la isla de Puerto Rico</strong> y las demás que están ahora bajo su soberanía en las Indias Occidentales, y la isla de Guam en el archipiélago de las Marianas o Ladrones.</p>
+  <div class="t-art">Artículo IX</div>
+  <p class="t-body"><strong>Los derechos civiles y la condición política de los habitantes naturales de los territorios aquí cedidos a los Estados Unidos se determinarán por el Congreso.</strong></p>
+  <div class="t-sign">Hecho en París, el décimo día de diciembre de 1898.</div>
+  <div class="t-foot">Texto completo archivado en este sitio &middot; transcripción, Avalon Project, Facultad de Derecho de Yale</div>
+</div>
+  <p>Una oración en el Artículo II. Una isla y su gente listadas junto a Guam como artículos de un inventario, entregadas de un imperio a otro. Ningún puertorriqueño lo firmó, y a ninguno se le preguntó.</p>
+  <p>Y el Artículo IX es la frase de la que penden los siguientes 128 años.</p>
   <p>No los determina el tratado. No los determinan los habitantes. <strong>Los determina el Congreso</strong> &mdash; un cuerpo en el que Puerto Rico nunca ha tenido voto. Todo lo demás en esta página desciende de esa cláusula: la Ley Foraker, los <em>Casos Insulares</em>, la ciudadanía, PROMESA, todo fluye de que en 1898 se le entregara al Congreso un cheque en blanco que nunca ha llenado.</p>
 </div>
 
@@ -834,11 +915,20 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
 
   <h3 style="font-family:'Instrument Serif',serif;font-weight:400;font-size:22px;margin:18px 0 6px;">Чего до сих пор не хватает</h3>
   <p><strong>Обновление &mdash; Парижский договор теперь тоже заархивирован.</strong> Полный текст на файле (транскрипция Avalon Project Йельской школы права; получить сканированный факсимиле подписанного оригинала всё ещё стоит, поэтому этот более узкий пункт остаётся в разделе <a href="../openleads/" style="color:var(--sea);font-weight:700;">«Открытые вопросы»</a>). Важны две статьи, и вот они дословно.</p>
-  <p><strong>Статья II</strong> &mdash; сама передача:</p>
-  <p style="border-left:3px solid var(--sea);padding-left:14px;font-style:italic;">«Испания уступает Соединённым Штатам <strong>остров Пуэрто-Рико</strong> и другие острова, ныне находящиеся под испанским суверенитетом в Вест-Индии, а также остров Гуам в архипелаге Марианских (Ладронских) островов.»</p>
-  <p>Одно предложение. Остров и его народ перечислены рядом с Гуамом, как строки описи, переданные от одной империи другой. Ни один пуэрто-риканец его не подписывал, и ни у одного не спросили.</p>
-  <p><strong>Статья IX</strong> &mdash; и на этой фразе держатся следующие 128 лет:</p>
-  <p style="border-left:3px solid var(--sea);padding-left:14px;font-style:italic;">«<strong>Гражданские права и политический статус коренных жителей территорий, настоящим уступаемых Соединённым Штатам, определяются Конгрессом.</strong>»</p>
+<div class="treaty-doc">
+  <div class="t-supra">Мирный договор между Соединёнными Штатами Америки и Королевством Испания</div>
+  <div class="t-title">Парижский договор</div>
+  <div class="t-sub">Заключён в Париже &middot; 10 декабря 1898 года</div>
+  <div class="t-rule"></div>
+  <div class="t-art">Статья II</div>
+  <p class="t-body">Испания уступает Соединённым Штатам <strong>остров Пуэрто-Рико</strong> и другие острова, ныне находящиеся под испанским суверенитетом в Вест-Индии, а также остров Гуам в архипелаге Марианских (Ладронских) островов.</p>
+  <div class="t-art">Статья IX</div>
+  <p class="t-body"><strong>Гражданские права и политический статус коренных жителей территорий, настоящим уступаемых Соединённым Штатам, определяются Конгрессом.</strong></p>
+  <div class="t-sign">Совершено в Париже, десятого дня декабря 1898 года.</div>
+  <div class="t-foot">Полный текст заархивирован на этом сайте &middot; транскрипция, Avalon Project, Йельская школа права</div>
+</div>
+  <p>Одно предложение в Статье II. Остров и его народ перечислены рядом с Гуамом, как строки описи, переданные от одной империи другой. Ни один пуэрто-риканец его не подписывал, и ни у одного не спросили.</p>
+  <p>А Статья IX &mdash; это фраза, на которой держатся следующие 128 лет.</p>
   <p>Не договором. Не самими жителями. <strong>Конгрессом</strong> &mdash; органом, в котором у Пуэрто-Рико никогда не было голоса. Всё остальное на этой странице вытекает из этой одной оговорки: закон Форакера, «Островные дела», гражданство, PROMESA &mdash; всё проистекает из того, что в 1898 году Конгрессу вручили незаполненный чек, который он так и не заполнил.</p>
 </div>
 
@@ -2547,6 +2637,6 @@ footer .rule{font-family:'Instrument Serif',serif;font-style:italic;font-size:19
 })();
 </script>
 
-<script src="../assets/i18n.js?v=20260802s"></script>
+<script src="../assets/i18n.js?v=20260802t"></script>
 </body>
 </html>
